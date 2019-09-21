@@ -291,6 +291,8 @@ class Game {
     //     });
     // };
 
+    //add event handler and repaint the canvas
+
 
     remove(object) {
         if (object instanceof Enemy) {
@@ -357,11 +359,15 @@ module.exports = GameView;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-console.log("Webpack is working!")
+// import "./score.js/index.js"
 const Game = __webpack_require__(/*! ./game */ "./src/game.js");
 const GameView = __webpack_require__(/*! ./game_view */ "./src/game_view.js");
 const Tower = __webpack_require__(/*! ./tower */ "./src/tower.js")
 const Enemy = __webpack_require__(/*! ./enemy */ "./src/enemy.js")
+const Score = __webpack_require__(/*! ./score */ "./src/score.js")
+const ScoreView = __webpack_require__(/*! ./score_view */ "./src/score_view.js")
+const Stats = __webpack_require__(/*! ./stats */ "./src/stats.js")
+const StatsView = __webpack_require__(/*! ./stats_view */ "./src/stats_view.js")
 
 document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById("canvas")
@@ -382,18 +388,48 @@ document.addEventListener("DOMContentLoaded", () => {
             let tower = new Tower(y, x, canvas)
             grid[x][y] = tower
             game.add(tower)
-        }
+        } 
+        // else if (grid[x][y] instanceof Tower){
+        //     console.log(grid[x][y])
+        //     game.remove(grid[x][y])
+        //     grid[x][y] = "o"
+        // }
+        
     }
      setInterval(() => {
             let enemy = new Enemy(4, 50, 1, 1, 8, "black", game)
             if (game.enemies.length < 10){
                 game.add(enemy)
-                // console.log(enemy)
             }
         }, 3000);
     canvas.addEventListener('click', handleClick)
     new GameView(game, context).start();
+
+    const score = document.getElementById("score")
+    const scoreContext = score.getContext("2d")
+    const scoreEle = new Score(scoreContext)
+    new ScoreView(scoreEle).start()
     
+    const stats = document.getElementById("stats")
+    const statsContext = stats.getContext("2d")
+    const statsEle = new Stats(statsContext)
+    new StatsView(scoreEle).start()
+    
+    const statsClick = (event) => {
+        let pos = getMousePos(canvas, event)
+        let x = pos.x
+        let y = pos.y
+        let gy = Number.parseInt(pos.x / 20)
+        let gx = Number.parseInt(pos.y / 20)
+        if (grid[gx][gy] instanceof Tower) {
+            statsEle.draw(grid[gx][gy])
+        } 
+        // else if (grid[x][y] instanceof Enemy) {
+        //     statsEle.draw(grid[x][y])
+        // }
+
+    }
+    canvas.addEventListener('click', statsClick)
 })
 
 
@@ -473,6 +509,123 @@ class Projectile extends MovingObject {
     
 }
 module.exports = Projectile
+
+/***/ }),
+
+/***/ "./src/score.js":
+/*!**********************!*\
+  !*** ./src/score.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+class Score {
+    constructor(context) {
+        this.context = context
+    }
+
+    draw() {
+        this.context.clearRect(0, 0, 300 , 100)
+        this.context.font = "20px Arial";
+        this.context.fillText(`Score: ${score}`, 10, 20);
+        this.context.fillText(`Lives: ${lives}`, 10, 50)
+    }
+}
+
+module.exports = Score;
+
+/***/ }),
+
+/***/ "./src/score_view.js":
+/*!***************************!*\
+  !*** ./src/score_view.js ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+class ScoreView {
+    constructor(score, context) {
+        this.context = context;
+        this.score = score;
+    }
+
+    animate(time) {
+        this.score.draw();
+        this.lastTime = time;
+        requestAnimationFrame(this.animate.bind(this));
+    };
+
+    start() {
+        this.lastTime = 0;
+        requestAnimationFrame(this.animate.bind(this));
+    };
+}
+module.exports = ScoreView;
+
+/***/ }),
+
+/***/ "./src/stats.js":
+/*!**********************!*\
+  !*** ./src/stats.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+const Tower = __webpack_require__(/*! ./tower */ "./src/tower.js")
+const Enemy = __webpack_require__(/*! ./enemy */ "./src/enemy.js")
+
+class Stats {
+    constructor(context) {
+        this.context = context
+    }
+
+    draw(object = null) {
+        if (object instanceof Tower) {
+            this.context.clearRect(0, 0, 300, 300)
+            // debugger
+            this.context.font = "20px Arial";
+            this.context.fillText(`Tower`, 10, 80)
+            this.context.fillText(`Range: ${object.range}`, 10, 110)
+            this.context.fillText(`Damage: ${object.dmg}`, 10, 140)
+        } else if (object instanceof Enemy) {
+            this.context.clearRect(0, 0, 300, 300)
+            this.context.font = "20px Arial";
+            this.context.fillText(`Enemy`, 10, 80)
+            this.context.fillText(`Speed: ${object.speed}`, 10, 110)
+            this.context.fillText(`Health: ${object.hp}`, 10, 140)
+        }
+    }
+}
+
+module.exports = Stats;
+
+/***/ }),
+
+/***/ "./src/stats_view.js":
+/*!***************************!*\
+  !*** ./src/stats_view.js ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+class StatsView {
+    constructor(stats, context) {
+        this.context = context;
+        this.stats = stats;
+    }
+
+    animate(time) {
+        this.stats.draw();
+        this.lastTime = time;
+        requestAnimationFrame(this.animate.bind(this));
+    };
+
+    start() {
+        this.lastTime = 0;
+        requestAnimationFrame(this.animate.bind(this));
+    };
+}
+module.exports = StatsView;
 
 /***/ }),
 

@@ -1,9 +1,5 @@
-.row-div {
-    /* height: 10px;
-    width: 10px; */
-    /* background-color: aquamarine; */
+/* .row-div {
     display: flex;
-
 }
 
 #board {
@@ -11,5 +7,15 @@
     flex-direction: column;
     height: 400px;
     width: 600px;
-    /* background-color: fuchsia; */
+} */
+
+.game-container{
+    display: flex;
+    justify-content: center;
+}
+
+.score-stats-container{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
 }

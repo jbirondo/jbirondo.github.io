@@ -105,6 +105,8 @@ class Game {
     //     });
     // };
 
+    //add event handler and repaint the canvas
+
 
     remove(object) {
         if (object instanceof Enemy) {
