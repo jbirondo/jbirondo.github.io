@@ -77,5 +77,6 @@ class Enemy extends MovingObject {
     }
 
 
+
 }
 module.exports = Enemy

@@ -27,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let tower = new Tower(y, x, canvas)
             grid[x][y] = tower
             game.add(tower)
+            debugger
         } 
         // else if (grid[x][y] instanceof Tower){
         //     console.log(grid[x][y])
@@ -35,12 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // }
         
     }
-     setInterval(() => {
-            let enemy = new Enemy(4, 50, 1, 1, 8, "black", game)
-            if (game.enemies.length < 10){
-                game.add(enemy)
-            }
-        }, 3000);
+    //  setInterval(() => {
+            
+    //     }, 3000);
     canvas.addEventListener('click', handleClick)
     new GameView(game, context).start();
 

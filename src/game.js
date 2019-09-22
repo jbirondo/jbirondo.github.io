@@ -97,6 +97,8 @@ class Game {
                 tower.fireProjectile(enemy)
             })
         })
+        this.lose()
+        // this.draw(grid, context)
     }
 
     // moveObjects(delta) {
@@ -123,10 +125,45 @@ class Game {
 
     };
 
-    // step(delta) {
-    //     this.moveObjects(delta);
-    //     this.checkCollisions();
-    // };
+    set_wave() {
+        if (this.enemies.length === 0){
+            for(let i = 0; i < 10; i ++) {
+                let enemy = new Enemy(4, 50, 1, 1, 8, "black", this);
+                this.add(enemy)
+            }
+        }
+    }
+
+    next_wave() {
+        this.enemies.map(enemy => {
+            enemy.hp = enemy.hp * 1.25
+        })
+    }
+
+    spawn() {
+        this.enemies.shift() 
+    }
+
+    play() {
+        this.set_wave()
+        this.next_wave()
+        setInterval(() => {
+            if (this.enemies.length > 0 ) {
+                this.spawn()
+            }
+        }, 1000);
+        if (this.enemies.length === 0){
+            this.play()
+        }
+    }
+
+    lose() {
+        if (lives === 0){
+            alert("Game Over")
+        }
+    }
+
+
 
 }
 

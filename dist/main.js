@@ -172,6 +172,7 @@ class Enemy extends MovingObject {
     }
 
 
+
 }
 module.exports = Enemy
 
@@ -283,6 +284,8 @@ class Game {
                 tower.fireProjectile(enemy)
             })
         })
+        this.lose()
+        // this.draw(grid, context)
     }
 
     // moveObjects(delta) {
@@ -309,10 +312,45 @@ class Game {
 
     };
 
-    // step(delta) {
-    //     this.moveObjects(delta);
-    //     this.checkCollisions();
-    // };
+    set_wave() {
+        if (this.enemies.length === 0){
+            for(let i = 0; i < 10; i ++) {
+                let enemy = new Enemy(4, 50, 1, 1, 8, "black", this);
+                this.add(enemy)
+            }
+        }
+    }
+
+    next_wave() {
+        this.enemies.map(enemy => {
+            enemy.hp = enemy.hp * 1.25
+        })
+    }
+
+    spawn() {
+        this.enemies.shift() 
+    }
+
+    play() {
+        this.set_wave()
+        this.next_wave()
+        setInterval(() => {
+            if (this.enemies.length > 0 ) {
+                this.spawn()
+            }
+        }, 1000);
+        if (this.enemies.length === 0){
+            this.play()
+        }
+    }
+
+    lose() {
+        if (lives === 0){
+            alert("Game Over")
+        }
+    }
+
+
 
 }
 
@@ -344,6 +382,7 @@ class GameView {
     };
 
     start() {
+        this.game.play()
         this.lastTime = 0;
         requestAnimationFrame(this.animate.bind(this));
     };
@@ -388,6 +427,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let tower = new Tower(y, x, canvas)
             grid[x][y] = tower
             game.add(tower)
+            debugger
         } 
         // else if (grid[x][y] instanceof Tower){
         //     console.log(grid[x][y])
@@ -396,12 +436,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // }
         
     }
-     setInterval(() => {
-            let enemy = new Enemy(4, 50, 1, 1, 8, "black", game)
-            if (game.enemies.length < 10){
-                game.add(enemy)
-            }
-        }, 3000);
+    //  setInterval(() => {
+            
+    //     }, 3000);
     canvas.addEventListener('click', handleClick)
     new GameView(game, context).start();
 

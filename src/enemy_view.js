@@ -1,23 +1,21 @@
-class GameView {
-    constructor(game, context){
+class EnemyView {
+    constructor(enemy, context) {
         this.context = context;
-        this.game = game;
+        this.enemy = enemy;
         this.grid = grid
     }
 
     animate(time) {
         const timeDelta = time - this.lastTime;
-        // this.game.step(timeDelta);
-        this.game.draw(this.grid, this.context);
+        this.enemy.draw(this.grid, this.context);
         this.lastTime = time;
 
         requestAnimationFrame(this.animate.bind(this));
     };
 
     start() {
-        this.game.play()
         this.lastTime = 0;
         requestAnimationFrame(this.animate.bind(this));
     };
 }
-module.exports = GameView;
+module.exports = EnemyView;
