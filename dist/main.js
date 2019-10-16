@@ -284,7 +284,6 @@ class Game {
                 tower.fireProjectile(enemy)
             })
         })
-        this.lose()
         // this.draw(grid, context)
     }
 
@@ -339,6 +338,7 @@ class Game {
                 this.spawn()
             }
         }, 1000);
+        this.lose()
         if (this.enemies.length === 0){
             this.play()
         }
