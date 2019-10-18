@@ -21,12 +21,3 @@ Architecture and Technologies
 
 JavaScript for game logic,
 Canvas API for effects rendering,
-
-Implementation Timeline:
-- Day 1: Complete proposal. Create Git Repo. Implement Canvas API.
-
-- Day 2: Work on game logic
-
-- Day 3: Complete game logic
-
-- Day 4: Install the controls for the user to interact with the game. Style the frontend, making it polished and professional.
