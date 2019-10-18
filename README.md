@@ -11,7 +11,6 @@ In JS TD, users will be able to:
 
 
 In addition, this project will include:
-A production README
 
 Wireframes
 
