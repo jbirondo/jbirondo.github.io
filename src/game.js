@@ -151,7 +151,7 @@ class Game {
                 this.spawn()
             }
         }, 1000);
-        this.lose()
+        // this.lose()
         if (this.enemies.length === 0){
             this.play()
         }
