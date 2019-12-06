@@ -8,7 +8,6 @@ class Road{
         this.fillColor();
     }
     fillColor() {
-        // debugger 
         this.context.fillStyle = "tan"
         this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
     }

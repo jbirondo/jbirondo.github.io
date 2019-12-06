@@ -257,10 +257,8 @@ class Game {
     };
 
     draw(grid, context){
-        // debugger
         for(let row = 0; row < grid.length ; row++ ){
             for(let col = 0; col < grid[row].length ; col++) {
-                // debugger
 
                 if (grid[row][col] == 'o') {
                     context.fillStyle = "green";
@@ -618,7 +616,6 @@ class Stats {
     draw(object = null) {
         if (object instanceof Tower) {
             this.context.clearRect(0, 0, 300, 300)
-            // debugger
             this.context.font = "20px Arial";
             this.context.fillText(`Tower`, 10, 80)
             this.context.fillText(`Range: ${object.range}`, 10, 110)

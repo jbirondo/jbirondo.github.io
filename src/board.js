@@ -45,7 +45,6 @@ class Board {
                 const colCanvas = document.createElement("canvas")
                 colCanvas.setAttribute("style", `height: ${tileSize}; width: ${tileSize}`)
                 if (grid[i][j] === "o") {
-                    // debugger
                     tile = new Tile( i, j, colCanvas);
                 } else if (grid[i][j] === "x") {
                     tile = new Road(i, j, colCanvas)

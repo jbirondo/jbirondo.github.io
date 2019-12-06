@@ -70,10 +70,8 @@ class Game {
     };
 
     draw(grid, context){
-        // debugger
         for(let row = 0; row < grid.length ; row++ ){
             for(let col = 0; col < grid[row].length ; col++) {
-                // debugger
 
                 if (grid[row][col] == 'o') {
                     context.fillStyle = "green";

@@ -9,7 +9,6 @@ class Stats {
     draw(object = null) {
         if (object instanceof Tower) {
             this.context.clearRect(0, 0, 300, 300)
-            // debugger
             this.context.font = "20px Arial";
             this.context.fillText(`Tower`, 10, 80)
             this.context.fillText(`Range: ${object.range}`, 10, 110)

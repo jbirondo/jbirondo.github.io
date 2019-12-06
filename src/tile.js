@@ -9,7 +9,6 @@ class Tile {
     }   
 
     fillColor() {
-        // debugger
         this.context.fillStyle = "#008000"
         this.context.fillRect(0, 0, this.canvas.width , this.canvas.height);
     }
