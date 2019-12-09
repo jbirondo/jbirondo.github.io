@@ -146,6 +146,7 @@ class Game {
         this.next_wave()
         setInterval(() => {
             if (this.enemies.length > 0 ) {
+                debugger
                 this.spawn()
             }
         }, 1000);
