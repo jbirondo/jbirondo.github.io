@@ -430,7 +430,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let tower = new Tower(y, x, canvas)
             grid[x][y] = tower
             game.add(tower)
-            // debugger
+            debugger
         } 
         // else if (grid[x][y] instanceof Tower){
         //     console.log(grid[x][y])
