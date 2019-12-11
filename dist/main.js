@@ -341,17 +341,24 @@ class Game {
         // this.lose()
 
         console.log("before new wave")
-        
-        if (this.enemies.length === 0){
-            console.log("new wave")
+
+        // if (this.enemies.length === 0){
+        //     console.log("new wave")
+        //     this.play()
+        // }
+        this.roundOver() || this.lose()
+        console.log("after round over")
+    }
+
+    roundOver() {
+        if (this.enemies.length === 0 && !this.lose()) {
             this.play()
         }
     }
 
     lose() {
-        if (lives === 0){
-            alert("Game Over")
-        }
+        if(lives === 0) return true
+        alert("Game Over")
     }
 
 
