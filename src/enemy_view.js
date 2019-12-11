@@ -18,4 +18,4 @@ class EnemyView {
         requestAnimationFrame(this.animate.bind(this));
     };
 }
-module.exports = EnemyView;
+module.exports = EnemyView

@@ -152,7 +152,10 @@ class Game {
         //     }
         // }, 1000);
         // this.lose()
+        
+        console.log("before new wave")
         if (this.enemies.length === 0){
+            console.log("new wave")
             this.play()
         }
     }

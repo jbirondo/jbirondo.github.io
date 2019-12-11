@@ -331,13 +331,18 @@ class Game {
     play() {
         this.set_wave()
         this.next_wave()
-        setInterval(() => {
-            if (this.enemies.length > 0 ) {
-                this.spawn()
-            }
-        }, 1000);
-        this.lose()
+        // console.log("in play before set interval spawn")
+        // setInterval(() => {
+        //     if (this.enemies.length > 0 ) {
+        //         debugger
+        //         this.spawn()
+        //     }
+        // }, 1000);
+        // this.lose()
+        
+        console.log("before new wave")
         if (this.enemies.length === 0){
+            console.log("new wave")
             this.play()
         }
     }
@@ -372,7 +377,7 @@ class GameView {
 
     animate(time) {
         const timeDelta = time - this.lastTime;
-        // this.game.step(timeDelta);
+        this.game.step(timeDelta);
         this.game.draw(this.grid, this.context);
         this.lastTime = time;
 
@@ -425,6 +430,7 @@ document.addEventListener("DOMContentLoaded", () => {
             let tower = new Tower(y, x, canvas)
             grid[x][y] = tower
             game.add(tower)
+            // debugger
         } 
         // else if (grid[x][y] instanceof Tower){
         //     console.log(grid[x][y])
