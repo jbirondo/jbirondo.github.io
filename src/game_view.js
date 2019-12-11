@@ -15,7 +15,9 @@ class GameView {
     };
 
     start() {
-        this.game.play()
+        if( lives > 0 || this.game.enemies.length === 0) {
+            this.game.play()
+        }
         this.lastTime = 0;
         requestAnimationFrame(this.animate.bind(this));
     };

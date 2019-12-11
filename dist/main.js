@@ -339,8 +339,9 @@ class Game {
         //     }
         // }, 1000);
         // this.lose()
-        
+
         console.log("before new wave")
+        
         if (this.enemies.length === 0){
             console.log("new wave")
             this.play()
@@ -385,7 +386,9 @@ class GameView {
     };
 
     start() {
-        this.game.play()
+        if( lives > 0 || this.game.enemies.length === 0) {
+            this.game.play()
+        }
         this.lastTime = 0;
         requestAnimationFrame(this.animate.bind(this));
     };
