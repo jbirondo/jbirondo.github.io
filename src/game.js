@@ -144,12 +144,13 @@ class Game {
     play() {
         this.set_wave()
         this.next_wave()
-        setInterval(() => {
-            if (this.enemies.length > 0 ) {
-                debugger
-                this.spawn()
-            }
-        }, 1000);
+        // console.log("in play before set interval spawn")
+        // setInterval(() => {
+        //     if (this.enemies.length > 0 ) {
+        //         debugger
+        //         this.spawn()
+        //     }
+        // }, 1000);
         // this.lose()
         if (this.enemies.length === 0){
             this.play()
