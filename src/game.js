@@ -160,7 +160,7 @@ class Game {
         //     this.play()
         // }
         this.roundOver()
-        // console.log("after round over")
+        console.log("after round over")
         this.play()
     }
 
