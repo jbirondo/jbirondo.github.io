@@ -159,7 +159,7 @@ class Game {
         //     console.log("new wave")
         //     this.play()
         // }
-        this.roundOver() || this.lose()
+        this.roundOver()
         // console.log("after round over")
         this.play()
     }
