@@ -123,7 +123,6 @@ class Game {
     };
 
     set_wave() {
-        console.log("inside set_wave")
         setInterval(() => {
         if (this.enemies.length === 0){
             for(let i = 0; i < 10; i ++) {
@@ -145,9 +144,7 @@ class Game {
     }
 
     play() {
-        console.log("before game.play set_wave")
         this.set_wave()
-        console.log("after game.play set_wave")
 
         // this.next_wave()
         // console.log("in play before set interval spawn")
@@ -159,7 +156,6 @@ class Game {
         // }, 1000);
         // this.lose()
 
-        console.log("before new wave")
 
         // if (this.enemies.length === 0){
         //     console.log("new wave")
@@ -169,7 +165,6 @@ class Game {
 
         //     this.play()
         // }
-        console.log("after round over")
     }
 
     roundOver() {
