@@ -152,11 +152,14 @@ class Game {
     play() {
         // this.set_wave()
         let enemies = this.createEnemyArr()
-        enemies.forEach(enemy => {
-            setInterval(() => {
-                this.add(enemy)
-            }, 1000);
-        })
+        let counter = 0
+        setInterval(() => {
+            if(counter < enemies.length) {
+                this.add(enemies[counter])
+            } else {
+                return
+            }
+        }, 1000);
 
 
     }
