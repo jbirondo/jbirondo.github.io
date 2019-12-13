@@ -398,7 +398,7 @@ class GameView {
     };
 
     start() {
-        if( lives > 0 || this.game.enemies.length === 0) {
+        while( lives > 0 && this.game.enemies.length === 0) {
             console.log("in gameView.start")
             this.game.play()
         }
