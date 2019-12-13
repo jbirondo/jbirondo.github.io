@@ -124,6 +124,7 @@ class Game {
 
     set_wave() {
         setInterval(() => {
+        console.log("inside set_wave")
         if (this.enemies.length === 0){
             for(let i = 0; i < 10; i ++) {
                 let enemy = new Enemy(4, 50, 1, 1, 8, "black", this);
