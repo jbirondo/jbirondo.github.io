@@ -123,14 +123,14 @@ class Game {
     };
 
     set_wave() {
+        setInterval(() => {
         if (this.enemies.length === 0){
             for(let i = 0; i < 10; i ++) {
                 let enemy = new Enemy(4, 50, 1, 1, 8, "black", this);
-                setInterval(() => {
                     this.add(enemy)
-                }, 1000)
+                }
             }
-        }
+        }, 1000)
     }
 
     next_wave() {
