@@ -131,11 +131,11 @@ class Game {
             }
         }
 
-        while (tempEnemies.length > 0) {
-            setInterval(() => {
-                this.add(tempEnemies.shift())
-            }, 1000)
-        }
+        // while (tempEnemies.length > 0) {
+        //     setInterval(() => {
+        //         this.add(tempEnemies.shift())
+        //     }, 1000)
+        // }
 
     }
 
