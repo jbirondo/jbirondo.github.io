@@ -321,38 +321,31 @@ class Game {
         }, 1000)
     }
 
+    createEnemyArr() {
+        let enemyArr = []
+        for(let i = 0; i < 10; i ++) {
+            let enemy = new Enemy(4, 50, 1, 1, 8, "black", this);
+            enemyArr.push(enemy)
+        }
+        return enemyArr
+    }
+
     next_wave() {
-        this.enemies.map(enemy => {
+        return this.createEnemyArr().map(enemy => {
             enemy.hp = enemy.hp * 1.25
         })
     }
 
-    spawn() {
-        this.enemies.shift() 
-    }
-
     play() {
-        this.set_wave()
-
-        // this.next_wave()
-        // console.log("in play before set interval spawn")
-        // setInterval(() => {
-        //     if (this.enemies.length > 0 ) {
-        //         debugger
-        //         this.spawn()
-        //     }
-        // }, 1000);
-        // this.lose()
+        // this.set_wave()
+        let enemies = this.createEnemyArr()
+        enemies.forEach(enemy => {
+            setInterval(() => {
+                this.add(enemy)
+            }, 1000);
+        })
 
 
-        // if (this.enemies.length === 0){
-        //     console.log("new wave")
-        //     this.play()
-        // }
-        // if (this.roundOver() === true) {
-
-        //     this.play()
-        // }
     }
 
     roundOver() {
