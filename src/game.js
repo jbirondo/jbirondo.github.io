@@ -159,20 +159,19 @@ class Game {
         //     console.log("new wave")
         //     this.play()
         // }
-        this.roundOver()
+        if (this.roundOver() === true) {
+
+            this.play()
+        }
         console.log("after round over")
-        this.play()
     }
 
     roundOver() {
-        if (this.enemies.length === 0 && !this.lose()) {
-            this.play()
-        }
+        this.enemies.length === 0
     }
 
     lose() {
-        if(lives === 0) return true
-        alert("Game Over")
+        lives === 0
     }
 
 
