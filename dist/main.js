@@ -338,7 +338,7 @@ class Game {
 
     play() {
         this.set_wave()
-        this.next_wave()
+        // this.next_wave()
         // console.log("in play before set interval spawn")
         // setInterval(() => {
         //     if (this.enemies.length > 0 ) {
@@ -354,11 +354,11 @@ class Game {
         //     console.log("new wave")
         //     this.play()
         // }
-        if (this.roundOver() === true) {
+        // if (this.roundOver() === true) {
 
-            this.play()
-        }
-        console.log("after round over")
+        //     this.play()
+        // }
+        // console.log("after round over")
     }
 
     roundOver() {
