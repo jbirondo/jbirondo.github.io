@@ -388,6 +388,9 @@ class GameView {
     };
 
     start() {
+        if (lives <= 0){
+            alert("Game Over")
+        }
         if( lives > 0 || this.game.enemies.length === 0) {
             this.game.play()
         }
