@@ -331,7 +331,10 @@ class Game {
     }
 
     play() {
+        console.log("before game.play set_wave")
         this.set_wave()
+        console.log("after game.play set_wave")
+
         // this.next_wave()
         // console.log("in play before set interval spawn")
         // setInterval(() => {
@@ -396,6 +399,7 @@ class GameView {
 
     start() {
         if( lives > 0 || this.game.enemies.length === 0) {
+            console.log("in gameView.start")
             this.game.play()
         }
         this.lastTime = 0;

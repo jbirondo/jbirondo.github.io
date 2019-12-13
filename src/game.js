@@ -144,7 +144,10 @@ class Game {
     }
 
     play() {
+        console.log("before game.play set_wave")
         this.set_wave()
+        console.log("after game.play set_wave")
+
         // this.next_wave()
         // console.log("in play before set interval spawn")
         // setInterval(() => {
