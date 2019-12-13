@@ -123,6 +123,7 @@ class Game {
     };
 
     set_wave() {
+        console.log("inside set_wave")
         setInterval(() => {
         if (this.enemies.length === 0){
             for(let i = 0; i < 10; i ++) {
