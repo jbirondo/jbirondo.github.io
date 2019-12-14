@@ -156,6 +156,7 @@ class Game {
         setInterval(() => {
             if(counter < enemies.length) {
                 this.add(enemies[counter])
+                counter++
             } else {
                 return
             }
