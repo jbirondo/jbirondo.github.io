@@ -345,7 +345,7 @@ class Game {
                 this.add(enemies[counter])
                 counter++
             } else {
-                return
+                this.play()
             }
         }, 1000);
 
