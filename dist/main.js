@@ -393,8 +393,7 @@ class GameView {
     };
 
     start() {
-        if( lives > 0 ) {
-            console.log (this.game.enemies.length)
+        if( lives > 0 && this.game.enemies.length === 0) {
             this.game.play()
         }
         this.lastTime = 0;
