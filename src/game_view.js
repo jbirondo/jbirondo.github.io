@@ -15,12 +15,10 @@ class GameView {
     };
 
     start() {
+        console.log(lives > 0)
         if( lives > 0 ) {
-            setTimeout(() => {
-                this.game.play()
-            }, 40000);
+            this.game.play()
         }
-
         this.lastTime = 0;
         requestAnimationFrame(this.animate.bind(this));
     };
