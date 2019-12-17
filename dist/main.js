@@ -348,7 +348,8 @@ class Game {
                 this.play()
             }
         }, 1000);
-        clearInterval(spawn)
+        spawn()
+        // clearInterval(spawn)
 
 
     }
@@ -393,7 +394,6 @@ class GameView {
     };
 
     start() {
-        console.log(lives > 0)
         if( lives > 0 ) {
             this.game.play()
         }

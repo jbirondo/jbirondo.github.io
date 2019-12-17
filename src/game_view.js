@@ -15,7 +15,6 @@ class GameView {
     };
 
     start() {
-        console.log(lives > 0)
         if( lives > 0 ) {
             this.game.play()
         }

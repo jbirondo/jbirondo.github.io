@@ -161,7 +161,8 @@ class Game {
                 this.play()
             }
         }, 1000);
-        clearInterval(spawn)
+        spawn()
+        // clearInterval(spawn)
 
 
     }
