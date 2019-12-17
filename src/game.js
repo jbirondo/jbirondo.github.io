@@ -153,7 +153,7 @@ class Game {
         // this.set_wave()
         let enemies = this.createEnemyArr()
         let counter = 0
-        let spawn = setInterval(() => {
+        setInterval(() => {
             if(counter < enemies.length) {
                 this.add(enemies[counter])
                 counter++
@@ -161,7 +161,6 @@ class Game {
                 this.play()
             }
         }, 1000);
-        spawn()
         // clearInterval(spawn)
 
 
