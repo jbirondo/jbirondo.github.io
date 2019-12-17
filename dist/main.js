@@ -396,6 +396,7 @@ class GameView {
         if( lives > 0 && this.game.enemies.length === 0) {
             this.game.play()
         }
+        debugger
         this.lastTime = 0;
         requestAnimationFrame(this.animate.bind(this));
     };
