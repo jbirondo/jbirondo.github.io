@@ -154,6 +154,7 @@ class Game {
         let enemies = this.createEnemyArr()
         let counter = 0
         setInterval(() => {
+            console.log("hello from game.play setInterval")
             if(counter < enemies.length) {
                 this.add(enemies[counter])
                 counter++
