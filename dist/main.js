@@ -353,7 +353,10 @@ class Game {
             //     console.log("Hello from setInterval else statement")
             // }
         }, 1000);
-        // clearInterval(spawn)
+        if (counter > 10 && enemies.length === 0){
+            counter = 0
+            this.play()
+        }
 
 
     }
