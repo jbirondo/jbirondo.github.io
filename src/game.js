@@ -160,10 +160,11 @@ class Game {
                 counter++
                 console.log("hello from setInterval if statement ")
                 console.log(counter)
-            } else {
-                this.play()
-                console.log("Hello from setInterval else statement")
             }
+            // } else {
+            //     this.play()
+            //     console.log("Hello from setInterval else statement")
+            // }
         }, 1000);
         // clearInterval(spawn)
 
