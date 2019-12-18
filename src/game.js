@@ -167,6 +167,8 @@ class Game {
             // }
         }, 1000);
         if (counter > 10 && enemies.length === 0){
+            console.log("After initial spawn")
+            debugger
             counter = 0
             this.play()
         }
