@@ -347,18 +347,14 @@ class Game {
                 counter++
                 console.log("hello from setInterval if statement ")
                 console.log(counter)
+            } else if (counter > 10 && enemies.length === 0) {
+                console.log("After initial spawn");
+                // debugger
+                counter = 0;
+                this.play();
             }
-            // } else {
-            //     this.play()
-            //     console.log("Hello from setInterval else statement")
-            // }
+
         }, 1000);
-        if (counter > 10 && enemies.length === 0){
-            console.log("After initial spawn")
-            // debugger
-            counter = 0
-            this.play()
-        }
 
 
     }
