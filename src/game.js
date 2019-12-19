@@ -153,22 +153,16 @@ class Game {
         // this.set_wave()
         let enemies = this.createEnemyArr()
         let counter = 0
-        setInterval(() => {
+        let spawn = setInterval(() => {
             console.log("hello from game.play setInterval")
             if(counter < enemies.length) {
                 this.add(enemies[counter])
                 counter++
                 console.log("hello from setInterval if statement ")
                 console.log(counter)
-            } else if (counter > 10 && enemies.length === 0) {
-                console.log("After initial spawn");
-                // debugger
-                counter = 0;
-                this.play();
-            }
-
+            } 
         }, 1000);
-
+        spawn()
 
     }
 
