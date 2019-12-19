@@ -338,6 +338,10 @@ class Game {
 
     play() {
         this.spawn()
+        if (this.enemies.length === 0){
+            console.log("hello from if in game.play")
+            clearInterval(this.spawn)
+        }
     }
 
     spawn() {
