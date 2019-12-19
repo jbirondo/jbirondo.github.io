@@ -150,20 +150,21 @@ class Game {
     }
 
     play() {
-        // this.set_wave()
-        let enemies = this.createEnemyArr()
-        let counter = 0
-        let spawn = setInterval(() => {
-            console.log("hello from game.play setInterval")
-            if(counter < enemies.length) {
-                this.add(enemies[counter])
-                counter++
-                console.log("hello from setInterval if statement ")
-                console.log(counter)
-            } 
-        }, 1000);
-        spawn()
+        this.spawn()
+    }
 
+    spawn() {
+        let enemies = this.createEnemyArr();
+        let counter = 0;
+        setInterval(() => {
+            console.log("hello from game.play setInterval");
+            if (counter < enemies.length) {
+            this.add(enemies[counter]);
+            counter++;
+            console.log("hello from setInterval if statement ");
+            console.log(counter);
+            }
+        }, 1000);
     }
 
     roundOver() {
