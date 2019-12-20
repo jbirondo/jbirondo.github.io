@@ -150,9 +150,10 @@ class Game {
     }
 
     play() {
-        while(!this.lose()) {
+        do {
             this.spawn()
         }
+        while(!this.lose())
     }
 
     spawn() {
