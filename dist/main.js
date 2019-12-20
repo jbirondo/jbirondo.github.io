@@ -341,6 +341,7 @@ class Game {
         if (this.enemies.length === 0){
             console.log("hello from if in game.play")
             clearInterval(this.spawn)
+            this.spawn()
         }
     }
 
@@ -350,10 +351,10 @@ class Game {
         setInterval(() => {
             console.log("hello from game.play setInterval");
             if (counter < enemies.length) {
-            this.add(enemies[counter]);
-            counter++;
-            console.log("hello from setInterval if statement ");
-            console.log(counter);
+                this.add(enemies[counter]);
+                counter++;
+                console.log("hello from setInterval if statement ");
+                console.log(counter);
             }
         }, 1000);
     }
