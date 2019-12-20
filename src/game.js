@@ -168,6 +168,9 @@ class Game {
                 counter++;
                 console.log("hello from setInterval if statement ");
                 console.log(counter);
+            } else if (counter > enemies.length){
+                console.log("inside setInterval else if")
+                counter = 0
             }
         }, 1000);
     }
