@@ -337,7 +337,9 @@ class Game {
     }
 
     play() {
-        this.spawn()
+        if (this.enemies === 0) {
+            this.spawn()
+        }
     }
 
     spawn() {
