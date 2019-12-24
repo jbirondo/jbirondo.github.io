@@ -151,7 +151,7 @@ class Game {
 
     play() {
         if (this.enemies.length === 0) {
-            console.log(this.enemies.length)
+            console.log("hello", this.enemies.length)
             this.spawn()
         }
     }
