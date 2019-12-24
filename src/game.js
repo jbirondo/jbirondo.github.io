@@ -150,7 +150,8 @@ class Game {
     }
 
     play() {
-        if (this.enemies === 0) {
+        if (this.enemies.length === 0) {
+            console.log(this.enemies.length)
             this.spawn()
         }
     }
@@ -159,7 +160,7 @@ class Game {
         let enemies = this.createEnemyArr();
         let counter = 0;
         setInterval(() => {
-            console.log("hello from game.play setInterval");
+            console.log("hello from game.spawn setInterval");
             if (counter < enemies.length) {
                 this.add(enemies[counter]);
                 counter++;
