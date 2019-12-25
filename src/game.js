@@ -179,7 +179,15 @@ class Game {
     }
 
     altSpawn () {
-        
+        let enemies = this.createEnemyArr()
+        let counter = 0
+        if (enemies.length > 0) {
+            setTimeout(() => {
+                this.add(enemies[counter]);
+                counter++;
+                console.log(counter);
+            }, 1000);
+        }
     }
 
 }
