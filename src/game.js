@@ -178,7 +178,9 @@ class Game {
         lives === 0
     }
 
-
+    altSpawn () {
+        
+    }
 
 }
 
