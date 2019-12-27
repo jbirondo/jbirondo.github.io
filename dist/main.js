@@ -337,15 +337,15 @@ class Game {
     }
 
     play() {
+        spawn = this.spawn()
+        spawn
         if (this.enemies.length === 0) {
             console.log("hello", this.enemies.length)
             // this.spawn()
-            this.spawn()
             console.log("hello again", this.enemies.length)
 
         } else {
-            console.log("hello from play else statement")
-            this.play()
+            clearInterval(spawn)
         }
     }
 
