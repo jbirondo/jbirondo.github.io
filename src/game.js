@@ -156,6 +156,9 @@ class Game {
             this.spawn()
             console.log("hello again", this.enemies.length)
 
+        } else {
+            console.log("hello from play else statement")
+            this.play()
         }
     }
 
