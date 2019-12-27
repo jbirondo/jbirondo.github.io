@@ -340,7 +340,9 @@ class Game {
         if (this.enemies.length === 0) {
             console.log("hello", this.enemies.length)
             // this.spawn()
-            this.altSpawn()
+            this.spawn()
+            console.log("hello again", this.enemies.length)
+
         }
     }
 
