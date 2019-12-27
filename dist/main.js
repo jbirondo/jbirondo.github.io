@@ -370,7 +370,7 @@ class Game {
         let enemies = this.createEnemyArr()
         let counter = 0
         if (counter < enemies.length) {
-            setTimeout(() => {
+            setInterval(() => {
                 console.log("inside setTimeout in altSpawn")
                 this.add(enemies[counter]);
                 counter++;
