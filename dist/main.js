@@ -337,8 +337,7 @@ class Game {
     }
 
     play() {
-        spawn = this.spawn()
-        spawn
+        let spawn = this.spawn
         if (this.enemies.length === 0) {
             console.log("hello", this.enemies.length)
             spawn()
