@@ -342,8 +342,6 @@ class Game {
             console.log("hello", this.enemies.length)
             spawn
             console.log("hello again", this.enemies.length)
-
-
         }
     }
 
