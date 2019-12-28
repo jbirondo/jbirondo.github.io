@@ -343,6 +343,7 @@ class Game {
             spawn
             console.log("hello again", this.enemies.length)
 
+            
         } else {
             clearInterval(spawn)
             this.play()
