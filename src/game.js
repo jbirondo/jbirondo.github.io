@@ -172,6 +172,7 @@ class Game {
             this.spawnFunc(enemies, counter)
         }, 1000);
         if (counter < enemies.length) {
+            console.log("inside game.spawn if statement")
             spawnOne
             counter++
         } else {
