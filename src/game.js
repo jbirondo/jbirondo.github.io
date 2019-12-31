@@ -165,12 +165,16 @@ class Game {
         setInterval(() => {
             console.log("hello from game.spawn setInterval");
             if (counter < enemies.length) {
-                this.add(enemies[counter]);
+                this.spawnFunc(enemies, counter)
                 counter++;
                 console.log("hello from setInterval if statement ");
                 console.log(counter);
             } 
         }, 1000);
+    }
+
+    spawnFunc(enemies, counter) {
+        this.add(enemies[counter])
     }
 
     roundOver() {
