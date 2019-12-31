@@ -349,15 +349,20 @@ class Game {
     spawn() {
         let enemies = this.createEnemyArr();
         let counter = 0;
-        setInterval(() => {
-            console.log("hello from game.spawn setInterval");
-            if (counter < enemies.length) {
-                this.spawnFunc(enemies, counter)
-                counter++;
-                console.log("hello from setInterval if statement ");
-                console.log(counter);
-            } 
+        // setInterval(() => {
+        //     if (counter < enemies.length) {
+        //         this.spawnFunc(enemies, counter)
+        //         counter++;
+        //     } 
+        // }, 1000);
+        let spawnOne = setInterval(() => {
+            this.spawnFunc(enemies, counter)
         }, 1000);
+        if (counter < enemies.length) {
+            spawnOne
+        } else {
+            clearInterval(spawnOne)
+        }
     }
 
     spawnFunc(enemies, counter) {
