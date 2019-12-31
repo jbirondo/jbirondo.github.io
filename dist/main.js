@@ -342,6 +342,8 @@ class Game {
             console.log("hello", this.enemies.length)
             spawn
             console.log("hello again", this.enemies.length)
+        } else {
+            console.log("game.play else statement")
         }
     }
 
