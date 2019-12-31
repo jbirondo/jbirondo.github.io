@@ -360,6 +360,7 @@ class Game {
         }, 1000);
         if (counter < enemies.length) {
             spawnOne
+            counter++
         } else {
             clearInterval(spawnOne)
             console.log("inside game.spawn else statement")
