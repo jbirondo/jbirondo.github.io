@@ -175,6 +175,7 @@ class Game {
             spawnOne
         } else {
             clearInterval(spawnOne)
+            console.log("inside game.spawn else statement")
         }
     }
 
