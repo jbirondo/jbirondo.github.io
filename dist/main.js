@@ -338,10 +338,12 @@ class Game {
 
     play() {
         let spawn = this.spawn()
-        while (lives !== 0) {
+        if (this.enemies.length === 0) {
             console.log("hello", this.enemies.length)
             spawn
-        } 
+        } else {
+            console.log("game.play else statement")
+        }
     }
 
     spawn() {
