@@ -57,7 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const instructions = document.getElementById("instructions")
     const instructionsContext = instructions.getContext("2d")
     const instructionsEle = new Instructions(instructionsContext)
-    new InstructionsView(instructionsEle, instructionsContext).start()
+    new InstructionsView(instructionsEle).start()
 
     const statsClick = (event) => {
         let pos = getMousePos(canvas, event)
