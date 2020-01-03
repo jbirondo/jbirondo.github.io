@@ -7,6 +7,8 @@ const Score = require("./score")
 const ScoreView = require("./score_view")
 const Stats = require("./stats")
 const StatsView = require("./stats_view")
+const Instructions = require("./instructions")
+const InstructionsView = require("./instructions_view")
 
 document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById("canvas")
@@ -50,8 +52,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const stats = document.getElementById("stats")
     const statsContext = stats.getContext("2d")
     const statsEle = new Stats(statsContext)
-    new StatsView(scoreEle).start()
-    
+    new StatsView(statsEle).start()
+
+    const instructions = document.getElementById("instructions")
+    const instructionsContext = instructions.getContext("2d")
+    const instructionsEle = new Instructions(instructionsContext)
+    new InstructionsView(instructionsEle).start()
+
     const statsClick = (event) => {
         let pos = getMousePos(canvas, event)
         let x = pos.x
