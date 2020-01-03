@@ -156,6 +156,7 @@ class Game {
             spawn
         } else {
             console.log("game.play else statement")
+            
         }
     }
 
