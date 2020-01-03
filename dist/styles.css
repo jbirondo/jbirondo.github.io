@@ -25,6 +25,7 @@
     flex-direction: column;
 }
 
-/* .instructions-container {
+.instructions-container {
+    display: flex;
     justify-content: center;
-} */
+}
