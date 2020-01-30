@@ -365,8 +365,10 @@ class Game {
             }
         }, 1000);
         // spawnWave
-        if (this.enemies.length === 0 && lives > 20){
-            spawnWave
+        while (this.enemies.length === 0 && lives > 20){
+            setInterval(() => {
+                spawnWave
+            }, 15000);
         }
         // let spawnOne = setInterval(() => {
         //     this.spawnFunc(enemies, counter)
