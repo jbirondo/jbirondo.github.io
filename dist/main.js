@@ -362,10 +362,12 @@ class Game {
                 clearInterval(spawnWave)
                 counter = 0
                 console.log("hello from game.spawn else statement", counter)
-                spawnWave
             }
         }, 1000);
-        spawnWave
+        // spawnWave
+        if (this.enemies.length === 0 && lives > 20){
+            spawnWave
+        }
         // let spawnOne = setInterval(() => {
         //     this.spawnFunc(enemies, counter)
         // }, 1000);
