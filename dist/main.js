@@ -365,8 +365,9 @@ class Game {
             }
         }, 1000);
         // spawnWave
-        while (this.enemies.length === 0 && lives > 20){
+        while (this.enemies.length === 0 && lives > 0){
             setInterval(() => {
+                console.log("game.spawn while lopp")
                 spawnWave
             }, 15000);
         }
