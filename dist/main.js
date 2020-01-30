@@ -343,10 +343,11 @@ class Game {
         if (this.enemies.length === 0) {
             console.log("hello", this.enemies.length)
             counter++
+            console.log(counter)
             spawn
         } else {
             console.log("game.play else statement")
-            
+            console.log(counter)
         }
     }
 
