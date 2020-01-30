@@ -152,7 +152,7 @@ class Game {
     play() {
         let spawn = this.spawn()
         let counter = 0
-        if (this.enemies.length === 0) {
+        if (this.enemies.length === 0 && lives > 20) {
             console.log("hello", this.enemies.length)
             counter++	           
             console.log(counter)	            
