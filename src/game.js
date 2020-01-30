@@ -174,7 +174,6 @@ class Game {
             } else {
                 clearInterval(spawnWave)
                 console.log("hello from game.spawn else statement", counter)
-                debugger
             }
         }, 1000);
         spawnWave
