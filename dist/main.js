@@ -362,6 +362,7 @@ class Game {
                 clearInterval(spawnWave)
                 counter = 0
                 console.log("hello from game.spawn else statement", counter)
+                spawnWave
             }
         }, 1000);
         spawnWave
