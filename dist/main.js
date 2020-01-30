@@ -338,11 +338,15 @@ class Game {
 
     play() {
         let spawn = this.spawn()
+        counter = 0
+        
         if (this.enemies.length === 0) {
             console.log("hello", this.enemies.length)
+            counter++
             spawn
         } else {
             console.log("game.play else statement")
+            
         }
     }
 
@@ -456,6 +460,8 @@ const Score = __webpack_require__(/*! ./score */ "./src/score.js")
 const ScoreView = __webpack_require__(/*! ./score_view */ "./src/score_view.js")
 const Stats = __webpack_require__(/*! ./stats */ "./src/stats.js")
 const StatsView = __webpack_require__(/*! ./stats_view */ "./src/stats_view.js")
+const Instructions = __webpack_require__(/*! ./instructions */ "./src/instructions.js")
+const InstructionsView = __webpack_require__(/*! ./instructions_view */ "./src/instructions_view.js")
 
 document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById("canvas")
@@ -499,8 +505,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const stats = document.getElementById("stats")
     const statsContext = stats.getContext("2d")
     const statsEle = new Stats(statsContext)
-    new StatsView(scoreEle).start()
-    
+    new StatsView(statsEle).start()
+
+    const instructions = document.getElementById("instructions")
+    const instructionsContext = instructions.getContext("2d")
+    const instructionsEle = new Instructions(instructionsContext)
+    new InstructionsView(instructionsEle).start()
+
     const statsClick = (event) => {
         let pos = getMousePos(canvas, event)
         let x = pos.x
@@ -518,6 +529,58 @@ document.addEventListener("DOMContentLoaded", () => {
     canvas.addEventListener('click', statsClick)
 })
 
+
+/***/ }),
+
+/***/ "./src/instructions.js":
+/*!*****************************!*\
+  !*** ./src/instructions.js ***!
+  \*****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+class Instructions {
+    constructor(context) {
+        this.context = context
+    }
+
+    draw() {
+        // this.context.clearRect(0, 0, 300, 100)
+        this.context.font = "20px Arial";
+        this.context.fillText(`Welcome to JavaScript Tower Defense`, 10, 20);
+        this.context.fillText(`Left click on a green tile to create a tower to defend the path`, 10, 50)
+    }
+}
+
+module.exports = Instructions;
+
+/***/ }),
+
+/***/ "./src/instructions_view.js":
+/*!**********************************!*\
+  !*** ./src/instructions_view.js ***!
+  \**********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+class InstructionsView {
+    constructor(instructions, context) {
+        this.context = context;
+        this.instructions = instructions;
+    }
+
+    animate(time) {
+        this.instructions.draw();
+        this.lastTime = time;
+        requestAnimationFrame(this.animate.bind(this));
+    };
+
+    start() {
+        this.lastTime = 0;
+        requestAnimationFrame(this.animate.bind(this));
+    };
+}
+module.exports = InstructionsView;
 
 /***/ }),
 

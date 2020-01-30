@@ -151,8 +151,11 @@ class Game {
 
     play() {
         let spawn = this.spawn()
+        counter = 0
+        
         if (this.enemies.length === 0) {
             console.log("hello", this.enemies.length)
+            counter++
             spawn
         } else {
             console.log("game.play else statement")
