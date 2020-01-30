@@ -339,11 +339,14 @@ class Game {
     play() {
         let spawn = this.spawn()
         let counter = 0
-        while (this.enemies.length === 0) {
+        if (this.enemies.length === 0) {
             console.log("hello", this.enemies.length)
-            counter++
-            console.log("game.play", counter)
-            spawn
+            counter++	           
+            console.log(counter)	            
+            spawn	            
+        } else {
+            console.log("game.play else statement")
+            console.log(counter)
         }
     }
 
@@ -544,8 +547,8 @@ class Instructions {
     draw() {
         this.context.clearRect(0, 0, 900, 200)
         this.context.font = "20px Arial";
-        this.context.fillText(`Welcome to JavaScript Tower Defense`, 20, 20);
-        this.context.fillText(`Left click on a green tile to create a tower to defend the path`, 20, 50)
+        this.context.fillText(`Welcome to JavaScript Tower Defense`, 20, 30);
+        this.context.fillText(`Left click on a green tile to create a tower to defend the path`, 20, 60)
     }
 }
 
