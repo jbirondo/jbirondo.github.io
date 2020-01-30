@@ -178,6 +178,7 @@ class Game {
                     console.log("hello from game.spawn else statement", counter)
                 }
             }, 1000);
+            spawnWave
             console.log("game.spawn in gameLoop")
         }, 15000);
         // spawnWave
