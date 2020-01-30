@@ -360,6 +360,7 @@ class Game {
                 console.log("hello from game.spawn if statement", counter)
             } else {
                 clearInterval(spawnWave)
+                counter = 0
                 console.log("hello from game.spawn else statement", counter)
             }
         }, 1000);
