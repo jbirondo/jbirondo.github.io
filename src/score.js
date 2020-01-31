@@ -8,6 +8,7 @@ class Score {
         this.context.font = "20px Arial";
         this.context.fillText(`Score: ${score}`, 10, 20);
         this.context.fillText(`Lives: ${lives}`, 10, 50)
+        this.context.fillText(`Round: ${round}`, 10, 80)
     }
 }
 

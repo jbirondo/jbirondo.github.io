@@ -330,10 +330,10 @@ class Game {
         return enemyArr
     }
 
-    nextWave(enemies) {
+    nextWave(enemies, round) {
         let newEnemies = []
         enemies.forEach(enemy => {
-            enemy.hp = enemy.hp * 1.25
+            enemy.hp = enemy.hp * (1 + (0.25 * round)) 
             newEnemies.push(enemy)
         })
         return newEnemies
@@ -346,6 +346,7 @@ class Game {
                 let enemyArr = this.createEnemyArr()
                 enemyArr = this.nextWave(enemyArr)
                 this.spawn(enemyArr)   
+                round++
             }, 35000);
         } 
     }
@@ -689,6 +690,7 @@ class Score {
         this.context.font = "20px Arial";
         this.context.fillText(`Score: ${score}`, 10, 20);
         this.context.fillText(`Lives: ${lives}`, 10, 50)
+        this.context.fillText(`Round: ${round}`, 10, 80)
     }
 }
 

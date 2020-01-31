@@ -143,10 +143,10 @@ class Game {
         return enemyArr
     }
 
-    nextWave(enemies) {
+    nextWave(enemies, round) {
         let newEnemies = []
         enemies.forEach(enemy => {
-            enemy.hp = enemy.hp * 1.25
+            enemy.hp = enemy.hp * (1 + (0.25 * round)) 
             newEnemies.push(enemy)
         })
         return newEnemies
@@ -159,6 +159,7 @@ class Game {
                 let enemyArr = this.createEnemyArr()
                 enemyArr = this.nextWave(enemyArr)
                 this.spawn(enemyArr)   
+                round++
             }, 35000);
         } 
     }
