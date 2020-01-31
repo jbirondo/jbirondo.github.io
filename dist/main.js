@@ -348,6 +348,7 @@ class Game {
     spawn() {
         let enemies = this.createEnemyArr();
         enemies = this.nextWave(enemies)
+        debugger
         let counter = 0;
         let spawnWave = setInterval(() => {
             if (counter < enemies.length) {
