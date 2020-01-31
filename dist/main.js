@@ -344,7 +344,7 @@ class Game {
         if (this.enemies.length === 0 && lives > 0) {            
             setInterval(() => {
                 let enemyArr = this.createEnemyArr()
-                enemyArr = this.nextWave(enemyArr)
+                enemyArr = this.nextWave(enemyArr, round)
                 this.spawn(enemyArr)   
                 round++
             }, 35000);
