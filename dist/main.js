@@ -330,8 +330,8 @@ class Game {
         return enemyArr
     }
 
-    next_wave() {
-        return this.createEnemyArr().map(enemy => {
+    nextWave(enemies) {
+        return enemies.map(enemy => {
             enemy.hp = enemy.hp * 1.25
         })
     }
@@ -350,6 +350,7 @@ class Game {
         let counter = 0;
         let spawnWave = setInterval(() => {
             if (counter < enemies.length) {
+                enemies = this.next_wave(enemies)
                 this.spawnFunc(enemies, counter)
                 counter++;
                 console.log("hello from game.spawn if statement", counter)
