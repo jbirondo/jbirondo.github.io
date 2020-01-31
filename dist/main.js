@@ -337,7 +337,7 @@ class Game {
     }
 
     play() {
-        console.log("if conditional check in game.play")
+        console.log("if conditional check in game.play", lives, this.enemies.length)
         if (this.enemies.length === 0 && lives > 0) {            
             setInterval(() => {
                 this.spawn()   
