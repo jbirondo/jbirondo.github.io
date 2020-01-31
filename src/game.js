@@ -145,8 +145,8 @@ class Game {
 
     nextWave(enemies) {
         return enemies.map(enemy => {
-            debugger
             enemy.hp = enemy.hp * 1.25
+            debugger
         })
     }
 
