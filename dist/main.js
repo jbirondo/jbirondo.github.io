@@ -367,7 +367,7 @@ class Game {
             }, 1000);
             spawnWave
             console.log("game.spawn in gameLoop")
-        }, 30000) ;
+        }, 35000) ;
         // spawnWave
         // while (this.enemies.length === 0 && lives > 0){
         gameLoop
