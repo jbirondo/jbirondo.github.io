@@ -331,9 +331,12 @@ class Game {
     }
 
     nextWave(enemies) {
-        return enemies.forEach(enemy => {
+        newEnemies = []
+        enemies.forEach(enemy => {
             enemy.hp = enemy.hp * 1.25
+            newEnemies.push(enemy)
         })
+        return newEnemies
     }
 
     play() {
