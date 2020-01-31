@@ -156,14 +156,16 @@ class Game {
         console.log("if conditional check in game.play", lives, this.enemies.length)
         if (this.enemies.length === 0 && lives > 0) {            
             setInterval(() => {
-                this.spawn()   
+                let enemyArr = this.createEnemyArr()
+                enemyArr = this.nextWave(enemyArr)
+                this.spawn(enemyArr)   
             }, 35000);
         } 
     }
 
-    spawn() {
-        let enemies = this.createEnemyArr();
-        enemies = this.nextWave(enemies)
+    spawn(enemies) {
+        // let enemies = this.createEnemyArr();
+        // enemies = this.nextWave(enemies)
         let counter = 0;
         let spawnWave = setInterval(() => {
             if (counter < enemies.length) {
