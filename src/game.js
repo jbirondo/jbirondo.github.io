@@ -144,7 +144,7 @@ class Game {
     }
 
     nextWave(enemies) {
-        enemies.map(enemy => {
+        return enemies.forEach(enemy => {
             enemy.hp = enemy.hp * 1.25
         })
     }
