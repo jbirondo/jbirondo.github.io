@@ -331,7 +331,7 @@ class Game {
     }
 
     nextWave(enemies) {
-        newEnemies = []
+        let newEnemies = []
         enemies.forEach(enemy => {
             enemy.hp = enemy.hp * 1.25
             newEnemies.push(enemy)
