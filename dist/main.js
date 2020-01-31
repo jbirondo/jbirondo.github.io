@@ -353,24 +353,24 @@ class Game {
     spawn() {
         let enemies = this.createEnemyArr();
         let counter = 0;
-        // let gameLoop = setInterval(() => {
-        let spawnWave = setInterval(() => {
-            if (counter < enemies.length) {
-                this.spawnFunc(enemies, counter)
-                counter++;
-                console.log("hello from game.spawn if statement", counter)
-            } else {
-                clearInterval(spawnWave)
-                counter = 0
-                console.log("hello from game.spawn else statement", counter)
-            }
-        }, 1000);
-        spawnWave
-        //     console.log("game.spawn in gameLoop")
-        // }, 15000);
+        let gameLoop = setInterval(() => {
+            let spawnWave = setInterval(() => {
+                if (counter < enemies.length) {
+                    this.spawnFunc(enemies, counter)
+                    counter++;
+                    console.log("hello from game.spawn if statement", counter)
+                } else {
+                    clearInterval(spawnWave)
+                    counter = 0
+                    console.log("hello from game.spawn else statement", counter)
+                }
+            }, 1000);
+            spawnWave
+            console.log("game.spawn in gameLoop")
+        }, 15000) ;
         // spawnWave
         // while (this.enemies.length === 0 && lives > 0){
-        // gameLoop
+        gameLoop
         // }
         //     setInterval(() => {
         //         console.log("game.spawn while lopp")
