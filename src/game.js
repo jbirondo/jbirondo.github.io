@@ -145,6 +145,7 @@ class Game {
 
     nextWave(enemies) {
         return enemies.map(enemy => {
+            debugger
             enemy.hp = enemy.hp * 1.25
         })
     }
@@ -161,7 +162,6 @@ class Game {
     spawn() {
         let enemies = this.createEnemyArr();
         enemies = this.nextWave(enemies)
-        debugger
         let counter = 0;
         let spawnWave = setInterval(() => {
             if (counter < enemies.length) {
