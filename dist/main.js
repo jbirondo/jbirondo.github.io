@@ -347,10 +347,10 @@ class Game {
 
     spawn() {
         let enemies = this.createEnemyArr();
+        enemies = this.next_wave(enemies)
         let counter = 0;
         let spawnWave = setInterval(() => {
             if (counter < enemies.length) {
-                enemies = this.next_wave(enemies)
                 this.spawnFunc(enemies, counter)
                 counter++;
                 console.log("hello from game.spawn if statement", counter)
