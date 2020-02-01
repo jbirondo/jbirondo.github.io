@@ -31,11 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
             game.add(tower)
             debugger
         } 
-        // else if (grid[x][y] instanceof Tower){
-        //     console.log(grid[x][y])
-        //     game.remove(grid[x][y])
-        //     grid[x][y] = "o"
-        // }
+        else if (grid[x][y] instanceof Tower){
+            console.log(grid[x][y])
+            game.remove(grid[x][y])
+            grid[x][y] = "o"
+        }
         
     }
     //  setInterval(() => {
