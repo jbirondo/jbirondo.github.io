@@ -1,4 +1,4 @@
-class EnemyView {
+class EnemyStatsView {
     constructor(enemy, context) {
         this.context = context;
         this.enemy = enemy;
@@ -18,4 +18,4 @@ class EnemyView {
         requestAnimationFrame(this.animate.bind(this));
     };
 }
-module.exports = EnemyView
+module.exports = EnemyStatsView
