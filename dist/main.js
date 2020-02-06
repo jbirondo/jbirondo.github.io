@@ -178,6 +178,70 @@ module.exports = Enemy
 
 /***/ }),
 
+/***/ "./src/enemy_stats.js":
+/*!****************************!*\
+  !*** ./src/enemy_stats.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+class EnemyStats {
+    constructor(context, enemy) {
+        this.context = context
+        this.enemy = enemy
+        this.hp = enemy.hp
+        this.speed = enemy.speed    
+    }
+
+    draw() {
+        // this.context.clearRect(0, 0, 300, 100)
+        // this.context.font = "20px Arial";
+        // this.context.fillText(`Score: ${score}`, 10, 20);
+        // this.context.fillText(`Lives: ${lives}`, 10, 50)
+        // this.context.fillText(`Round: ${round}`, 10, 80)
+        this.context.clearRect(0, 0, 300, 300)
+        this.context.font = "20px Arial";
+        this.context.fillText(`Enemy`, 10, 80)
+        this.context.fillText(`Speed: ${this.speed}`, 10, 110)
+        this.context.fillText(`Health: ${this.hp}`, 10, 140)
+    }
+}
+
+module.exports = EnemyStats;
+
+/***/ }),
+
+/***/ "./src/enemy_stats_view.js":
+/*!*********************************!*\
+  !*** ./src/enemy_stats_view.js ***!
+  \*********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+class EnemyStatsView {
+    constructor(enemyStats, context) {
+        this.context = context;
+        this.enemyStats = enemyStats;
+        this.grid = grid
+    }
+
+    animate(time) {
+        const timeDelta = time - this.lastTime;
+        this.enemyStats.draw(this.grid, this.context);
+        this.lastTime = time;
+
+        requestAnimationFrame(this.animate.bind(this));
+    };
+
+    start() {
+        this.lastTime = 0;
+        requestAnimationFrame(this.animate.bind(this));
+    };
+}
+module.exports = EnemyStatsView
+
+/***/ }),
+
 /***/ "./src/game.js":
 /*!*********************!*\
   !*** ./src/game.js ***!
@@ -443,7 +507,8 @@ module.exports = GameView;
 const Game = __webpack_require__(/*! ./game */ "./src/game.js");
 const GameView = __webpack_require__(/*! ./game_view */ "./src/game_view.js");
 const Tower = __webpack_require__(/*! ./tower */ "./src/tower.js")
-const Enemy = __webpack_require__(/*! ./enemy */ "./src/enemy.js")
+const EnemyStats = __webpack_require__(/*! ./enemy_stats */ "./src/enemy_stats.js")
+const EnemyStatsView = __webpack_require__(/*! ./enemy_stats_view */ "./src/enemy_stats_view.js")
 const Score = __webpack_require__(/*! ./score */ "./src/score.js")
 const ScoreView = __webpack_require__(/*! ./score_view */ "./src/score_view.js")
 const Stats = __webpack_require__(/*! ./stats */ "./src/stats.js")
@@ -499,6 +564,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const instructionsContext = instructions.getContext("2d")
     const instructionsEle = new Instructions(instructionsContext)
     new InstructionsView(instructionsEle).start()
+
+    const enemyStats = document.getElementById("enemy")
+    const enemyStatsContext = enemyStats.getContext("2d")
+    const enemyEle = new EnemyStats(enemyStatsContext)
+    new EnemyStatsView(enemyEle).start()
 
     const statsClick = (event) => {
         let pos = getMousePos(canvas, event)

@@ -2,7 +2,8 @@
 const Game = require("./game");
 const GameView = require("./game_view");
 const Tower = require("./tower")
-const Enemy = require("./enemy")
+const EnemyStats = require("./enemy_stats")
+const EnemyStatsView = require("./enemy_stats_view")
 const Score = require("./score")
 const ScoreView = require("./score_view")
 const Stats = require("./stats")
@@ -58,6 +59,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const instructionsContext = instructions.getContext("2d")
     const instructionsEle = new Instructions(instructionsContext)
     new InstructionsView(instructionsEle).start()
+
+    const enemyStats = document.getElementById("enemy")
+    const enemyStatsContext = enemyStats.getContext("2d")
+    const enemyEle = new EnemyStats(enemyStatsContext)
+    new EnemyStatsView(enemyEle).start()
 
     const statsClick = (event) => {
         let pos = getMousePos(canvas, event)
