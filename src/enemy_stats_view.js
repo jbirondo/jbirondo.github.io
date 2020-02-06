@@ -1,13 +1,13 @@
 class EnemyStatsView {
-    constructor(enemy, context) {
+    constructor(enemyStats, context) {
         this.context = context;
-        this.enemy = enemy;
+        this.enemyStats = enemyStats;
         this.grid = grid
     }
 
     animate(time) {
         const timeDelta = time - this.lastTime;
-        this.enemy.draw(this.grid, this.context);
+        this.enemyStats.draw(this.grid, this.context);
         this.lastTime = time;
 
         requestAnimationFrame(this.animate.bind(this));
