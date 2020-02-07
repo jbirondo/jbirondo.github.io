@@ -169,7 +169,10 @@ class Enemy extends MovingObject {
             lives--
             this.remove()
             if (lives === 0){
-                alert("Game over. Try Again")
+                alert("Game over. Try again")
+                if (confirm("Game over. Try again")){
+                    window.location.reload()
+                }
             }
         }
     }
