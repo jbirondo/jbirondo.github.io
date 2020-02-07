@@ -16,7 +16,7 @@ class EnemyStats {
         this.context.font = "20px Arial";
         this.context.fillText(`Enemy`, 10, 80)
         // this.context.fillText(`Speed: ${this.speed}`, 10, 110)
-        this.context.fillText(`Health: ${(12 * (1 + (0.25 * round)) )}`, 10, 140)
+        this.context.fillText(`Health: ${(12 * (1 + (0.25 * (round - 1))) )}`, 10, 140)
     }
 }
 
