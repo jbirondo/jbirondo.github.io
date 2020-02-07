@@ -156,11 +156,6 @@ class Game {
     play() {
         if (this.enemies.length === 0 && lives > 0) {            
             setInterval(() => {
-                if(lives <= 0) {
-                    alert("Game over. Try again.")
-                } else {
-                    console.log("Lives OK")
-                }
                 let enemyArr = this.createEnemyArr()
                 enemyArr = this.nextWave(enemyArr, round)
                 this.spawn(enemyArr)   

@@ -168,6 +168,9 @@ class Enemy extends MovingObject {
         if (this.x === 570 && this.y === 370) {
             lives--
             this.remove()
+            if (lives === 0){
+                alert("Game over. Try Again")
+            }
         }
     }
 
@@ -403,11 +406,6 @@ class Game {
     play() {
         if (this.enemies.length === 0 && lives > 0) {            
             setInterval(() => {
-                if(lives <= 0) {
-                    alert("Game over. Try again.")
-                } else {
-                    console.log("Lives OK")
-                }
                 let enemyArr = this.createEnemyArr()
                 enemyArr = this.nextWave(enemyArr, round)
                 this.spawn(enemyArr)   

@@ -73,6 +73,9 @@ class Enemy extends MovingObject {
         if (this.x === 570 && this.y === 370) {
             lives--
             this.remove()
+            if (lives === 0){
+                alert("Game over. Try Again")
+            }
         }
     }
 
