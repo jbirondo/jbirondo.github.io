@@ -194,16 +194,12 @@ class EnemyStats {
     }
 
     draw() {
-        // this.context.clearRect(0, 0, 300, 100)
-        // this.context.font = "20px Arial";
-        // this.context.fillText(`Score: ${score}`, 10, 20);
-        // this.context.fillText(`Lives: ${lives}`, 10, 50)
-        // this.context.fillText(`Round: ${round}`, 10, 80)
-        this.context.clearRect(0, 0, 300, 300)
-        this.context.font = "20px Arial";
-        this.context.fillText(`Enemy`, 10, 80)
-        // this.context.fillText(`Speed: ${this.speed}`, 10, 110)
-        this.context.fillText(`Health: ${(12 * (1 + (0.25 * (round - 1))) )}`, 10, 140)
+        if(round > 0){
+            this.context.clearRect(0, 0, 300, 300)
+            this.context.font = "20px Arial";
+            this.context.fillText(`Enemy`, 10, 80)
+            this.context.fillText(`Health: ${(12 * (1 + (0.25 * (round - 1))) )}`, 10, 110)
+        }
     }
 }
 
@@ -412,7 +408,9 @@ class Game {
                 this.spawn(enemyArr)   
                 round++
             }, 35000);
-        } 
+        } else if (lives <= 0) {
+            alert("Game Over. Try again")
+        }
     }
 
     spawn(enemies) {
@@ -486,8 +484,6 @@ class GameView {
     start() {
         if( lives > 0 && this.game.enemies.length === 0) {
             this.game.play()
-        } else {
-            alert("Game over. Try again.")
         }
         console.log("hello from gave_view start")
         this.lastTime = 0;

@@ -161,7 +161,9 @@ class Game {
                 this.spawn(enemyArr)   
                 round++
             }, 35000);
-        } 
+        } else if (lives <= 0) {
+            alert("Game Over. Try again")
+        }
     }
 
     spawn(enemies) {
