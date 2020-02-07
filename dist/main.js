@@ -486,6 +486,8 @@ class GameView {
     start() {
         if( lives > 0 && this.game.enemies.length === 0) {
             this.game.play()
+        } else {
+            alert("Game over. Try again.")
         }
         console.log("hello from gave_view start")
         this.lastTime = 0;
