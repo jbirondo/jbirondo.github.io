@@ -186,11 +186,11 @@ module.exports = Enemy
 /***/ (function(module, exports) {
 
 class EnemyStats {
-    constructor(context, enemy) {
+    constructor(context) {
         this.context = context
-        this.enemy = enemy
-        this.hp = enemy.hp
-        this.speed = enemy.speed    
+        // this.enemy = enemy
+        // this.hp = enemy.hp
+        // this.speed = enemy.speed    
     }
 
     draw() {
@@ -202,8 +202,8 @@ class EnemyStats {
         this.context.clearRect(0, 0, 300, 300)
         this.context.font = "20px Arial";
         this.context.fillText(`Enemy`, 10, 80)
-        this.context.fillText(`Speed: ${this.speed}`, 10, 110)
-        this.context.fillText(`Health: ${this.hp}`, 10, 140)
+        // this.context.fillText(`Speed: ${this.speed}`, 10, 110)
+        this.context.fillText(`Health: ${(12 * (1 + (0.25 * round)) )}`, 10, 140)
     }
 }
 
@@ -794,14 +794,13 @@ class Stats {
             this.context.fillText(`Tower`, 10, 80)
             this.context.fillText(`Range: ${object.range}`, 10, 110)
             this.context.fillText(`Damage: ${object.dmg}`, 10, 140)
-        } 
-        // else if (object instanceof Enemy) {
-        //     this.context.clearRect(0, 0, 300, 300)
-        //     this.context.font = "20px Arial";
-        //     this.context.fillText(`Enemy`, 10, 80)
-        //     this.context.fillText(`Speed: ${object.speed}`, 10, 110)
-        //     this.context.fillText(`Health: ${object.hp}`, 10, 140)
-        // }
+        } else if (object instanceof Enemy) {
+            this.context.clearRect(0, 0, 300, 300)
+            this.context.font = "20px Arial";
+            this.context.fillText(`Enemy`, 10, 80)
+            this.context.fillText(`Speed: ${object.speed}`, 10, 110)
+            this.context.fillText(`Health: ${object.hp}`, 10, 140)
+        }
     }
 }
 
