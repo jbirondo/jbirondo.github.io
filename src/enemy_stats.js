@@ -11,7 +11,7 @@ class EnemyStats {
             this.context.fillText(`${startTime}`, 10, 110)
             setInterval(() => {
                 startTime--
-            }, 1000);
+            }, 10000);
         } else {
             this.context.clearRect(0, 0, 300, 300)
             this.context.font = "20px Arial";
