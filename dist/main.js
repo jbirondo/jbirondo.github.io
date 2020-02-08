@@ -202,7 +202,7 @@ class EnemyStats {
                 this.context.font = "20px Arial";
                 this.context.fillText(`Round starts in:`, 10, 80)
                 this.context.fillText(`${time}`, 10, 110)
-                time--
+                time = time--
             }, 1000);
         } else {
             this.context.clearRect(0, 0, 300, 300)
