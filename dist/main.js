@@ -191,14 +191,20 @@ module.exports = Enemy
 
 class EnemyStats {
     constructor(context) {
-        this.context = context
-        // this.enemy = enemy
-        // this.hp = enemy.hp
-        // this.speed = enemy.speed    
+        this.context = context  
     }
 
     draw() {
-        if(round > 0){
+        if (round === 0){
+            let time = 35
+            setInterval(() => {
+                this.context.clearRect(0, 0, 300, 300)
+                this.context.font = "20px Arial";
+                this.context.fillText(`Round starts in:`, 10, 80)
+                this.context.fillText(`${time}`)
+                time--
+            }, 1000);
+        } else {
             this.context.clearRect(0, 0, 300, 300)
             this.context.font = "20px Arial";
             this.context.fillText(`Enemy`, 10, 80)
