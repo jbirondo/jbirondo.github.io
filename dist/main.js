@@ -196,14 +196,12 @@ class EnemyStats {
 
     draw() {
         if (round === 0){
+            this.context.clearRect(0, 0, 300, 300)
+            this.context.font = "20px Arial";
+            this.context.fillText(`Round starts in:`, 10, 80)
+            this.context.fillText(`${startTime}`, 10, 110)
             setInterval(() => {
-                this.context.clearRect(0, 0, 300, 300)
-                this.context.font = "20px Arial";
-                this.context.fillText(`Round starts in:`, 10, 80)
-                this.context.fillText(`${startTime}`, 10, 110)
-                setInterval(() => {
-                    startTime--
-                }, 1000);
+                startTime--
             }, 1000);
         } else {
             this.context.clearRect(0, 0, 300, 300)
