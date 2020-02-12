@@ -196,7 +196,7 @@ class EnemyStats {
 
     draw() {
         if (round === 0){
-            setTimeout(() => {
+            setInterval(() => {
                 this.context.clearRect(0, 0, 300, 300)
                 this.context.font = "20px Arial";
                 this.context.fillText(`Round starts in:`, 10, 80)
