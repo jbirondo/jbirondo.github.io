@@ -193,6 +193,16 @@ class EnemyStats {
     constructor(context) {
         this.context = context  
     }
+    counter(ctx, num) {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.font = "75px Comic Sans MS";
+        ctx.fillStyle = "red";
+        ctx.textAlign = "center";
+        ctx.fillText("" + num, canvas.width / 2, canvas.height / 2);
+        if (num == 0) {
+            clearInterval(intvl);
+        }
+    } 
 
     draw() {
         if (round === 0){
