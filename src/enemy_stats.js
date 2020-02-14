@@ -2,6 +2,14 @@ class EnemyStats {
     constructor(context) {
         this.context = context  
     }
+    
+    countdown() {
+        let num = 35
+        setInterval(() => {
+            console.log(num)
+            num--
+        }, 1000);
+    }
 
     draw() {
 
