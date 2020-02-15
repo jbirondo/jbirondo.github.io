@@ -194,13 +194,13 @@ class EnemyStats {
         this.context = context  
     }
     
-    // countdown() {
-    //     let num = 35
-    //     setInterval(() => {
-    //         console.log(num)
-    //         num--
-    //     }, 1000);
-    // }
+    countdown() {
+        let num = 35
+        setInterval(() => {
+            console.log(num)
+            num--
+        }, 1000);
+    }
 
     draw() {
         debugger
