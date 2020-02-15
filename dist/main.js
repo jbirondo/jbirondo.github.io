@@ -203,7 +203,7 @@ class EnemyStats {
     // }
 
     draw() {
-        // debugger
+        debugger
 
         if (round === 0){
             this.context.clearRect(0, 0, 300, 300)
@@ -243,7 +243,6 @@ class EnemyStatsView {
         const timeDelta = time - this.lastTime;
         this.enemyStats.draw(this.grid, this.context);
         this.lastTime = time;
-
         requestAnimationFrame(this.animate.bind(this));
     };
 

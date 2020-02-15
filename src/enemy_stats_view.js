@@ -9,7 +9,6 @@ class EnemyStatsView {
         const timeDelta = time - this.lastTime;
         this.enemyStats.draw(this.grid, this.context);
         this.lastTime = time;
-
         requestAnimationFrame(this.animate.bind(this));
     };
 

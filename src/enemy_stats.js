@@ -12,7 +12,7 @@ class EnemyStats {
     // }
 
     draw() {
-        // debugger
+        debugger
 
         if (round === 0){
             this.context.clearRect(0, 0, 300, 300)
