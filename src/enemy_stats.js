@@ -4,6 +4,8 @@ class EnemyStats {
     }
 
     draw() {
+        let a = Date.now()
+        let b = a + 35000
         debugger
         if (round === 0){
             this.context.clearRect(0, 0, 300, 300)
