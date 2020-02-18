@@ -4,10 +4,8 @@ class EnemyStats {
     }
 
     draw() {
-        let a = Date.now()
-        let b = a + 35000
-        debugger
         if (round === 0){
+            let a = Date.now()
             this.context.clearRect(0, 0, 300, 300)
             this.context.font = "20px Arial";
             this.context.fillText(`Round starts in:`, 10, 80)
