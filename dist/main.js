@@ -195,6 +195,7 @@ class EnemyStats {
     }
 
     draw() {
+        debugger
         if (round === 0){
             this.context.clearRect(0, 0, 300, 300)
             this.context.font = "20px Arial";
