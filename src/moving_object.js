@@ -27,15 +27,6 @@ class MovingObject {
         return centerDist < (this.radius + otherObject.radius);
     }
 
-    // move(timeDelta) {
-    //     const velocityScale = timeDelta / this.NORMAL_FRAME_TIME_DELTA,
-    //         offsetX = this.dx * velocityScale,
-    //         offsetY = this.dy * velocityScale;
-
-    //     this.x += offsetX; 
-    //     this.y += offsetY;
-    // };
-
     remove() {
         this.game.remove(this);
     };

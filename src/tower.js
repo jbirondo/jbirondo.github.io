@@ -19,11 +19,11 @@ class Tower {
         const a = enemy.x - ((this.row * 20) + 10) 
         const b = enemy.y - ((this.col * 20) + 10) 
         const dist = Math.sqrt(Math.pow(a , 2) + Math.pow(b, 2))
-        if (dist < this.range) {
-            return true
-        } else {
-            return false
-        }
+        dist < this.range ? true : false
+        //     return true
+        // } else {
+        //     return false
+        // }
     }
 
     fireProjectile(enemy) {

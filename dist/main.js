@@ -644,15 +644,6 @@ class MovingObject {
         return centerDist < (this.radius + otherObject.radius);
     }
 
-    // move(timeDelta) {
-    //     const velocityScale = timeDelta / this.NORMAL_FRAME_TIME_DELTA,
-    //         offsetX = this.dx * velocityScale,
-    //         offsetY = this.dy * velocityScale;
-
-    //     this.x += offsetX; 
-    //     this.y += offsetY;
-    // };
-
     remove() {
         this.game.remove(this);
     };
@@ -830,11 +821,11 @@ class Tower {
         const a = enemy.x - ((this.row * 20) + 10) 
         const b = enemy.y - ((this.col * 20) + 10) 
         const dist = Math.sqrt(Math.pow(a , 2) + Math.pow(b, 2))
-        if (dist < this.range) {
-            return true
-        } else {
-            return false
-        }
+        dist < this.range ? true : false
+        //     return true
+        // } else {
+        //     return false
+        // }
     }
 
     fireProjectile(enemy) {
