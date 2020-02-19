@@ -211,8 +211,8 @@ class EnemyStats {
             } else if (countdown < 1){
                 this.context.clearRect(0, 0, 300, 300)
                 this.context.font = "20px Arial";
-                this.context.fillText(`Round starts NOW!`, 10, 80)
-                // this.context.fillText(`${countdown} second`, 10, 110)
+                this.context.fillText(`Round starts`, 10, 80)
+                this.context.fillText(`NOW!`, 10, 110)
             }
         } else {
             this.context.clearRect(0, 0, 300, 300)
