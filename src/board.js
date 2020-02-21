@@ -66,5 +66,4 @@ class Board {
 }
 document.addEventListener("DOMContentLoaded", () => {
     board = new Board(gridWidth, gridHeight)
-    console.log(board)
 })
