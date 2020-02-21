@@ -1,4 +1,3 @@
-// import Tile from "./tile"
 class Road{
     constructor(x, y, canvas){
         this.x = x;
