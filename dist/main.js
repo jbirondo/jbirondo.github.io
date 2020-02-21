@@ -109,13 +109,6 @@ class Enemy extends MovingObject {
         this.hp = 10
     }
 
-    // collideWith(projectile) {
-    //     this.hp -= projectile.damage
-    //     if (this.hp <= 0) {
-    //         this.remove()
-    //     }
-    // }
-
     update(context) {
         if (this.x + this.radius < 498 && this.y === 50) {
             this.x += this.dx;
