@@ -442,7 +442,6 @@ class GameView {
 
     animate(time) {
         const timeDelta = time - this.lastTime;
-        // this.game.step(timeDelta);
         this.game.draw(this.grid, this.context);
         this.lastTime = time;
 
