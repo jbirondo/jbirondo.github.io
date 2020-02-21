@@ -832,7 +832,6 @@ class Tower {
             enemy.hp -= this.dmg
 
             if (enemy.hp <= 0) {
-                // console.log(enemy)
                 enemy.remove()
                 score++
             }
