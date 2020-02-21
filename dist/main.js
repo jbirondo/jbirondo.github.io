@@ -348,9 +348,8 @@ class Game {
     set_wave() {
         setInterval(() => {
             if (this.enemies.length === 0){
-            console.log("inside set_wave")
-            for(let i = 0; i < 10; i ++) {
-                let enemy = new Enemy(4, 50, 1, 1, 8, "black", this);
+                for(let i = 0; i < 10; i ++) {
+                    let enemy = new Enemy(4, 50, 1, 1, 8, "black", this);
                     this.add(enemy)
                 }
             }
@@ -494,7 +493,6 @@ document.addEventListener("DOMContentLoaded", () => {
             debugger
         } 
         else if (grid[x][y] instanceof Tower){
-            console.log(grid[x][y])
             game.remove(grid[x][y])
             grid[x][y] = "o"
         }

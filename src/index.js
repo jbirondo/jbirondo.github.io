@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
             debugger
         } 
         else if (grid[x][y] instanceof Tower){
-            console.log(grid[x][y])
             game.remove(grid[x][y])
             grid[x][y] = "o"
         }
