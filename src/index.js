@@ -1,4 +1,3 @@
-// import "./score.js/index.js"
 const Game = require("./game");
 const GameView = require("./game_view");
 const Tower = require("./tower")
@@ -39,9 +38,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         
     }
-    //  setInterval(() => {
-            
-    //     }, 3000);
     canvas.addEventListener('click', handleClick)
     new GameView(game, context).start();
 
@@ -74,9 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (grid[gx][gy] instanceof Tower) {
             statsEle.draw(grid[gx][gy])
         } 
-        // else if (grid[x][y] instanceof Enemy) {
-        //     statsEle.draw(grid[x][y])
-        // }
 
     }
     canvas.addEventListener('click', statsClick)

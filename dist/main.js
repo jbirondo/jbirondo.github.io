@@ -468,7 +468,6 @@ module.exports = GameView;
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-// import "./score.js/index.js"
 const Game = __webpack_require__(/*! ./game */ "./src/game.js");
 const GameView = __webpack_require__(/*! ./game_view */ "./src/game_view.js");
 const Tower = __webpack_require__(/*! ./tower */ "./src/tower.js")
@@ -509,9 +508,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         
     }
-    //  setInterval(() => {
-            
-    //     }, 3000);
     canvas.addEventListener('click', handleClick)
     new GameView(game, context).start();
 
@@ -544,9 +540,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (grid[gx][gy] instanceof Tower) {
             statsEle.draw(grid[gx][gy])
         } 
-        // else if (grid[x][y] instanceof Enemy) {
-        //     statsEle.draw(grid[x][y])
-        // }
 
     }
     canvas.addEventListener('click', statsClick)
