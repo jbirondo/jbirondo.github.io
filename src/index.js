@@ -29,7 +29,6 @@ document.addEventListener("DOMContentLoaded", () => {
             let tower = new Tower(y, x, canvas)
             grid[x][y] = tower
             game.add(tower)
-            debugger
         } 
         else if (grid[x][y] instanceof Tower){
             game.remove(grid[x][y])
