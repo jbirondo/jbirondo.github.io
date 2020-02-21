@@ -117,31 +117,31 @@ class Enemy extends MovingObject {
         if (this.x === 490 && this.y + this.radius < 318) {
             this.y += this.dy
         }
-        // // down
+        // down
         if (this.x + this.radius > 378 && this.y === 310) {
             this.x -= this.dx
         }
-        // // left
+        // left
         if (this.x === 370 && this.y + this.radius > 138 && this.y < 330) {
             this.y -= this.dy
         }
-        // // up
+        // up
         if (this.x + this.radius > 278 && this.x + this.radius < 379 && this.y === 130) {
             this.x -= this.dx
         }
-        // // left
+        // left
         if (this.x === 270 && this.y + this.radius < 318 && this.y > 100 ) {
             this.y += this.dy
         }
-        // // down
+        // down
         if (this.x + this.radius > 178 && this.x < 317 && this.y === 310) {
             this.x -= this.dx
         }
-        // // left
+        // left
         if (this.x === 170 && this.y + this.radius > 138 && this.y < 338 ) {
             this.y -= this.dy
         }
-        // // up
+        // up
         if (this.x + this.radius > 78 && this.x + this.radius < 250 && this.y === 130) {
             this.x -= this.dx
         }
