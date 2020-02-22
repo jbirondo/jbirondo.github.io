@@ -73,7 +73,7 @@ class Enemy extends MovingObject {
         }
     }
 
-    enemyHp(hp) {
+    enemyHp() {
 
     }
 
