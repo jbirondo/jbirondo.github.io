@@ -631,6 +631,7 @@ class MovingObject {
     }
 
     remove() {
+        debugger
         this.game.remove(this);
     };
 
