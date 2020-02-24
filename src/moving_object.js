@@ -17,7 +17,7 @@ class MovingObject {
         context.fillStyle = this.color;
         context.beginPath();
         context.arc(
-            this.x, this.y, this.radius, 0, (2 * Math.PI) * (12 * (1 + (0.25 * (round - 1))) / this.hp), true
+            this.x, this.y, this.radius, 0, (2 * Math.PI) * (12 * (1 + (0.25 * (round))) / this.hp), true
         );
         context.fill();
 
