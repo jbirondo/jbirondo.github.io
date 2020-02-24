@@ -367,7 +367,6 @@ class Game {
             let enemy = new Enemy(4, 50, 1, 1, 8, "black", this);
             enemyArr.push(enemy)
         }
-        debugger
         return enemyArr
     }
 
