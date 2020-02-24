@@ -216,7 +216,7 @@ class EnemyStats {
             this.context.clearRect(0, 0, 300, 300)
             this.context.font = "20px Arial";
             this.context.fillText(`Enemy`, 10, 80)
-            this.context.fillText(`Health: ${(10 * (1 + (0.25 * (round))) )}`, 10, 110)
+            this.context.fillText(`Health: ${(12 * (1 + (0.25 * (round - 1))) )}`, 10, 110)
         }
     }
 }
@@ -621,7 +621,7 @@ class MovingObject {
         context.beginPath();
         debugger
         context.arc(
-            this.x, this.y, this.radius, 0, (2 * Math.PI) * (this.hp / (12 * (1 + (0.25 * (round - 1))))), true
+            this.x, this.y, this.radius, 0, (2 * Math.PI) * (this.hp / (10 * (1 + (0.25 * (round - 1))))), true
         );
         context.fill();
 
