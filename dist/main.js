@@ -614,13 +614,15 @@ class MovingObject {
         this.game = game;
         this.hp = hp
         this.NORMAL_FRAME_TIME_DELTA = 1000 / 60
+        this.totalHp = hp * 1
     }
 
     draw(context){
         context.fillStyle = this.color;
         context.beginPath();
         context.arc(
-            this.x, this.y, this.radius, 0, (2 * Math.PI) * (this.hp / (10 * (1 + (0.25 * (round - 1))))), true
+            // this.x, this.y, this.radius, 0, (2 * Math.PI) * (this.hp / (10 * (1 + (0.25 * (round - 1))))), true
+            this.x, this.y, this.radius, 0, (2 * Math.PI) * (this.hp / this.totalHp), true
         );
         context.fill();
 
