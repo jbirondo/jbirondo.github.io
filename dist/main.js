@@ -619,7 +619,6 @@ class MovingObject {
     draw(context){
         context.fillStyle = this.color;
         context.beginPath();
-        debugger
         context.arc(
             this.x, this.y, this.radius, 0, (2 * Math.PI) * (this.hp / (10 * (1 + (0.25 * (round - 1))))), true
         );
