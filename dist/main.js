@@ -615,6 +615,7 @@ class MovingObject {
         this.hp = hp
         this.NORMAL_FRAME_TIME_DELTA = 1000 / 60
         this.totalHp = this.hp * 1
+        debugger
     }
 
     draw(context){
