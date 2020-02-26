@@ -107,6 +107,7 @@ class Enemy extends MovingObject {
         this.color = "black"
         this.speed = 1;
         this.hp = 10
+        this.totalHp = this.hp * 1
         this.game = game
     }
 
@@ -614,8 +615,6 @@ class MovingObject {
         this.game = game;
         this.hp = hp
         this.NORMAL_FRAME_TIME_DELTA = 1000 / 60
-        this.totalHp = this.hp * 1
-        debugger
     }
 
     draw(context){
