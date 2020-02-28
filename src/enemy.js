@@ -12,7 +12,7 @@ class Enemy extends MovingObject {
         this.color = "black"
         this.speed = 1;
         this.hp = 10
-        this.totalHp = this.hp * 1
+        this.totalHp = (10 * (1 + (0.25 * (round - 1))))
         this.game = game
     }
 

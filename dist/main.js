@@ -107,7 +107,7 @@ class Enemy extends MovingObject {
         this.color = "black"
         this.speed = 1;
         this.hp = 10
-        this.totalHp = this.hp * 1
+        this.totalHp = (10 * (1 + (0.25 * (round - 1))))
         this.game = game
     }
 
@@ -217,7 +217,7 @@ class EnemyStats {
             this.context.clearRect(0, 0, 300, 300)
             this.context.font = "20px Arial";
             this.context.fillText(`Enemy`, 10, 80)
-            this.context.fillText(`Health: ${(12 * (1 + (0.25 * (round - 1))) )}`, 10, 110)
+            this.context.fillText(`Health: ${(10 * (1 + (0.25 * (round - 1))) )}`, 10, 110)
         }
     }
 }
