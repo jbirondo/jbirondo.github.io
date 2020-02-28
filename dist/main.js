@@ -617,6 +617,7 @@ class MovingObject {
     }
 
     draw(context){
+        let totalHp = (10 * (1 + (0.25 * (round - 1))))
         context.fillStyle = this.color;
         context.beginPath();
         debugger
@@ -626,7 +627,7 @@ class MovingObject {
                 this.y, 
                 this.radius, 
                 0, 
-                (2 * Math.PI) * ((10 * (1 + (0.25 * (round - 1)))) % this.hp), 
+                (2 * Math.PI) * (totalHp % this.hp), 
                 true
             );
         } else {
