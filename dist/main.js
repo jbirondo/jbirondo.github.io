@@ -636,7 +636,7 @@ class MovingObject {
                 this.y, 
                 this.radius, 
                 0, 
-                (2 * Math.PI), 
+                2 * Math.PI, 
                 true
             );
         }
