@@ -620,11 +620,25 @@ class MovingObject {
         context.fillStyle = this.color;
         context.beginPath();
         debugger
-        context.arc(
-            // this.x, this.y, this.radius, 0, (2 * Math.PI) * (this.hp / (10 * (1 + (0.25 * (round - 1))))), true
-            // this.x, this.y, this.radius, 0, (2 * Math.PI) * .9 , true
-            this.x, this.y, this.radius, 0, (2 * Math.PI) * ((10 * (1 + (0.25 * (round - 1)))) % this.hp), true
-        );
+        if (Math.floor(totalHp) === Math.floor(this.hp)){
+            context.arc(
+                this.x, 
+                this.y, 
+                this.radius, 
+                0, 
+                (2 * Math.PI) * ((10 * (1 + (0.25 * (round - 1)))) % this.hp), 
+                true
+            );
+        } else {
+            context.arc(
+                this.x,
+                this.y, 
+                this.radius, 
+                0, 
+                (2 * Math.PI), 
+                true
+            );
+        }
         context.fill();
 
     }
