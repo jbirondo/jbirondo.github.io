@@ -620,7 +620,7 @@ class MovingObject {
         context.fillStyle = this.color;
         context.beginPath();
         debugger
-        if (Math.floor(totalHp) === Math.floor(this.hp)){
+        if (Math.floor(totalHp) !== Math.floor(this.hp)){
             context.arc(
                 this.x, 
                 this.y, 
