@@ -107,9 +107,6 @@ class Enemy extends MovingObject {
         this.color = "black"
         this.speed = 1;
         this.hp = 10
-        if (round > 0) {
-            this.totalHp = (10 * (1 + (0.25 * (round - 1))))
-        }
         this.game = game
     }
 
@@ -625,7 +622,7 @@ class MovingObject {
         debugger
         context.arc(
             // this.x, this.y, this.radius, 0, (2 * Math.PI) * (this.hp / (10 * (1 + (0.25 * (round - 1))))), true
-            this.x, this.y, this.radius, 0, (2 * Math.PI) * (this.hp / this.totalHp), true
+            this.x, this.y, this.radius, 0, (2 * Math.PI) * (this.hp / (10 * (1 + (0.25 * (round - 1))))), true
         );
         context.fill();
 
