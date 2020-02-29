@@ -36,6 +36,8 @@ class MovingObject {
                 2 * Math.PI, 
                 true
             );
+        } else if (this.hp < 0) {
+            null
         }
         context.fill();
 
