@@ -168,13 +168,6 @@ class Enemy extends MovingObject {
             }
         }
     }
-
-    enemyHp() {
-
-    }
-
-
-
 }
 module.exports = Enemy
 
