@@ -27,7 +27,7 @@ class MovingObject {
                 (2 * Math.PI) * (1 + (-1 * (this.hp / totalHp))), 
                 true
             );
-        } else {
+        } else if (Math.floor(totalHp) === Math.floor(this.hp)) {
             context.arc(
                 this.x,
                 this.y, 
