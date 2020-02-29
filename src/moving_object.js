@@ -24,7 +24,7 @@ class MovingObject {
                 this.y, 
                 this.radius, 
                 0, 
-                (2 * Math.PI) * (totalHp % this.hp), 
+                (2 * Math.PI) * (1 + (-1 * (this.hp / totalHp))), 
                 true
             );
         } else {
