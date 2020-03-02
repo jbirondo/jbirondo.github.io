@@ -15,10 +15,9 @@ class MovingObject {
 
     draw(context){
         let totalHp = (10 * (1 + (0.25 * (round - 1))))
-        context.fillStyle = this.color;
-        context.beginPath();
-        debugger
         if (Math.floor(totalHp) !== Math.floor(this.hp)){
+            context.fillStyle = this.color;
+            context.beginPath();
             context.arc(
                 this.x, 
                 this.y, 
@@ -27,7 +26,10 @@ class MovingObject {
                 (2 * Math.PI) * (1 + (-1 * (this.hp / totalHp))), 
                 true
             );
+            context.fill();
         } else if (Math.floor(totalHp) === Math.floor(this.hp)) {
+            context.fillStyle = this.color;
+            context.beginPath();
             context.arc(
                 this.x,
                 this.y, 
@@ -36,11 +38,10 @@ class MovingObject {
                 2 * Math.PI, 
                 true
             );
+            context.fill();
         } else if (this.hp < 0) {
             null
         }
-        context.fill();
-
     }
 
     iscollideWith(otherObject) {
