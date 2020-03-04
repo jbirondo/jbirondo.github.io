@@ -194,7 +194,7 @@ class EnemyStats {
                 this.context.font = "20px Arial";
                 this.context.fillText(`Round starts in:`, 10, 80)
                 this.context.fillText(`${countdown} seconds`, 10, 110)
-                this.context.fillRect(50, 50, 20, countdown * 3)
+                this.context.fillRect(50, 50, countdown / 3, 20)
             } else if (countdown === 1) {
                 this.context.clearRect(0, 0, 300, 300)
                 this.context.font = "20px Arial";
