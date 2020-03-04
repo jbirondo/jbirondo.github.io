@@ -23,6 +23,7 @@ class EnemyStats {
                     2 * Math.PI,
                     true
                 );
+                this.context.stroke()
                 // (2 * Math.PI) * (1 + (-1 * (this.hp / totalHp)))
             // } else if (countdown === 1) {
                 // this.context.clearRect(0, 0, 300, 300)
