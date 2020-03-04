@@ -710,13 +710,13 @@ class Score {
         let statusBar = Math.floor(countdown % 35)
         this.context.clearRect(0, 0, 300 , 100);
         this.context.font = "20px Arial";
-        this.context.fillText(`Score: ${score}`, 10, 20);
-        this.context.fillText(`Lives: ${lives}`, 10, 50);
-        this.context.fillText(`Round: ${round}`, 10, 80);
+        this.context.fillText(`Score: ${score}`, 200, 20);
+        this.context.fillText(`Lives: ${lives}`, 200, 50);
+        this.context.fillText(`Round: ${round}`, 10, 50);
         this.context.beginPath();
         this.context.arc(
-            200,
-            45,
+            50,
+            50,
             40,
             0,
             (2 * Math.PI) * (1 + (-1 * (countdown / 35))),
