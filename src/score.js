@@ -14,8 +14,8 @@ class Score {
         this.context.fillText(`Round: ${round}`, 10, 80);
         this.context.beginPath();
         this.context.arc(
-            30,
             120,
+            30,
             40,
             0,
             (2 * Math.PI) * (1 + (-1 * (countdown / 35))),
