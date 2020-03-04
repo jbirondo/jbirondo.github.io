@@ -210,6 +210,7 @@ class EnemyStats {
             this.context.font = "20px Arial";
             this.context.fillText(`Enemy`, 10, 80)
             this.context.fillText(`Health: ${(10 * (1 + (0.25 * (round - 1))) )}`, 10, 110)
+            this.context.fillRect( 150, 150, 50, 50)
         }
     }
 }
