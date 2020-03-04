@@ -9,7 +9,7 @@ class EnemyStats {
             let countdown = Math.floor((startTime - a) / 1000)
             let statusBar = Math.floor(countdown % 35)
             debugger
-            if(countdown > 1){
+            if(countdown >= 0){
                 this.context.clearRect(0, 0, 300, 300)
                 this.context.font = "20px Arial";
                 this.context.fillText(`Round starts in:`, 10, 80)
