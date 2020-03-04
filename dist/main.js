@@ -623,7 +623,7 @@ class MovingObject {
                 this.x, 
                 this.y, 
                 this.radius, 
-                1.5*Math.PI, 
+                0, 
                 (2 * Math.PI) * (1 + (-1 * (this.hp / totalHp))), 
                 true
             );
