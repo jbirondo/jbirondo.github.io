@@ -9,7 +9,7 @@ class Score {
         let statusBar = Math.floor(countdown % 35)
         if (round === 0){
             this.context.clearRect(0, 0, 300 , 100);
-            this.context.font = "20px Arial";
+            this.context.font = "15px Arial";
             this.context.fillText(`Score: ${score}`, 120, 20);
             this.context.fillText(`Lives: ${lives}`, 120, 50);
             this.context.fillText(`Prepare!`, 25, 50);
@@ -25,7 +25,7 @@ class Score {
             this.context.stroke()
         } else {
             this.context.clearRect(0, 0, 300 , 100);
-            this.context.font = "20px Arial";
+            this.context.font = "15px Arial";
             this.context.fillText(`Score: ${score}`, 120, 20);
             this.context.fillText(`Lives: ${lives}`, 120, 50);
             this.context.fillText(`Wave`, 25, 50);
