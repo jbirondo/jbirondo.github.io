@@ -15,9 +15,9 @@ class Score {
             this.context.fillText(`Prepare!`, 25, 50);
             this.context.beginPath();
             this.context.arc(
-                60,
-                60,
                 50,
+                50,
+                40,
                 0,
                 (2 * Math.PI) * (1 + (-1 * (countdown / 35))),
                 true
