@@ -7,21 +7,39 @@ class Score {
         let a = Date.now()
         let countdown = Math.floor((startTime - a) / 1000)
         let statusBar = Math.floor(countdown % 35)
-        this.context.clearRect(0, 0, 300 , 100);
-        this.context.font = "20px Arial";
-        this.context.fillText(`Score: ${score}`, 120, 20);
-        this.context.fillText(`Lives: ${lives}`, 120, 50);
-        this.context.fillText(`Round: ${round}`, 10, 60);
-        this.context.beginPath();
-        this.context.arc(
-            60,
-            60,
-            50,
-            0,
-            (2 * Math.PI) * (1 + (-1 * (countdown / 35))),
-            true
-        );
-        this.context.stroke()
+        if (round === 0){
+            this.context.clearRect(0, 0, 300 , 100);
+            this.context.font = "20px Arial";
+            this.context.fillText(`Score: ${score}`, 120, 20);
+            this.context.fillText(`Lives: ${lives}`, 120, 50);
+            this.context.fillText(`Prepare!`, 25, 60);
+            this.context.beginPath();
+            this.context.arc(
+                60,
+                60,
+                50,
+                0,
+                (2 * Math.PI) * (1 + (-1 * (countdown / 35))),
+                true
+            );
+            this.context.stroke()
+        } else {
+            this.context.clearRect(0, 0, 300 , 100);
+            this.context.font = "20px Arial";
+            this.context.fillText(`Score: ${score}`, 120, 20);
+            this.context.fillText(`Lives: ${lives}`, 120, 50);
+            this.context.fillText(`Wave: ${round}`, 25, 60);
+            this.context.beginPath();
+            this.context.arc(
+                60,
+                60,
+                50,
+                0,
+                (2 * Math.PI) * (1 + (-1 * (countdown / 35))),
+                true
+            );
+            this.context.stroke()
+        }
     }
 }
 
