@@ -730,7 +730,7 @@ class Score {
             this.context.fillText(`Score: ${score}`, 120, 20);
             this.context.fillText(`Lives: ${lives}`, 120, 50);
             this.context.fillText(`Wave`, 25, 50);
-            this.context.fillText(`${round}`, 50, 50)
+            this.context.fillText(`${round}`, 50, 70)
             this.context.beginPath();
             this.context.arc(
                 50,
