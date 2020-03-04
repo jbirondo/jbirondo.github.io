@@ -717,7 +717,7 @@ class Score {
         this.context.arc(
             120,
             30,
-            40,
+            30,
             0,
             (2 * Math.PI) * (1 + (-1 * (countdown / 35))),
             true
