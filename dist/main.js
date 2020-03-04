@@ -202,7 +202,7 @@ class EnemyStats {
                     60,
                     30,
                     0,
-                    2 * Math.PI,
+                    (2 * Math.PI) * (1 + (-1 * (countdown / 35))),
                     true
                 );
                 this.context.stroke()
