@@ -190,7 +190,7 @@ class EnemyStats {
             let a = Date.now()
             let countdown = Math.floor((startTime - a) / 1000)
             let statusBar = Math.floor(countdown % 35)
-            debugger
+            // debugger
             if(countdown >= 0){
                 this.context.clearRect(0, 0, 300, 300)
                 this.context.font = "20px Arial";
@@ -202,7 +202,7 @@ class EnemyStats {
                     60,
                     30,
                     0,
-                    2 * Math.PI ,
+                    2 * Math.PI,
                     true
                 );
                 // (2 * Math.PI) * (1 + (-1 * (this.hp / totalHp)))
