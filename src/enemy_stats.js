@@ -12,19 +12,19 @@ class EnemyStats {
                 this.context.font = "20px Arial";
                 this.context.fillText(`Round starts in:`, 10, 80)
                 this.context.fillText(`${countdown} seconds`, 10, 110)
-                this.context.fillRect(150, 150, 50, 50)
+                this.context.fillRect(50, 50, 50, 50)
             } else if (countdown === 1) {
                 this.context.clearRect(0, 0, 300, 300)
                 this.context.font = "20px Arial";
                 this.context.fillText(`Round starts in:`, 10, 80)
                 this.context.fillText(`${countdown} second`, 10, 110)
-                this.context.fillRect(150, 150, 50, 50)
+                this.context.fillRect(50, 50, 50, 50)
             } else if (countdown < 1){
                 this.context.clearRect(0, 0, 300, 300)
                 this.context.font = "20px Arial";
                 this.context.fillText(`Round starts`, 10, 80)
                 this.context.fillText(`NOW!`, 10, 110)
-                this.context.fillRect(150, 150, 50, 50)
+                this.context.fillRect(50, 50, 50, 50)
             }
         } else {
             this.context.clearRect(0, 0, 300, 300)
