@@ -7,7 +7,7 @@ class EnemyStats {
         if (round === 0){
             let a = Date.now()
             let countdown = Math.floor((startTime - a) / 1000)
-            let statusBar = Math.floor(35 % ((a % startTime) / 1000))
+            let statusBar = Math.floor(35 % countdown)
             debugger
             if(countdown > 1){
                 this.context.clearRect(0, 0, 300, 300)
