@@ -22,8 +22,8 @@ class Score {
                 (2 * Math.PI) * (1 + (-1 * (countdown / 350))),
                 true
             );
-            this.context.lineWidth = 5
-            this.context.strokeStyle = "black"
+            this.context.lineWidth = 10
+            this.context.strokeStyle = "green"
             this.context.stroke()
         } else {
             this.context.clearRect(0, 0, 300 , 100);
@@ -41,7 +41,7 @@ class Score {
                 (2 * Math.PI) * (1 + (-1 * (countdown / 350))),
                 true
             );
-            this.context.lineWidth = 5
+            this.context.lineWidth = 10
             this.context.strokeStyle = ["black", "brown", "purple", "yellow", "orange"][round - 1 % 5]
             this.context.stroke()
         }
