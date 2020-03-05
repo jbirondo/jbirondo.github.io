@@ -5,7 +5,7 @@ class Score {
 
     draw() {
         let a = Date.now()
-        let countdown = Math.floor((startTime - a) / 1000)
+        let countdown = Math.floor((startTime - a) / 100)
         let statusBar = Math.floor(countdown % 35)
         if (round === 0){
             this.context.clearRect(0, 0, 300 , 100);
@@ -19,7 +19,7 @@ class Score {
                 50,
                 40,
                 0,
-                (2 * Math.PI) * (1 + (-1 * (countdown / 35))),
+                (2 * Math.PI) * (1 + (-1 * (countdown / 350))),
                 true
             );
             this.context.stroke()
@@ -36,7 +36,7 @@ class Score {
                 50,
                 40,
                 0,
-                (2 * Math.PI) * (1 + (-1 * (countdown / 35))),
+                (2 * Math.PI) * (1 + (-1 * (countdown / 350))),
                 true
             );
             this.context.stroke()
