@@ -743,7 +743,7 @@ class Score {
                 true
             );
             this.context.lineWidth = 10
-            this.context.strokeStyle = ["black", "brown", "purple", "yellow", "orange"][round - 1 % 5]
+            this.context.strokeStyle = ["black", "brown", "purple", "yellow", "orange"][(round - 1) % 5]
             this.context.stroke()
         }
     }
