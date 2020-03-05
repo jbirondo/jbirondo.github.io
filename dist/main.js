@@ -515,6 +515,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let pos = getMousePos(canvas, event)
         let y = Number.parseInt(pos.x / 20)
         let x = Number.parseInt(pos.y / 20)
+        debugger
         grid[x][y] === "o" ? context.fillStyle = "red" : context.fillStyle = "green"
     }
 
