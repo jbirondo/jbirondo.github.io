@@ -10,7 +10,7 @@ class Tower {
     }
 
     draw(context) {
-        let grd = context.createRadialGradient(this.row * tileSize, this.col * tileSize, tileSize, tileSize);
+        let grd = context.createRadialGradient(this.row * tileSize, this.col * tileSize, 5, tileSize, tileSize, 100);
         grd.addColorStop(0, "red");
         grd.addColorStop(1, "white");
         context.fillStyle = grd
