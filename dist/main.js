@@ -511,16 +511,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    const handleHover = (event) => {
-        let pos = getMousePos(canvas, event)
-        let y = Number.parseInt(pos.x / 20)
-        let x = Number.parseInt(pos.y / 20)
-        debugger
-        grid[x][y] === "o" ? context.fillStyle = "red" : context.fillStyle = "green"
-    }
+    // const handleHover = (event) => {
+    //     let pos = getMousePos(canvas, event)
+    //     let y = Number.parseInt(pos.x / 20)
+    //     let x = Number.parseInt(pos.y / 20)
+    //     debugger
+    //     grid[x][y] === "o" ? context.fillStyle = "red" : context.fillStyle = "green"
+    // }
 
 
-    canvas.addEventListener('pointermove', handleHover)
+    // canvas.addEventListener('pointermove', handleHover)
     canvas.addEventListener('click', handleClick)
     new GameView(game, context).start();
 
