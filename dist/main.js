@@ -519,8 +519,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (grid[x][y] === "o"){
             context.fillStyle = "red"
             context.fillRect(x * 20, y * 20, 20, 20)
-        }  
-        context.fillStyle = "green"
+        } 
     }
 
 
