@@ -873,7 +873,6 @@ class Tower {
     draw(context) {
         context.fillStyle = "red"
         context.strokeRect(this.row * tileSize, this.col * tileSize, tileSize, tileSize);
-        context.lineWidth = 3
         context.fillRect(this.row * tileSize, this.col * tileSize, tileSize, tileSize);
     }
 
