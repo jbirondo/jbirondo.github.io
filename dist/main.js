@@ -326,7 +326,8 @@ class Game {
                 } else if (grid[row][col] == 'x') {
                     context.fillStyle = "tan";
                 } else {
-                    context.fillStyle = "red"
+                    // context.fillStyle = "red"
+                    null
                 }
                 context.fillRect(col * tileSize, row * tileSize, tileSize, tileSize);
                 context.strokeRect(col * tileSize, row * tileSize, tileSize, tileSize);
