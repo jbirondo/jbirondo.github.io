@@ -724,6 +724,7 @@ class Score {
                 true
             );
             this.context.lineWidth = 5
+            this.context.strokeStyle = ["black", "brown", "purple", "yellow", "orange"][round % 5]
             this.context.stroke()
         } else {
             this.context.clearRect(0, 0, 300 , 100);
@@ -742,6 +743,7 @@ class Score {
                 true
             );
             this.context.lineWidth = 5
+            this.context.strokeStyle = ["black", "brown", "purple", "yellow", "orange"][round % 5]
             this.context.stroke()
         }
     }
