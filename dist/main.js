@@ -518,6 +518,7 @@ document.addEventListener("DOMContentLoaded", () => {
         debugger
         if (grid[x][y] === "o"){
             context.fillStyle = "red"
+            context.strokeRect(x * 20, y * 20, 20, 20)
             context.fillRect(x * 20, y * 20, 20, 20)
         } 
     }
