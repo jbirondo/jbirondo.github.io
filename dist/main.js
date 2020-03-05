@@ -509,8 +509,17 @@ document.addEventListener("DOMContentLoaded", () => {
             game.remove(grid[x][y])
             grid[x][y] = "o"
         }
-        
     }
+
+    const handleHover = (event) => {
+        let pos = getMousePos(canvas, event)
+        let y = Number.parseInt(pos.x / 20)
+        let x = Number.parseInt(pos.y / 20)
+        grid[x][y] === "o" ? context.fillStyle = "red" : context.fillStyle = "green"
+    }
+
+
+    canvas.addEventListener('pointerover', handleHover)
     canvas.addEventListener('click', handleClick)
     new GameView(game, context).start();
 
