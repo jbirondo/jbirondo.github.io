@@ -5,15 +5,15 @@ class EnemyStats {
 
     draw() {
         if (round === 0){
-            let a = Date.now()
-            let countdown = Math.floor((startTime - a) / 1000)
-            let statusBar = Math.floor(countdown % 35)
+        //     let a = Date.now()
+        //     let countdown = Math.floor((startTime - a) / 1000)
+        //     let statusBar = Math.floor(countdown % 35)
             // debugger
-            if(countdown >= 0){
-                this.context.clearRect(0, 0, 300, 300)
-                this.context.font = "20px Arial";
-                this.context.fillText(`Round starts in:`, 10, 80)
-                this.context.fillText(`${countdown} seconds`, 10, 110)
+            // if(countdown >= 0){
+            //     this.context.clearRect(0, 0, 300, 300)
+            //     this.context.font = "20px Arial";
+            //     this.context.fillText(`Round starts in:`, 10, 80)
+            //     this.context.fillText(`${countdown} seconds`, 10, 110)
                 // this.context.beginPath();
                 // this.context.arc(
                 //     60,
@@ -37,7 +37,8 @@ class EnemyStats {
                 // this.context.fillText(`Round starts`, 10, 80)
                 // this.context.fillText(`NOW!`, 10, 110)
                 // this.context.fillRect(50, 50, 50, 50)
-            }
+        //     }
+        null
         } else {
             this.context.clearRect(0, 0, 300, 300)
             this.context.font = "20px Arial";

@@ -31,7 +31,13 @@ class Score {
             this.context.fillText(`Score: ${score}`, 120, 20);
             this.context.fillText(`Lives: ${lives}`, 120, 50);
             this.context.fillText(`Wave`, 30, 50);
-            this.context.fillText(`${round}`, 45, 70)
+            if (round < 10){
+                this.context.fillText(`${round}`, 45, 70)
+            } else if (round >= 10 && round < 100) {
+                this.context.fillText(`${round}`, 41, 70)
+            } else {
+                this.context.fillText(`${round}`, 37, 70)
+            }
             this.context.beginPath();
             this.context.arc(
                 50,
