@@ -873,7 +873,7 @@ class Tower {
     draw(context) {
         context.fillStyle = "red"
         context.strokeRect(this.row * tileSize, this.col * tileSize, tileSize, tileSize);
-        context.fillRect((this.row * tileSize) - 5, (this.col * tileSize) - 5, tileSize, tileSize);
+        context.fillRect(this.row * tileSize, this.col * tileSize, tileSize, tileSize);
     }
 
     inRange(enemy) {
