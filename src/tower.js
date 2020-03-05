@@ -13,8 +13,8 @@ class Tower {
         // context.fillStyle = "red"
         // context.strokeRect(this.row * tileSize, this.col * tileSize, tileSize, tileSize);
         // context.fillRect(this.row * tileSize, this.col * tileSize, tileSize, tileSize);
-        context.font = "12px Arial"
-        context.fillText("♟", this.row * tileSize, (this.col * tileSize) + tileSize)
+        context.font = "15px Arial"
+        context.fillText("♟", this.row * tileSize, (this.col * tileSize) + tileSize - 5)
     }
 
     inRange(enemy) {
