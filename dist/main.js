@@ -841,6 +841,7 @@ module.exports = ScoreView;
 
 const Tower = __webpack_require__(/*! ./tower */ "./src/tower.js")
 const Enemy = __webpack_require__(/*! ./enemy */ "./src/enemy.js")
+const Road = __webpack_require__(/*! ./road */ "./src/road.js")
 
 class Stats {
     constructor(context) {

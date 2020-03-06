@@ -1,5 +1,6 @@
 const Tower = require("./tower")
 const Enemy = require("./enemy")
+const Road = require("./road")
 
 class Stats {
     constructor(context) {
