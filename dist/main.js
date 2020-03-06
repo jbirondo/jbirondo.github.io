@@ -561,7 +561,9 @@ document.addEventListener("DOMContentLoaded", () => {
         let gx = Number.parseInt(pos.y / 20)
         if (grid[gx][gy] instanceof Tower) {
             statsEle.draw(grid[gx][gy])
-        } 
+        } else {
+            statsEle.draw(grid[gx][gy])
+        }
 
     }
     canvas.addEventListener('click', statsClick)
@@ -856,7 +858,8 @@ class Stats {
             this.context.fillText(`${object.stage} Tower`, 10, 80)
             this.context.fillText(`Range: ${object.range}`, 10, 110)
             this.context.fillText(`Damage: ${object.dmg}`, 10, 140)
-        } else if (!object instanceof Tower) {
+        } else {
+            debugger
             this.context.clearRect(0, 0, 300, 300)
             // this.context.font = "20px Arial";
             // this.context.fillText(`Enemy`, 10, 80)
