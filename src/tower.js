@@ -14,7 +14,6 @@ class Tower {
         // context.fillStyle = "red"
         // context.strokeRect(this.row * tileSize, this.col * tileSize, tileSize, tileSize);
         // context.fillRect(this.row * tileSize, this.col * tileSize, tileSize, tileSize);
-        debugger
         context.font = "14px Arial"
         context.fillText("♟", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
     }
