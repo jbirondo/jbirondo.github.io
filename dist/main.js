@@ -851,7 +851,11 @@ class Stats {
             this.context.fillText(`${object.stage} Tower`, 10, 80)
             this.context.fillText(`Range: ${object.range}`, 10, 110)
             this.context.fillText(`Damage: ${object.dmg}`, 10, 140)
-            this.context.strokeRect(10, 45, 20, 20);
+            if (object.stage === "Pawn") {
+                this.context.strokeStyle = "blue"
+                this.context.fillText(`Upgrade`, 14, 40)
+                this.context.strokeRect(10, 40, 20, 60);
+            }
             // this.context.fillRect(this.row * tileSize, this.col * tileSize, tileSize, tileSize);
         } 
     }
