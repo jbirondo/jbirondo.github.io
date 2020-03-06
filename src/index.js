@@ -83,6 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let gy = Number.parseInt(pos.x / 20)
         let gx = Number.parseInt(pos.y / 20)
         if (grid[gx][gy] instanceof Tower) {
+            debugger
             statsEle.draw(grid[gx][gy])
         } 
     }

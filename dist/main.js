@@ -558,6 +558,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let gy = Number.parseInt(pos.x / 20)
         let gx = Number.parseInt(pos.y / 20)
         if (grid[gx][gy] instanceof Tower) {
+            debugger
             statsEle.draw(grid[gx][gy])
         } 
     }
@@ -836,8 +837,7 @@ module.exports = ScoreView;
 /***/ (function(module, exports, __webpack_require__) {
 
 const Tower = __webpack_require__(/*! ./tower */ "./src/tower.js")
-const Enemy = __webpack_require__(/*! ./enemy */ "./src/enemy.js")
-const Road = __webpack_require__(/*! ./road */ "./src/road.js")
+
 
 class Stats {
     constructor(context) {
@@ -852,13 +852,7 @@ class Stats {
             this.context.fillText(`${object.stage} Tower`, 10, 80)
             this.context.fillText(`Range: ${object.range}`, 10, 110)
             this.context.fillText(`Damage: ${object.dmg}`, 10, 140)
-        } else {
-            this.context.clearRect(0, 0, 300, 300)
-            // this.context.font = "20px Arial";
-            // this.context.fillText(`Enemy`, 10, 80)
-            // this.context.fillText(`Speed: ${object.speed}`, 10, 110)
-            // this.context.fillText(`Health: ${object.hp}`, 10, 140)
-        }
+        } 
     }
 }
 
