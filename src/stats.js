@@ -17,8 +17,7 @@ class Stats {
             if (object.stage === "Pawn") {
                 this.context.strokeStyle = "black"
                 this.context.strokeText(`Upgrade`, 14, 40)
-                this.context.fillStyle = "blue"
-                this.context.fillRect(10, 23, 85, 22);
+                this.context.strokeRect(10, 23, 85, 22);
             }
             // this.context.fillRect(this.row * tileSize, this.col * tileSize, tileSize, tileSize);
         } 
