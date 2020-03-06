@@ -858,7 +858,7 @@ class Stats {
                 this.context.strokeRect(10, 23, 85, 22);
                 this.context.strokeStyle = "red"
                 this.context.fillText(`Sell`, 104, 40)
-                this.context.strokeRect(100, 23, 45, 22);
+                this.context.strokeRect(100, 23, 38, 22);
             }
             // this.context.fillRect(this.row * tileSize, this.col * tileSize, tileSize, tileSize);
         } 
