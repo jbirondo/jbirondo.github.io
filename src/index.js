@@ -30,9 +30,15 @@ document.addEventListener("DOMContentLoaded", () => {
             grid[x][y] = tower
             game.add(tower)
         } 
-        else if (grid[x][y] instanceof Tower){
-            game.remove(grid[x][y])
-            grid[x][y] = "o"
+        // else if (grid[x][y] instanceof Tower){
+        //     game.remove(grid[x][y])
+        //     grid[x][y] = "o"
+        // }
+        else if (grid[x][y] instanceof Tower) {
+            console.log(grid[x][y])
+        }
+        else if (grid[pos.y][pos.x] instanceof Enemy){
+            console.log(grid[pos.y][pos.x])
         }
     }
 
