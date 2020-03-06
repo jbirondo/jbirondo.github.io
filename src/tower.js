@@ -7,6 +7,7 @@ class Tower {
         this.firingRate = 50
         this.canvas = canvas
         this.context = this.canvas.getContext("2d")
+        this.stage = "Pawn"
     }
 
     draw(context) {
