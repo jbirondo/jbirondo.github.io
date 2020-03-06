@@ -32,6 +32,7 @@ class Board {
         this.gridWidth = gridWidth;
         this.gridHeight = gridHeight;
         this.generateBoard()
+        debugger
     }
 
     generateBoard() {
