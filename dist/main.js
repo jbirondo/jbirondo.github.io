@@ -476,6 +476,7 @@ module.exports = GameView;
 const Game = __webpack_require__(/*! ./game */ "./src/game.js");
 const GameView = __webpack_require__(/*! ./game_view */ "./src/game_view.js");
 const Tower = __webpack_require__(/*! ./tower */ "./src/tower.js")
+const Road = __webpack_require__(/*! ./road */ "./src/road.js")
 const EnemyStats = __webpack_require__(/*! ./enemy_stats */ "./src/enemy_stats.js")
 const EnemyStatsView = __webpack_require__(/*! ./enemy_stats_view */ "./src/enemy_stats_view.js")
 const Score = __webpack_require__(/*! ./score */ "./src/score.js")
@@ -708,6 +709,31 @@ class Projectile extends MovingObject {
     
 }
 module.exports = Projectile
+
+/***/ }),
+
+/***/ "./src/road.js":
+/*!*********************!*\
+  !*** ./src/road.js ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+class Road{
+    constructor(x, y, canvas){
+        this.x = x;
+        this.y = y;
+        this.canvas = canvas;
+        this.context = this.canvas.getContext("2d")
+        this.fillColor();
+    }
+    fillColor() {
+        this.context.fillStyle = "tan"
+        this.context.fillRect(0, 0, this.canvas.width, this.canvas.height);
+    }
+
+}
+ module.exports = Road
 
 /***/ }),
 

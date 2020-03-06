@@ -1,6 +1,7 @@
 const Game = require("./game");
 const GameView = require("./game_view");
 const Tower = require("./tower")
+const Road = require("./road")
 const EnemyStats = require("./enemy_stats")
 const EnemyStatsView = require("./enemy_stats_view")
 const Score = require("./score")
