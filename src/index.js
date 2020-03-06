@@ -36,7 +36,9 @@ document.addEventListener("DOMContentLoaded", () => {
         // }
         else if (grid[x][y] instanceof Tower) {
             console.log(grid[x][y])
-        }
+        } else if (grid[x][y] instanceof Road){
+            console.log(grid[x][y])
+        } 
     }
 
     // const handleHover = (event) => {
