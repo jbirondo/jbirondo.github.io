@@ -14,6 +14,8 @@ class Stats {
             this.context.fillText(`${object.stage} Tower`, 10, 80)
             this.context.fillText(`Range: ${object.range}`, 10, 110)
             this.context.fillText(`Damage: ${object.dmg}`, 10, 140)
+            this.context.strokeRect(10, 45, 20, 20);
+            // this.context.fillRect(this.row * tileSize, this.col * tileSize, tileSize, tileSize);
         } 
     }
 }
