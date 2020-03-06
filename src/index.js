@@ -37,8 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
         // }	
         else if (grid[x][y] instanceof Tower) {
             console.log(grid[x][y])
-        } else if (grid[x][y] instanceof Road) {
-            console.log(grid[x][y])
         }
     }
 
@@ -86,10 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let gx = Number.parseInt(pos.y / 20)
         if (grid[gx][gy] instanceof Tower) {
             statsEle.draw(grid[gx][gy])
-        } else {
-            statsEle.draw(grid[gx][gy])
-        }
-
+        } 
     }
     canvas.addEventListener('click', statsClick)
 })
