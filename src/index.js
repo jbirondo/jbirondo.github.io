@@ -37,9 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
         else if (grid[x][y] instanceof Tower) {
             console.log(grid[x][y])
         }
-        else if (grid[pos.y][pos.x] instanceof Enemy){
-            console.log(grid[pos.y][pos.x])
-        }
     }
 
     // const handleHover = (event) => {
