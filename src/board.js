@@ -32,7 +32,6 @@ class Board {
         this.gridWidth = gridWidth;
         this.gridHeight = gridHeight;
         this.generateBoard()
-        debugger
     }
 
     generateBoard() {
@@ -48,7 +47,6 @@ class Board {
                 if (grid[i][j] === "o") {
                     tile = new Tile( i, j, colCanvas);
                 } else if (grid[i][j] === "x") {
-                    debugger
                     tile = new Road(i, j, colCanvas)
                 }
                 this.grid[i].push(tile);

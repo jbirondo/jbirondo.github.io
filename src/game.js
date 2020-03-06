@@ -51,7 +51,6 @@ class Game {
                 if (grid[row][col] == 'o') {
                     context.fillStyle = "green";
                 } else if (grid[row][col] == 'x') {
-                    debugger
                     context.fillStyle = "tan";
                 } else {
                     context.fillStyle = "green"
