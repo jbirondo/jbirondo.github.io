@@ -572,7 +572,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const upgrade = (event) => {
         let pos = getMousePos(stats, event)
         if(isUpgrade(pos)){
-            object.upgrade()
+            newObject = object.upgrade()
+            object = newObject
         }
     }
 
