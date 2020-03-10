@@ -497,6 +497,7 @@ document.addEventListener("DOMContentLoaded", () => {
             y: event.clientY - rect.top
         }
     }
+    let object
     const handleClick = (event) => {
         let pos = getMousePos(canvas, event)
         let y = Number.parseInt(pos.x / 20)
@@ -504,6 +505,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (grid[x][y] === "o") {
             let tower = new Tower(y, x, canvas)
             grid[x][y] = tower
+            object = grid[x][y]
             game.add(tower)
         }
         // else if (grid[x][y] instanceof Tower){	
@@ -864,12 +866,12 @@ const Tower = __webpack_require__(/*! ./tower */ "./src/tower.js")
 
 
 class Stats {
-    constructor(context, object) {
+    constructor(context, object = null) {
         this.context = context
         this.object = object
     }
 
-    draw(object = null) {
+    draw(object) {
         if (object instanceof Tower) {
             this.context.clearRect(0, 0, 300, 300)
             this.context.font = "20px Arial";

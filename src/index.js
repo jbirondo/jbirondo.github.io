@@ -22,6 +22,7 @@ document.addEventListener("DOMContentLoaded", () => {
             y: event.clientY - rect.top
         }
     }
+    let object
     const handleClick = (event) => {
         let pos = getMousePos(canvas, event)
         let y = Number.parseInt(pos.x / 20)
@@ -29,6 +30,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (grid[x][y] === "o") {
             let tower = new Tower(y, x, canvas)
             grid[x][y] = tower
+            object = grid[x][y]
             game.add(tower)
         }
         // else if (grid[x][y] instanceof Tower){	

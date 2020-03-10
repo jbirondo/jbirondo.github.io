@@ -2,12 +2,12 @@ const Tower = require("./tower")
 
 
 class Stats {
-    constructor(context, object) {
+    constructor(context, object = null) {
         this.context = context
         this.object = object
     }
 
-    draw(object = null) {
+    draw(object) {
         if (object instanceof Tower) {
             this.context.clearRect(0, 0, 300, 300)
             this.context.font = "20px Arial";
