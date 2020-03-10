@@ -2,8 +2,9 @@ const Tower = require("./tower")
 
 
 class Stats {
-    constructor(context) {
+    constructor(context, object) {
         this.context = context
+        this.object = object
     }
 
     draw(object = null) {

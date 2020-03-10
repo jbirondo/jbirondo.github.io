@@ -63,7 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const stats = document.getElementById("stats")
     const statsContext = stats.getContext("2d")
-    const statsEle = new Stats(statsContext)
+    const statsEle = new Stats(statsContext, object)
     new StatsView(statsEle).start()
 
     const instructions = document.getElementById("instructions")
@@ -86,19 +86,30 @@ document.addEventListener("DOMContentLoaded", () => {
             statsEle.draw(grid[gx][gy])
         } 
     }
-    function isUpgrade(pos) {
+    isUpgrade = (pos) => {
         return pos.x > 10 && pos.x < 95 && pos.y < 45 && pos.y > 23
+    }
+
+    isSell = (pos) => {
+        return pos.x > 100 && pos.x < 140 && pos.y < 45 && pos.y > 23
     }
 
     const upgrade = (event) => {
         let pos = getMousePos(stats, event)
         if(isUpgrade(pos)){
-            debugger
             alert('Hit upgrade button')
         }
     }
 
+    const sell = (event) => {
+        let pos = getMousePos(stats, event)
+        if(isSell(pos)) {
+            debugger
+            alert('Hit sell button')
+        }
+    }
 
     canvas.addEventListener('click', statsClick)
     stats.addEventListener('click', upgrade)
+    stats.addEventListener('click', sell)
 })
