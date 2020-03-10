@@ -106,7 +106,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const sell = (event) => {
         let pos = getMousePos(stats, event)
         if(isSell(pos)) {
-            debugger
             alert('Hit sell button')
         }
     }
