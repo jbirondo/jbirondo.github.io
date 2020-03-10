@@ -561,9 +561,12 @@ document.addEventListener("DOMContentLoaded", () => {
             statsEle.draw(grid[gx][gy])
         } 
     }
+    function isUpgrade(pos) {
+        return pos.x > 10 && pos.x < 95 && pos.y < 45 && pos.y > 23
+    }
 
     const upgrade = (event) => {
-
+        
     }
 
 
