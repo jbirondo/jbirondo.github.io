@@ -509,12 +509,7 @@ document.addEventListener("DOMContentLoaded", () => {
             grid[x][y] = tower
             object = grid[x][y]
             game.add(tower)
-        }
-        // else if (grid[x][y] instanceof Tower){	
-        //     game.remove(grid[x][y])	
-        //     grid[x][y] = "o"	
-        // }	
-        else if (grid[x][y] instanceof Tower) {
+        } else if (grid[x][y] instanceof Tower) {
             console.log(grid[x][y])
             object = grid[x][y]
         }
@@ -958,6 +953,16 @@ class Tower {
         if (this.stage === "Pawn") {
             context.font = "14px Arial"
             context.fillText("♟", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+        } else if (this.stage === "Knight") {
+            context.font = "14px Arial"
+            context.fillText("♞", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+        }
+    }
+
+    upgrade(){
+        if (this.stage === "Pawn"){
+            this.stage = "Knight"
+            this.dmg = 5
         }
     }
 

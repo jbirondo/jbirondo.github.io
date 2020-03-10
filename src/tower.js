@@ -17,6 +17,16 @@ class Tower {
         if (this.stage === "Pawn") {
             context.font = "14px Arial"
             context.fillText("♟", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+        } else if (this.stage === "Knight") {
+            context.font = "14px Arial"
+            context.fillText("♞", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+        }
+    }
+
+    upgrade(){
+        if (this.stage === "Pawn"){
+            this.stage = "Knight"
+            this.dmg = 5
         }
     }
 
