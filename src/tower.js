@@ -15,24 +15,50 @@ class Tower {
         // context.strokeRect(this.row * tileSize, this.col * tileSize, tileSize, tileSize);
         // context.fillRect(this.row * tileSize, this.col * tileSize, tileSize, tileSize);
         context.fillStyle = "black"
-        if (this.stage === "Pawn") {
-            context.font = "14px Arial"
-            context.fillText("♟", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
-        } else if (this.stage === "Knight") {
-            context.font = "14px Arial"
-            context.fillText("♞", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
-        } else if (this.stage === "Bishop") {
-            context.font = "14px Arial"
-            context.fillText("♝", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
-        } else if (this.stage === "Rook") {
-            context.font = "14px Arial"
-            context.fillText("♜", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
-        } else if (this.stage === "Queen") {
-            context.font = "14px Arial"
-            context.fillText("♛", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
-        } else if (this.stage === "King") {
-            context.font = "14px Arial"
-            context.fillText("♔", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+        // if (this.stage === "Pawn") {
+        //     context.font = "14px Arial"
+        //     context.fillText("♟", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+        // } else if (this.stage === "Knight") {
+        //     context.font = "14px Arial"
+        //     context.fillText("♞", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+        // } else if (this.stage === "Bishop") {
+        //     context.font = "14px Arial"
+        //     context.fillText("♝", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+        // } else if (this.stage === "Rook") {
+        //     context.font = "14px Arial"
+        //     context.fillText("♜", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+        // } else if (this.stage === "Queen") {
+        //     context.font = "14px Arial"
+        //     context.fillText("♛", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+        // } else if (this.stage === "King") {
+        //     context.font = "14px Arial"
+        //     context.fillText("♔", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+        // }
+        switch (this.stage) {
+            case "Pawn":
+                context.font = "14px Arial"
+                context.fillText("♟", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+                break
+            case "Knight":
+                context.font = "14px Arial"
+                context.fillText("♞", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+                break
+            case "Bishop":
+                context.font = "14px Arial"
+                context.fillText("♝", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+                break
+            case "Rook":
+                context.font = "14px Arial"
+                context.fillText("♜", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+                break
+            case "Queen":
+                context.font = "14px Arial"
+                context.fillText("♛", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+                break
+            case "King":
+                context.font = "14px Arial"
+                context.fillText("♔", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+                break
         }
     }
 

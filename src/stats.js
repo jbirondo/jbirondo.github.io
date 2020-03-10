@@ -25,7 +25,6 @@ class Stats {
                 this.context.strokeStyle = "red"
                 this.context.strokeRect(100, 23, 40, 22);
             }
-            // this.context.fillRect(this.row * tileSize, this.col * tileSize, tileSize, tileSize);
         } 
     }
 }
