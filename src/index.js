@@ -107,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let pos = getMousePos(stats, event)
         let row = object.col * 1
         let col = object.row * 1
+        debugger
         if(isSell(pos)) {
             game.remove(grid[object.col][object.row])
             grid[row][col] = "o"
