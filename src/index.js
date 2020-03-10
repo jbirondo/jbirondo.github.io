@@ -86,5 +86,12 @@ document.addEventListener("DOMContentLoaded", () => {
             statsEle.draw(grid[gx][gy])
         } 
     }
+
+    const upgrade = (event) => {
+
+    }
+
+
     canvas.addEventListener('click', statsClick)
+    stats.addEventListener('click', upgrade)
 })
