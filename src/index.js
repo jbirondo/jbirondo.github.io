@@ -106,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const sell = (event) => {
         let pos = getMousePos(stats, event)
         if(isSell(pos)) {
-            alert('Hit sell button')
+            game.remove(object)
         }
     }
 
