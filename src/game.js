@@ -80,7 +80,7 @@ class Game {
             this.projectiles.splice(this.projectiles.indexOf(object), 1);
         } else if (object instanceof Tower) {
             this.towers.splice(this.towers.indexOf(object), 1);
-        } else if (object === "o") {
+        } else if (object === null) {
             return null
         } else {
             throw new Error("unknown type of object");
