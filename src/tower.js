@@ -21,6 +21,18 @@ class Tower {
         } else if (this.stage === "Knight") {
             context.font = "14px Arial"
             context.fillText("♞", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+        } else if (this.stage === "Bishop") {
+            context.font = "14px Arial"
+            context.fillText("♝", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+        } else if (this.stage === "Rook") {
+            context.font = "14px Arial"
+            context.fillText("♜", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+        } else if (this.stage === "Queen") {
+            context.font = "14px Arial"
+            context.fillText("♛", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+        } else if (this.stage === "King") {
+            context.font = "14px Arial"
+            context.fillText("♔", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
         }
     }
 
@@ -28,6 +40,18 @@ class Tower {
         if (this.stage === "Pawn"){
             this.stage = "Knight"
             this.dmg = 5
+        } else if (this.stage === "Knight"){
+            this.stage = "Bishop"
+            this.dmg = 10
+        } else if (this.stage === "Bishop"){
+            this.stage = "Rook"
+            this.dmg = 20
+        } else if (this.stage === "Rook"){
+            this.stage = "Queen"
+            this.dmg = 50
+        } else if (this.stage === "Queen"){
+            this.stage = "King"
+            this.dmg = 200
         }
     }
 
