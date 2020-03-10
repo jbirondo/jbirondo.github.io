@@ -538,7 +538,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const stats = document.getElementById("stats")
     const statsContext = stats.getContext("2d")
-    const statsEle = new Stats(statsContext, object)
+    let statsEle = new Stats(statsContext, object)
     new StatsView(statsEle).start()
 
     const instructions = document.getElementById("instructions")
@@ -574,6 +574,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if(isUpgrade(pos)){
             newObject = object.upgrade()
             object = newObject
+            statsEle = new Stats(statsContext, object)
         }
     }
 
