@@ -79,6 +79,7 @@ class Tower {
             this.stage = "King"
             this.dmg = 200
         }
+        return this
     }
 
     inRange(enemy) {
