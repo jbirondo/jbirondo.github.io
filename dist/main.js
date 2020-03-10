@@ -568,6 +568,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const upgrade = (event) => {
         let pos = getMousePos(stats, event)
         if(isUpgrade(pos)){
+            debugger
             alert('Hit upgrade button')
         }
     }
