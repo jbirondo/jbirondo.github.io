@@ -111,6 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if(isSell(pos)) {
             game.remove(grid[object.col][object.row])
             grid[row][col] = "o"
+            object = null
         }
     }
 

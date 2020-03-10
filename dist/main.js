@@ -353,6 +353,8 @@ class Game {
             this.projectiles.splice(this.projectiles.indexOf(object), 1);
         } else if (object instanceof Tower) {
             this.towers.splice(this.towers.indexOf(object), 1);
+        } else if (object === "o") {
+            return null
         } else {
             throw new Error("unknown type of object");
         }
@@ -586,6 +588,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if(isSell(pos)) {
             game.remove(grid[object.col][object.row])
             grid[row][col] = "o"
+            object = null
         }
     }
 
