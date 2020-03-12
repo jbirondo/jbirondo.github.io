@@ -45,18 +45,23 @@ class Tower {
         if (this.stage === "Pawn"){
             this.stage = "Knight"
             this.dmg = 5
+            this.cost = 30
         } else if (this.stage === "Knight"){
             this.stage = "Bishop"
             this.dmg = 10
+            this.cost = 100
         } else if (this.stage === "Bishop"){
             this.stage = "Rook"
             this.dmg = 20
+            this.cost = 250
         } else if (this.stage === "Rook"){
             this.stage = "Queen"
             this.dmg = 50
+            this.cost = 1000
         } else if (this.stage === "Queen"){
             this.stage = "King"
             this.dmg = 200
+            this.cost = 10000
         }
         return this
     }
