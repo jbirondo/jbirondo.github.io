@@ -946,7 +946,7 @@ class Tower {
         this.canvas = canvas
         this.context = this.canvas.getContext("2d")
         this.stage = "Pawn"
-        this.cost = 5
+        this.upgradeCost = 30
     }
 
     draw(context) {
@@ -983,24 +983,25 @@ class Tower {
         if (this.stage === "Pawn"){
             this.stage = "Knight"
             this.dmg = 5
-            this.cost = 30
+            this.upgradeCost = 100
         } else if (this.stage === "Knight"){
             this.stage = "Bishop"
             this.dmg = 10
-            this.cost = 100
+            this.upgradeCost = 250
         } else if (this.stage === "Bishop"){
             this.stage = "Rook"
             this.dmg = 20
-            this.cost = 250
+            this.upgradeCost = 500
         } else if (this.stage === "Rook"){
             this.stage = "Queen"
             this.dmg = 50
-            this.cost = 1000
+            this.upgradeCost = 1000
         } else if (this.stage === "Queen"){
             this.stage = "King"
             this.dmg = 200
-            this.cost = 10000
+            this.upgradeCost = 10000
         }
+        debugger
         return this
     }
 
