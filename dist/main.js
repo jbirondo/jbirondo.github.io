@@ -86,6 +86,94 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/enemy.js":
+/*!**********************!*\
+  !*** ./src/enemy.js ***!
+  \**********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+const  MovingObject = __webpack_require__(/*! ./moving_object */ "./src/moving_object.js")
+const Tower = __webpack_require__(/*! ./tower */ "./src/tower.js")
+
+class Enemy extends MovingObject {
+    constructor(x, y, dx, dy, radius, color, game) {
+        super(x, y, dx, dy, radius, color, game)
+        this.x = 4;
+        this.y = 50;
+        this.dx = 1;
+        this.dy = 1;
+        this.radius = 8;
+        this.color = "black"
+        this.speed = 1;
+        this.hp = 10
+        this.game = game
+        this.bounty = 1
+    }
+
+    update(context) {
+        if (this.x + this.radius < 498 && this.y === 50) {
+            this.x += this.dx;
+        }
+        // right
+        if (this.x === 490 && this.y + this.radius < 318) {
+            this.y += this.dy
+        }
+        // down
+        if (this.x + this.radius > 378 && this.y === 310) {
+            this.x -= this.dx
+        }
+        // left
+        if (this.x === 370 && this.y + this.radius > 138 && this.y < 330) {
+            this.y -= this.dy
+        }
+        // up
+        if (this.x + this.radius > 278 && this.x + this.radius < 379 && this.y === 130) {
+            this.x -= this.dx
+        }
+        // left
+        if (this.x === 270 && this.y + this.radius < 318 && this.y > 100 ) {
+            this.y += this.dy
+        }
+        // down
+        if (this.x + this.radius > 178 && this.x < 317 && this.y === 310) {
+            this.x -= this.dx
+        }
+        // left
+        if (this.x === 170 && this.y + this.radius > 138 && this.y < 338 ) {
+            this.y -= this.dy
+        }
+        // up
+        if (this.x + this.radius > 78 && this.x + this.radius < 250 && this.y === 130) {
+            this.x -= this.dx
+        }
+        // left
+        if (this.x === 70 && this.y + this.radius < 378 && this.y > 100 ) {
+            this.y += this.dy
+        }
+        // down
+        if (this.x + this.radius < 578 && this.y < 371 && this.y > 369) {
+            this.x += this.dx;
+        }
+        // right
+        this.draw(context)
+
+
+
+        if (this.x === 570 && this.y === 370) {
+            lives--
+            this.remove()
+            if (lives === 0){
+                confirm("Game over. Try again")
+                window.location.reload()
+            }
+        }
+    }
+}
+module.exports = Enemy
+
+/***/ }),
+
 /***/ "./src/enemy_stats.js":
 /*!****************************!*\
   !*** ./src/enemy_stats.js ***!
@@ -182,9 +270,171 @@ module.exports = EnemyStatsView
   !*** ./src/game.js ***!
   \*********************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-throw new Error("Module parse failed: Unexpected token (22:8)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n|             this.towers.push(object);\n|             object.\n>         } else {\n|             throw new Error(\"unknown type of object\");\n|         }");
+const Enemy = __webpack_require__(/*! ./enemy */ "./src/enemy.js")
+const Projectile = __webpack_require__(/*! ./projectile */ "./src/projectile.js")
+const Tower = __webpack_require__(/*! ./tower */ "./src/tower.js")
+
+class Game {
+    constructor(context){
+        this.context = context
+        this.enemies = [];
+        this.projectiles = [];
+        this.towers = [];
+    }
+
+
+    add(object) {
+        if (object instanceof Enemy) {
+            this.enemies.push(object);
+        } else if (object instanceof Projectile) {
+            this.projectiles.push(object);
+        } else if (object instanceof Tower) {
+            this.towers.push(object);
+            money -= object.cost 
+        } else {
+            throw new Error("unknown type of object");
+        }
+    };
+
+    allObjects() {
+        return [].concat(this.enemies, this.projectiles, this.towers);
+    };
+
+
+
+    checkCollisions() {
+        const allObjects = this.allObjects();
+        for (let i = 0; i < allObjects.length; i++) {
+            for (let j = 0; j < allObjects.length; j++) {
+                const obj1 = allObjects[i];
+                const obj2 = allObjects[j];
+
+                if (obj1.isCollidedWith(obj2)) {
+                    const collision = obj1.collideWith(obj2);
+                    if (collision) return;
+                }
+            }
+        }
+    };
+
+    draw(grid, context){
+        for(let row = 0; row < grid.length ; row++ ){
+            for(let col = 0; col < grid[row].length ; col++) {
+
+                if (grid[row][col] == 'o') {
+                    context.fillStyle = "green";
+                } else if (grid[row][col] == 'x') {
+                    context.fillStyle = "tan";
+                } else {
+                    context.fillStyle = "green"
+                }
+                context.fillRect(col * tileSize, row * tileSize, tileSize, tileSize);
+                context.strokeRect(col * tileSize, row * tileSize, tileSize, tileSize);
+            }
+        }
+        this.allObjects().forEach(object => {
+            object.draw(context);
+        })
+        this.enemies.forEach(enemy => {
+            enemy.update(context)
+            this.towers.forEach(tower => {
+                tower.fireProjectile(enemy)
+            })
+        })
+
+    }
+
+    remove(object) {
+        if (object instanceof Enemy) {
+            if (this.enemies.indexOf(object) >= 0) {
+                this.enemies.splice(this.enemies.indexOf(object), 1);
+            }
+        } else if (object instanceof Projectile) {
+            this.projectiles.splice(this.projectiles.indexOf(object), 1);
+        } else if (object instanceof Tower) {
+            this.towers.splice(this.towers.indexOf(object), 1);
+        } else if (object === null) {
+            return null
+        } else {
+            throw new Error("unknown type of object");
+        }
+
+    };
+
+    set_wave() {
+        setInterval(() => {
+            if (this.enemies.length === 0){
+                for(let i = 0; i < 10; i ++) {
+                    let enemy = new Enemy(4, 50, 1, 1, 8, "black", this);
+                    this.add(enemy)
+                }
+            }
+        }, 1000)
+    }
+
+    createEnemyArr() {
+        let enemyArr = []
+        for(let i = 0; i < 10; i ++) {
+            let enemy = new Enemy(4, 50, 1, 1, 8, "black", this);
+            enemyArr.push(enemy)
+        }
+        return enemyArr
+    }
+
+    nextWave(enemies, round) {
+        let newEnemies = []
+        enemies.forEach(enemy => {
+            enemy.hp = enemy.hp * (1 + (0.25 * round)) 
+            enemy.color = ["black", "brown", "purple", "yellow", "orange"][round % 5]
+            enemy.bounty = Math.floor(enemy.bounty + (round * .4))
+            newEnemies.push(enemy)
+
+        })
+        return newEnemies
+    }
+
+    play() {
+        if (this.enemies.length === 0 && lives > 0) {            
+            setInterval(() => {
+                let enemyArr = this.createEnemyArr()
+                enemyArr = this.nextWave(enemyArr, round)
+                this.spawn(enemyArr)   
+                round++
+            }, 35000);
+        }
+    }
+
+    spawn(enemies) {
+        let counter = 0;
+        let spawnWave = setInterval(() => {
+            if (counter < enemies.length) {
+                this.spawnFunc(enemies, counter)
+                counter++;
+            } else {
+                clearInterval(spawnWave)
+                counter = 0
+            }
+        }, 1000);
+        spawnWave
+    }
+
+    spawnFunc(enemies, counter) {
+        this.add(enemies[counter])
+    }
+
+    roundOver() {
+        this.enemies.length === 0
+    }
+
+    lose() {
+        lives === 0
+    }
+
+}
+
+module.exports = Game;
 
 /***/ }),
 
@@ -400,6 +650,96 @@ class InstructionsView {
     };
 }
 module.exports = InstructionsView;
+
+/***/ }),
+
+/***/ "./src/moving_object.js":
+/*!******************************!*\
+  !*** ./src/moving_object.js ***!
+  \******************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+const Util = __webpack_require__(/*! ./util */ "./src/util.js")
+
+class MovingObject {
+    constructor(x, y, dx, dy, radius, hp, color, game) {
+        this.x = x;
+        this.y = y;
+        this.dx = dx;
+        this.dy = dy;
+        this.radius = radius;
+        this.color = color;
+        this.game = game;
+        this.hp = hp
+        this.NORMAL_FRAME_TIME_DELTA = 1000 / 60
+    }
+
+    draw(context){
+        let totalHp = (10 * (1 + (0.25 * (round - 1))))
+        if (Math.floor(totalHp) !== Math.floor(this.hp)){
+            context.fillStyle = this.color;
+            context.beginPath();
+            context.arc(
+                this.x, 
+                this.y, 
+                this.radius, 
+                0, 
+                (2 * Math.PI) * (1 + (-1 * (this.hp / totalHp))), 
+                true
+            );
+            context.fill();
+        } else if (Math.floor(totalHp) === Math.floor(this.hp)) {
+            context.fillStyle = this.color;
+            context.beginPath();
+            context.arc(
+                this.x,
+                this.y, 
+                this.radius, 
+                0, 
+                2 * Math.PI, 
+                true
+            );
+            context.fill();
+        } else if (this.hp < 0) {
+            null
+        }
+    }
+
+    iscollideWith(otherObject) {
+        const centerDist = Util.dist([this.x, this.y], [otherObject.x, otherObject.y]);
+        return centerDist < (this.radius + otherObject.radius);
+    }
+
+    remove() {
+        this.game.remove(this);
+    };
+
+}
+
+module.exports = MovingObject
+
+/***/ }),
+
+/***/ "./src/projectile.js":
+/*!***************************!*\
+  !*** ./src/projectile.js ***!
+  \***************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+const MovingObject =  __webpack_require__(/*! ./moving_object */ "./src/moving_object.js")
+
+class Projectile extends MovingObject {
+    constructor(x, y, dx, dy, radius, color, game) {
+        super(x, y, dx, dy, radius, color, game)
+        this.radius = 2;
+        this.speed = 15
+        this.damage = 10
+    }
+    
+}
+module.exports = Projectile
 
 /***/ }),
 
@@ -705,6 +1045,39 @@ class Tower {
 }
 
 module.exports = Tower
+
+/***/ }),
+
+/***/ "./src/util.js":
+/*!*********************!*\
+  !*** ./src/util.js ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+class Util {
+
+    scale(vec, m) {
+        return [vec[0] * m, vec[1] * m];
+    }
+
+    dist(pos1, pos2) {
+        return Math.sqrt(
+            Math.pow(pos1[0] - pos2[0], 2) + Math.pow(pos1[1] - pos2[1], 2)
+        );
+    }
+
+    norm(vec) {
+        return Util.dist([0, 0], vec);
+    }
+
+    dir(vec) {
+        const norm = Util.norm(vec);
+        return Util.scale(vec, 1 / norm);
+    }
+}
+
+module.exports = Util
 
 /***/ })
 
