@@ -18,6 +18,7 @@ class Game {
             this.projectiles.push(object);
         } else if (object instanceof Tower) {
             this.towers.push(object);
+            object.
         } else {
             throw new Error("unknown type of object");
         }

@@ -8,6 +8,7 @@ class Tower {
         this.canvas = canvas
         this.context = this.canvas.getContext("2d")
         this.stage = "Pawn"
+        this.cost = 5
         this.upgradeCost = 30
     }
 
