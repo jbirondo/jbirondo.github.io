@@ -785,6 +785,7 @@ class Score {
             this.context.font = "15px Arial";
             this.context.fillText(`Score: ${score}`, 120, 20);
             this.context.fillText(`Lives: ${lives}`, 120, 50);
+            this.context.fillText(`Money: ${money}`, 120, 80);
             this.context.fillText(`Prepare!`, 20, 50);
             this.context.beginPath();
             this.context.arc(
