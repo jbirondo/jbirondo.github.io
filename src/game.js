@@ -114,6 +114,7 @@ class Game {
             enemy.hp = enemy.hp * (1 + (0.25 * round)) 
             enemy.color = ["black", "brown", "purple", "yellow", "orange"][round % 5]
             newEnemies.push(enemy)
+            
         })
         return newEnemies
     }
