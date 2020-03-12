@@ -13,6 +13,7 @@ class Enemy extends MovingObject {
         this.speed = 1;
         this.hp = 10
         this.game = game
+        this.bounty = 1
     }
 
     update(context) {
