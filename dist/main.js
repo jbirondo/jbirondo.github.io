@@ -510,10 +510,12 @@ document.addEventListener("DOMContentLoaded", () => {
         let y = Number.parseInt(pos.x / 20)
         let x = Number.parseInt(pos.y / 20)
         if (grid[x][y] === "o") {
-            let tower = new Tower(y, x, canvas)
-            grid[x][y] = tower
-            object = grid[x][y]
-            game.add(tower)
+            if (money > 5){
+                let tower = new Tower(y, x, canvas)
+                grid[x][y] = tower
+                object = grid[x][y]
+                game.add(tower)
+            }
         } else if (grid[x][y] instanceof Tower) {
             console.log(grid[x][y])
             object = grid[x][y]
