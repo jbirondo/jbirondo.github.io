@@ -594,6 +594,7 @@ document.addEventListener("DOMContentLoaded", () => {
             game.remove(grid[object.col][object.row])
             grid[row][col] = "o"
             object = null
+            
         }
     }
 
