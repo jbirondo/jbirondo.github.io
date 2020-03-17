@@ -568,6 +568,7 @@ document.addEventListener("DOMContentLoaded", () => {
             statsEle.draw(grid[gx][gy])
         } 
     }
+    
     isUpgrade = (pos) => {
         return pos.x > 10 && pos.x < 95 && pos.y < 45 && pos.y > 23
     }
@@ -594,7 +595,7 @@ document.addEventListener("DOMContentLoaded", () => {
             game.remove(grid[object.col][object.row])
             grid[row][col] = "o"
             object = null
-            
+
         }
     }
 
