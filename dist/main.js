@@ -582,8 +582,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if(isUpgrade(pos)){
             newObject = object.upgrade()
             object = newObject
-            statsEle = new Stats(statsContext, object)
-            new StatsView(statsEle).start()
         }
     }
 
@@ -992,19 +990,19 @@ class Tower {
     }
 
     upgrade(){
-        if (this.upgradeCost < money) {
+        if (this.upgradeCost <= money) {
             if (this.stage === "Pawn"){
                 this.stage = "Knight"
                 this.dmg = 5
-                this.upgradeCost = 30
+                this.upgradeCost = 100
             } else if (this.stage === "Knight"){
                 this.stage = "Bishop"
                 this.dmg = 10
-                this.upgradeCost = 100
+                this.upgradeCost = 250
             } else if (this.stage === "Bishop"){
                 this.stage = "Rook"
                 this.dmg = 20
-                this.upgradeCost = 250
+                this.upgradeCost = 500
             } else if (this.stage === "Rook"){
                 this.stage = "Queen"
                 this.dmg = 50
