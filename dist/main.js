@@ -510,7 +510,7 @@ document.addEventListener("DOMContentLoaded", () => {
         let y = Number.parseInt(pos.x / 20)
         let x = Number.parseInt(pos.y / 20)
         if (grid[x][y] === "o") {
-            if (money > 5){
+            if (money >= 5){
                 let tower = new Tower(y, x, canvas)
                 grid[x][y] = tower
                 object = grid[x][y]
@@ -568,7 +568,7 @@ document.addEventListener("DOMContentLoaded", () => {
             statsEle.draw(grid[gx][gy])
         } 
     }
-    
+
     isUpgrade = (pos) => {
         return pos.x > 10 && pos.x < 95 && pos.y < 45 && pos.y > 23
     }
