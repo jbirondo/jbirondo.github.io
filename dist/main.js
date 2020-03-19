@@ -533,7 +533,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }	
 
 
-    canvas.addEventListener('pointerover', handleHover)	
+    canvas.addEventListener('mouseover', handleHover)	
     canvas.addEventListener('click', handleClick)
     new GameView(game, context).start();
 
