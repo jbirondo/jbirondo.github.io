@@ -517,7 +517,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 game.add(tower)
             }
         } else if (grid[x][y] instanceof Tower) {
-            console.log(grid[x][y])
             object = grid[x][y]
         }
     }
