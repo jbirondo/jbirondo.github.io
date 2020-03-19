@@ -531,6 +531,7 @@ document.addEventListener("DOMContentLoaded", () => {
             context.fillRect(x * 20, y * 20, 20, 20)	
         } 	
         console.log(pos)
+        console.log(grid[x][y])
     }	
 
 
