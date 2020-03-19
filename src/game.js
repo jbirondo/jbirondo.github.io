@@ -53,6 +53,8 @@ class Game {
                     context.fillStyle = "green";
                 } else if (grid[row][col] == 'x') {
                     context.fillStyle = "tan";
+                } else if (grid[row][col] == "h"){
+                    context.fillStyle = "red"
                 } else {
                     context.fillStyle = "green"
                 }

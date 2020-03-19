@@ -44,13 +44,8 @@ document.addEventListener("DOMContentLoaded", () => {
         let y = Number.parseInt(pos.x / 20)	
         let x = Number.parseInt(pos.y / 20)	
         if (grid[x][y] === "o"){
-            context.fillStyle = "red"	
-            context.clearRect(x * 20, y * 20, 20, 20);	
-            context.strokeRect(x * 20, y * 20, 20, 20)	
-            context.fillRect(x * 20, y * 20, 20, 20)	
+            grid[x][y] = 'h'
         } 	
-        console.log(pos)
-        console.log(x, y)
     }	
 
 
