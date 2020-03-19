@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }	
 
 
-    canvas.addEventListener('mousemove', handleHover)	
+    canvas.addEventListener('pointerover', handleHover)	
     canvas.addEventListener('click', handleClick)
     new GameView(game, context).start();
 
