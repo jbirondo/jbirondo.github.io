@@ -45,7 +45,9 @@ document.addEventListener("DOMContentLoaded", () => {
         let x = Number.parseInt(pos.y / 20)	
         if (grid[x][y] === "o"){
             grid[x][y] = 'h'
-        } 	
+            console.log(grid.length)
+        }
+
     }	
 
 
