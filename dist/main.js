@@ -530,6 +530,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (grid[x][y] === "o"){
             grid[x][y] = 'h'
             console.log(grid.length)
+            console.log(grid[x].length)
         }
 
     }	
