@@ -48,9 +48,8 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         for (let i = 0; i < grid.length; i++){
             for (let j = 0; j < grid[i].length; j++){
-                if (grid[i][j] != grid[x][y] && !grid[i][j] instanceof Tower){
-                    console.log(grid[i][j])
-                    grid[i][j] = "o"
+                if (i != x && j != y && !grid[i][j] instanceof Tower){
+                    grid[x][y] = "o"
                 }
             }
         }
