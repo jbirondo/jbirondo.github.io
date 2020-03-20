@@ -529,8 +529,13 @@ document.addEventListener("DOMContentLoaded", () => {
         let x = Number.parseInt(pos.y / 20)	
         if (grid[x][y] === "o"){
             grid[x][y] = 'h'
-            console.log(grid.length)
-            console.log(grid[x].length)
+        }
+        for (let i = 0; i < grid.length; i++){
+            for (let j = 0; j < grid[i].length; j++){
+                if (grid[i][j] != grid[x][y] && !grid[i][j] instanceof Tower){
+                    grid[i][j] = "o"
+                }
+            }
         }
 
     }	
