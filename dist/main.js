@@ -998,6 +998,7 @@ class Tower {
 
     upgrade(){
         if (this.upgradeCost <= money) {
+            money -= this.upgradeCost;
             if (this.stage === "Pawn"){
                 this.stage = "Knight"
                 this.dmg = 5
@@ -1019,7 +1020,6 @@ class Tower {
                 this.dmg = 200
                 this.upgradeCost = 15000
             }
-            money -= this.upgradeCost
         }
         return this
     }
