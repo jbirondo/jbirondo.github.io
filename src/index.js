@@ -46,18 +46,18 @@ document.addEventListener("DOMContentLoaded", () => {
         if (grid[x][y] === "o"){
             grid[x][y] = 'h'
         }
-        for (let i = 0; i < grid.length; i++){
-            for (let j = 0; j < grid[i].length; j++){
-                if (i != x && j != y && !grid[i][j] === "x"){
-                    grid[i][j] = "o"
-                }
-            }
-        }
+        // for (let i = 0; i < grid.length; i++){
+        //     for (let j = 0; j < grid[i].length; j++){
+        //         if (i != x && j != y && !grid[i][j] === "x"){
+        //             grid[i][j] = "o"
+        //         }
+        //     }
+        // }
 
     }	
 
 
-    // canvas.addEventListener('mousemove', handleHover)	
+    canvas.addEventListener('mousemove', handleHover)	
     canvas.addEventListener('click', handleClick)
     new GameView(game, context).start();
 
