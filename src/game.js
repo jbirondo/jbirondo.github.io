@@ -55,6 +55,11 @@ class Game {
                     context.fillStyle = "tan";
                 } else if (grid[row][col] == "h"){
                     context.fillStyle = "red"
+                    setInterval(() => {
+                        if(!grid[row][col] instanceof Tower){
+                            grid[row][col] = "o"
+                        }
+                    }, 100);
                 } else {
                     context.fillStyle = "green"
                 }
