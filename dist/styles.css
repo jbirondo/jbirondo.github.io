@@ -32,9 +32,16 @@
     justify-content: center;
 }
 
+.social-links a {
+    padding: 1%;
+}
+
+.social-links a:nth-child(2) {
+    margin: 0% 5%;
+}
+
 .social-links {
-    position: relative;
+    padding-left: 25%;
     display: flex;
-    align-content: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
