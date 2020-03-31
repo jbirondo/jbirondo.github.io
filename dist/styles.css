@@ -31,3 +31,9 @@
     align-content: center;
     justify-content: center;
 }
+
+.social-links {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
