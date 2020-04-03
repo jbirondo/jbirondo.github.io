@@ -120,6 +120,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    isGithub = (pos) => {
+        
+    }
+    isLinkedIn = (pos) => {
+
+    }
+
     canvas.addEventListener('click', statsClick)
     stats.addEventListener('click', upgrade)
     stats.addEventListener('click', sell)
