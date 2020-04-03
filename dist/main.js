@@ -603,8 +603,12 @@ class Instructions {
         this.context.fillText(`Welcome to JavaScript Tower Defense`, 20, 30);
         this.context.fillText(`Left click on a green tile to create a tower to defend the path`, 20, 60)
         this.context.font = "30px FontAwesome";
+        this.context.fillStyle = "blue"
         this.context.fillText('\uf09b' + "github", 20, 90)
+        this.context.strokeRect(20, 43, 120, 43)
+        this.context.fillStyle = "red"
         this.context.fillText('\uf08c' + "LinkedIn", 150, 90)
+        this.context.strokeRect(150, 43, 200, 43)
     }
 }
 
@@ -880,11 +884,11 @@ class Stats {
                 this.context.fillStyle = "blue"
                 this.context.fillText(`Upgrade`, 14, 40)
                 this.context.strokeStyle = "blue"
-                this.context.strokeRect(10, 23, 85, 22);
+                this.context.strokeRect(10, 23, 85, 23);
                 this.context.fillStyle = "red"
                 this.context.fillText(`Sell`, 104, 40)
                 this.context.strokeStyle = "red"
-                this.context.strokeRect(100, 23, 40, 22);
+                this.context.strokeRect(100, 23, 40, 23);
             }
         } 
     }

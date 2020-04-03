@@ -19,11 +19,11 @@ class Stats {
                 this.context.fillStyle = "blue"
                 this.context.fillText(`Upgrade`, 14, 40)
                 this.context.strokeStyle = "blue"
-                this.context.strokeRect(10, 23, 85, 22);
+                this.context.strokeRect(10, 23, 85, 23);
                 this.context.fillStyle = "red"
                 this.context.fillText(`Sell`, 104, 40)
                 this.context.strokeStyle = "red"
-                this.context.strokeRect(100, 23, 40, 22);
+                this.context.strokeRect(100, 23, 40, 23);
             }
         } 
     }
