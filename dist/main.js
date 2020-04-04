@@ -609,7 +609,7 @@ class Instructions {
         this.context.strokeRect(20, 60, 110, 53)
         this.context.fillStyle = "red"
         this.context.fillText('\uf08c' + "LinkedIn", 150, 90)
-        this.context.strokeRect(150, 60, 200, 53)
+        this.context.strokeRect(150, 60, 150, 53)
     }
 }
 
