@@ -15,7 +15,7 @@ class Instructions {
         this.context.strokeRect(15, 65, 110, 30)
         this.context.fillStyle = "red"
         this.context.fillText('\uf08c' + "LinkedIn", 150, 90)
-        this.context.strokeRect(145, 60, 145, 53)
+        this.context.strokeRect(145, 65, 145, 30)
     }
 }
 
