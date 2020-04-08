@@ -90,7 +90,7 @@ class Tower {
 			this.context.lineTo(enemy.x, enemy.y)
             this.context.stroke();
             
-            enemy.hp -= (this.dmg / 1000)
+            enemy.hp -= (this.dmg / 60)
 
             if (enemy.hp <= 0) {
                 enemy.remove()
