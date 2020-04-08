@@ -584,14 +584,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const github = (event) => {
         let pos = getMousePos(instructions, event)
         if (isGithub(pos)){
-            window.location = "https://github.com/jbirondo"
+            window.open("https://github.com/jbirondo", "_blank")
         }
     }
 
     const linkedIn = (event) => {
         let pos = getMousePos(instructions, event)
         if(isLinkedIn(pos)){
-            window.location = "https://www.linkedin.com/in/eugene-birondo-702637192/"
+            window.open("https://www.linkedin.com/in/eugene-birondo-702637192/", "_blank")
         }
     }
 
