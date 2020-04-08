@@ -612,10 +612,10 @@ document.addEventListener("DOMContentLoaded", () => {
     canvas.addEventListener('click', statsClick)
     stats.addEventListener('click', upgrade)
     stats.addEventListener('click', sell)
+    stats.addEventListener('mousemove', statsPointer)
     instructions.addEventListener('click', github)
     instructions.addEventListener('click', linkedIn)
     instructions.addEventListener('mousemove', instructionsPointer)
-    instructions.addEventListener('mousemove', statsPointer)
 })
 
 /***/ }),
