@@ -5,7 +5,7 @@ Tower defense (TD) is a subgenre of strategy video game where the goal is to def
 Functionality & MVP
 In JS TD, users will be able to:
 
-- Click and drag towers to positions on the canvas
+- Click grid to generate towers on the canvas
 - Upgrade towers attributes depending on users available money
 - Unlock different towers with different abilities depending users available money
 
@@ -14,7 +14,7 @@ In addition, this project will include:
 
 Wireframes
 
-This app will consist of a single screen with game board and game controls. Game controls will include Start button, Tower/Upgrade panel, and User resources pane.
+This app will consist of a single screen with game board and game controls. Game controls will include Tower/Upgrade panel, and User resources pane.
 
 Architecture and Technologies
 
