@@ -135,11 +135,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const linkedIn = (event) => {
         let pos = getMousePos(stats, event)
+        console.log(pos)
     }
 
     canvas.addEventListener('click', statsClick)
     stats.addEventListener('click', upgrade)
     stats.addEventListener('click', sell)
     instructions.addEventListener('click', github)
-    // instructions.addEventListener('click', linkedIn)
+    instructions.addEventListener('click', linkedIn)
 })
