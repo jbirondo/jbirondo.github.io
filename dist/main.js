@@ -596,7 +596,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if(isGithub(pos) || isLinkedIn(pos)){
             document.body.style.cursor = "pointer"
         } else {
-            document.body.style.cursor = "none"
+            document.body.style.cursor = "auto"
         }
     }
 
