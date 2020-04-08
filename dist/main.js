@@ -579,9 +579,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     const github = (event) => {
         let pos = getMousePos(stats, event)
-        if(isGithub(pos)){
             console.log(pos)
-        }
     }
 
     const linkedIn = (event) => {
