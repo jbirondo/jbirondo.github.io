@@ -586,7 +586,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const linkedIn = (event) => {
         let pos = getMousePos(instructions, event)
-            console.log("in linkedin button")
+            console.log(pos)
     }
 
     const pointer = (event) => {
