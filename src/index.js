@@ -126,8 +126,18 @@ document.addEventListener("DOMContentLoaded", () => {
     isLinkedIn = (pos) => {
         return pos.x > 145 && pos.x < 290 && pos.y < 45 && pos.y > 23
     }
+    const github = (event) => {
+        let pos = getMousePos(stats, event)
+        console.log(pos)
+    }
+
+    const linkedIn = (event) => {
+        let pos = getMousePos(stats, event)
+    }
 
     canvas.addEventListener('click', statsClick)
     stats.addEventListener('click', upgrade)
     stats.addEventListener('click', sell)
+    instructions.addEventListener('click', github)
+    // instructions.addEventListener('click', linkedIn)
 })
