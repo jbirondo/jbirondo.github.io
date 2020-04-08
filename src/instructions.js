@@ -12,7 +12,7 @@ class Instructions {
         this.context.font = "30px FontAwesome";
         this.context.fillStyle = "black"
         this.context.fillText('\uf09b' + "github", 20, 90)
-        this.context.fillStyle = "0E76A8"
+        this.context.fillStyle = "blue"
         this.context.fillText('\uf08c' + "LinkedIn", 150, 90)
     }
 }
