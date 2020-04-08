@@ -591,9 +591,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    const pointer = (event) => {
+    const instructionsPointer = (event) => {
         let pos = getMousePos(instructions, event)
         if(isGithub(pos) || isLinkedIn(pos)){
+            document.body.style.cursor = "pointer"
+        } else {
+            document.body.style.cursor = "auto"
+        }
+    }
+
+    const statsPointer = (event) => {
+        let pos = getMousePos(stats, event)
+        if (isUpgrade(pos) || isSell(pos)) {
             document.body.style.cursor = "pointer"
         } else {
             document.body.style.cursor = "auto"
@@ -605,7 +614,8 @@ document.addEventListener("DOMContentLoaded", () => {
     stats.addEventListener('click', sell)
     instructions.addEventListener('click', github)
     instructions.addEventListener('click', linkedIn)
-    instructions.addEventListener('mousemove', pointer)
+    instructions.addEventListener('mousemove', instructionsPointer)
+    instructions.addEventListener('mousemove', statsPointer)
 })
 
 /***/ }),
