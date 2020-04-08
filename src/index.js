@@ -121,10 +121,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     isGithub = (pos) => {
-        return pos.x > 10 && pos.x < 95 && pos.y < 45 && pos.y > 23
+        return pos.x > 15 && pos.x < 125 && pos.y < 45 && pos.y > 23
     }
     isLinkedIn = (pos) => {
-        return pos.x > 10 && pos.x < 95 && pos.y < 45 && pos.y > 23
+        return pos.x > 145 && pos.x < 290 && pos.y < 45 && pos.y > 23
     }
 
     canvas.addEventListener('click', statsClick)
