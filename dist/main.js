@@ -578,17 +578,19 @@ document.addEventListener("DOMContentLoaded", () => {
         return pos.x > -455 && pos.x < -310 && pos.y < 246 && pos.y > 217
     }
     const github = (event) => {
-        let pos = getMousePos(stats, event)
+        let pos = getMousePos(instructions, event)
         if(isGithub(pos)){
             console.log("in github button")
         }
     }
 
     const linkedIn = (event) => {
-        let pos = getMousePos(stats, event)
-        if(isLinkedIn(pos)){
+        let pos = getMousePos(instructions, event)
             console.log("in linkedin button")
-        }
+    }
+
+    const pointer = (event) => {
+        let pos = getMousePos()
     }
 
     canvas.addEventListener('click', statsClick)
@@ -596,6 +598,7 @@ document.addEventListener("DOMContentLoaded", () => {
     stats.addEventListener('click', sell)
     instructions.addEventListener('click', github)
     instructions.addEventListener('click', linkedIn)
+    // instructions.addEventListener('mousemove', pointer)
 })
 
 /***/ }),
