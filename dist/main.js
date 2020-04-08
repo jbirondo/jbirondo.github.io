@@ -507,6 +507,13 @@ document.addEventListener("DOMContentLoaded", () => {
             document.body.style.cursor = "auto"
         }
     }
+    
+    const enemyHover = (event) => {
+        let pos = getMousePos(enemyStats, event)
+        if (pos.x > 0 && pos.x < 300 && pos.y < 100 && pos.y > 0) {
+            document.body.style.cursor = "auto"
+        }
+    }
     new GameView(game, context).start();
 
     const score = document.getElementById("score")
@@ -612,6 +619,8 @@ document.addEventListener("DOMContentLoaded", () => {
     canvas.addEventListener('click', statsClick)
 
     score.addEventListener('mousemove', scoreHover)
+
+    enemyStats.addEventListener('mousemove', enemyHover)
 
     stats.addEventListener('click', upgrade)
     stats.addEventListener('click', sell)
