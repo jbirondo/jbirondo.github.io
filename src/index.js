@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const linkedIn = (event) => {
         let pos = getMousePos(instructions, event)
         if(isLinkedIn(pos)){
-            console.log(pos)
+            window.location = "https://www.linkedin.com/in/eugene-birondo-702637192/"
         }
     }
 
