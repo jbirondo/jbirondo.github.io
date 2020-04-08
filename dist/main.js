@@ -575,18 +575,20 @@ document.addEventListener("DOMContentLoaded", () => {
         return pos.x > -585 && pos.x < -475 && pos.y < 246 && pos.y > 217
     }
     isLinkedIn = (pos) => {
-        return pos.x > 145 && pos.x < 290 && pos.y < 45 && pos.y > 23
+        return pos.x > -455 && pos.x < -310 && pos.y < 246 && pos.y > 217
     }
     const github = (event) => {
         let pos = getMousePos(stats, event)
         if(isGithub(pos)){
-            console.log(pos)
+            console.log("in github button")
         }
     }
 
     const linkedIn = (event) => {
         let pos = getMousePos(stats, event)
-        console.log(pos)
+        if(isLinkedIn(pos)){
+            console.log("in linkedin button")
+        }
     }
 
     canvas.addEventListener('click', statsClick)
