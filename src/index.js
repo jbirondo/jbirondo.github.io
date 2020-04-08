@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    const handleHover = (event) => {
+    const canvasHover = (event) => {
         let pos = getMousePos(canvas, event)
         let y = Number.parseInt(pos.x / 20)
         let x = Number.parseInt(pos.y / 20)
@@ -50,8 +50,12 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    canvas.addEventListener('mousemove', handleHover)	
-    canvas.addEventListener('click', handleClick)
+    const scoreHover = (event) => {
+        let pos = getMousePos(score, event)
+        if (pos.x > 0 && pos.x < 300 && pos.y < 100 && pos.y > 0) {
+            document.body.style.cursor = "auto"
+        }
+    }
     new GameView(game, context).start();
 
     const score = document.getElementById("score")
@@ -151,10 +155,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+
+    canvas.addEventListener('mousemove', canvasHover)
+    canvas.addEventListener('click', handleClick)
     canvas.addEventListener('click', statsClick)
+
+    score.addEventListener('mousemove', scoreHover)
+
     stats.addEventListener('click', upgrade)
     stats.addEventListener('click', sell)
     stats.addEventListener('mousemove', statsPointer)
+
     instructions.addEventListener('click', github)
     instructions.addEventListener('click', linkedIn)
     instructions.addEventListener('mousemove', instructionsPointer)
