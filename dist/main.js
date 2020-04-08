@@ -572,16 +572,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     isGithub = (pos) => {
-        return pos.x > -585 && pos.x < -475 && pos.y < 246 && pos.y > 217
+        return pos.x > -585 && pos.x < -475 && pos.y < 95 && pos.y > 66
     }
     isLinkedIn = (pos) => {
-        return pos.x > -455 && pos.x < -310 && pos.y < 246 && pos.y > 217
+        return pos.x > 145.5 && pos.x < 290.5 && pos.y < 95 && pos.y > 66
     }
     const github = (event) => {
         let pos = getMousePos(instructions, event)
-        if(isGithub(pos)){
-            console.log("in github button")
-        }
+
+            console.log(pos)
     }
 
     const linkedIn = (event) => {
@@ -597,7 +596,7 @@ document.addEventListener("DOMContentLoaded", () => {
     stats.addEventListener('click', upgrade)
     stats.addEventListener('click', sell)
     instructions.addEventListener('click', github)
-    instructions.addEventListener('click', linkedIn)
+    // instructions.addEventListener('click', linkedIn)
     // instructions.addEventListener('mousemove', pointer)
 })
 
