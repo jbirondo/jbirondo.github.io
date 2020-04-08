@@ -490,25 +490,18 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    const handleHover = (event) => {	
-        let pos = getMousePos(canvas, event)	
-        let y = Number.parseInt(pos.x / 20)	
-        let x = Number.parseInt(pos.y / 20)	
-        if (grid[x][y] === "o"){
-            grid[x][y] = 'h'
+    const handleHover = (event) => {
+        let pos = getMousePos(canvas, event)
+        let y = Number.parseInt(pos.x / 20)
+        let x = Number.parseInt(pos.y / 20)
+        if (grid[x][y] === "o" || grid[x][y] instanceof Tower) {
+            document.body.style.cursor = "pointer"
+        } else {
+            document.body.style.cursor = "auto"
         }
-        // for (let i = 0; i < grid.length; i++){
-        //     for (let j = 0; j < grid[i].length; j++){
-        //         if (i != x && j != y && !grid[i][j] === "x"){
-        //             grid[i][j] = "o"
-        //         }
-        //     }
-        // }
+    }
 
-    }	
-
-
-    // canvas.addEventListener('mousemove', handleHover)	
+    canvas.addEventListener('mousemove', handleHover)	
     canvas.addEventListener('click', handleClick)
     new GameView(game, context).start();
 
