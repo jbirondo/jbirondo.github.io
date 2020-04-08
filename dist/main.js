@@ -584,7 +584,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const github = (event) => {
         let pos = getMousePos(instructions, event)
         if (isGithub(pos)){
-            console.log(pos)
+            window.location = "https://github.com/jbirondo"
         }
     }
 
