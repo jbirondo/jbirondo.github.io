@@ -537,8 +537,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const statsClick = (event) => {
         let pos = getMousePos(canvas, event)
-        let x = pos.x
-        let y = pos.y
         let gy = Number.parseInt(pos.x / 20)
         let gx = Number.parseInt(pos.y / 20)
         if (grid[gx][gy] instanceof Tower) {
