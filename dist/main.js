@@ -959,7 +959,7 @@ class Tower {
         this.row = row;
         this.col = col;
         this.range = 4 * tileSize
-        this.dmg = .02
+        this.dmg = 1
         this.firingRate = 50
         this.canvas = canvas
         this.context = this.canvas.getContext("2d")
