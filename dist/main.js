@@ -557,6 +557,8 @@ document.addEventListener("DOMContentLoaded", () => {
         if(isUpgrade(pos)){
             newObject = object.upgrade()
             object = newObject
+            statsEle = new Stats(statsContext, object)
+            new StatsView(statsEle).start()
         }
     }
 
