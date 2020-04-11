@@ -320,6 +320,7 @@ class Game {
             if (this.enemies.indexOf(object) >= 0) {
                 this.enemies.splice(this.enemies.indexOf(object), 1);
             }
+            
             money += object.bounty + round
         } else if (object instanceof Projectile) {
             this.projectiles.splice(this.projectiles.indexOf(object), 1);
