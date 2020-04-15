@@ -1049,10 +1049,9 @@ class Tower {
             
             enemy.hp -= (this.dmg / 60)
 
-            if (enemy.hp <= 0) {
-                enemy.remove()
-                score++
-            }
+            // if (enemy.hp <= 0) {
+            //     enemy.remove()
+            // }
         }
     }
 }
