@@ -5,7 +5,6 @@ class Stats {
     constructor(context, object = null) {
         this.context = context
         this.object = object
-        console.log(object)
     }
 
     draw(object) {
@@ -26,6 +25,7 @@ class Stats {
                 this.context.strokeStyle = "red"
                 this.context.strokeRect(100, 23, 40, 23);
             }
+        console.log(object)
         } 
     }
 }
