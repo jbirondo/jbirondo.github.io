@@ -108,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 newObject = object.upgrade()
                 object = newObject = object
                 statsEle = new Stats(statsContext, object)
-                new StatsView(statsEle).start()
+                StatsView(statsEle).start()
             } else {
                 alert("Not enough money")
             }
