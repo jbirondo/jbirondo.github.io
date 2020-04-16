@@ -556,8 +556,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const upgrade = (event) => {
         let pos = getMousePos(stats, event)
         if(isUpgrade(pos)){
-            newObject = object.upgrade()
-            object = newObject
+            if(object.upgradeCost <= money){
+                newObject = object.upgrade()
+                object = newObject
+            } else {
+                alert("Not enough money")
+            }
         }
     }
 
