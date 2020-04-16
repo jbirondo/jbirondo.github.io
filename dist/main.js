@@ -559,8 +559,6 @@ document.addEventListener("DOMContentLoaded", () => {
             if(object.upgradeCost <= money){
                 newObject = object.upgrade()
                 object = newObject = object
-                statsEle = new Stats(statsContext, object)
-                StatsView(statsEle).start()
             } else {
                 alert("Not enough money")
             }
