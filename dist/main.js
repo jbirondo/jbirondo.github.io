@@ -555,12 +555,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const upgrade = (event) => {
         let pos = getMousePos(stats, event)
-        console.log(object)
         if(isUpgrade(pos)){
             if(object.upgradeCost <= money){
                 newObject = object.upgrade()
                 object = newObject = object
-                console.log(object)
             } else {
                 alert("Not enough money")
             }
@@ -896,6 +894,7 @@ class Stats {
     constructor(context, object = null) {
         this.context = context
         this.object = object
+        console.log(object)
     }
 
     draw(object) {

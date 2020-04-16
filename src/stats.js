@@ -5,6 +5,7 @@ class Stats {
     constructor(context, object = null) {
         this.context = context
         this.object = object
+        console.log(object)
     }
 
     draw(object) {
