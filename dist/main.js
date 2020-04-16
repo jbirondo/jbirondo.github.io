@@ -558,7 +558,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if(isUpgrade(pos)){
             if(object.upgradeCost <= money){
                 newObject = object.upgrade()
-                object = newObject
+                object = newObject = object
             } else {
                 alert("Not enough money")
             }
