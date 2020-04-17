@@ -904,6 +904,8 @@ class Stats {
             this.context.fillText(`${object.stage} Tower`, 10, 80)
             this.context.fillText(`Range: ${object.range}`, 10, 110)
             this.context.fillText(`Damage: ${object.dmg}`, 10, 140)
+            this.context.fillText(`Damage: ${object.dmg}`, 10, 140)
+
             if (["Pawn", "Knight", "Bishop", "Rook", "Queen"].includes(object.stage)){
                 this.context.fillStyle = "blue"
                 this.context.fillText(`Upgrade`, 14, 40)
