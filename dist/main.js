@@ -1042,7 +1042,7 @@ class Tower {
     }
 
     fireProjectile(enemy) {
-        if (this.inRange(enemy) === true) {
+        if (this.inRange(enemy) === true && enemy.hp > 0) {
 			this.context.lineWidth = 1
 			this.context.strokeStyle = "black"
 			this.context.beginPath()
