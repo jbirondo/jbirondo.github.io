@@ -977,27 +977,27 @@ class Tower {
         switch (this.stage) {
             case "Pawn":
                 context.font = "16px Arial"
-                context.fillText("♟", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+                context.fillText(" ♟", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
                 break
             case "Knight":
                 context.font = "16px Arial"
-                context.fillText("♞", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+                context.fillText(" ♞", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
                 break
             case "Bishop":
                 context.font = "16px Arial"
-                context.fillText("♝", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+                context.fillText(" ♝", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
                 break
             case "Rook":
                 context.font = "16px Arial"
-                context.fillText("♜", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+                context.fillText(" ♜", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
                 break
             case "Queen":
                 context.font = "16px Arial"
-                context.fillText("♛", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+                context.fillText(" ♛", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
                 break
             case "King":
                 context.font = "16px Arial"
-                context.fillText("♔", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
+                context.fillText(" ♔", this.row * tileSize, (this.col * tileSize) + tileSize - 4)
                 break
         }
     }
