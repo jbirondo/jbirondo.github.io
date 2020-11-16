@@ -48,6 +48,10 @@
     width: 100%;
 }
 
+h1 {
+    align-self: start;
+}
+
 .second{
     display: flex;
     justify-content: center;
