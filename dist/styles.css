@@ -37,6 +37,11 @@
     width: 300px;
 }
 
+.second-instructions{
+    height: 200px;
+    width: 300px;
+}
+
 .main{
     background-image: url(background.jpg);
     background-size: cover;
