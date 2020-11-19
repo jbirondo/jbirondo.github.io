@@ -114,6 +114,11 @@ class Game {
         return enemyArr
     }
 
+    createBoss(){
+        let boss = new Boss(4, 50, 1, 1, 8, "blue", this)
+        return [boss]
+    }
+
     nextWave(enemies, round) {
         let newEnemies = []
         enemies.forEach(enemy => {
@@ -133,6 +138,7 @@ class Game {
                 enemyArr = this.nextWave(enemyArr, round)
                 this.spawn(enemyArr)   
                 round++
+                console.log(this.createBoss())
             }, 35000);
         }
     }

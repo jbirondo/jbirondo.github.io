@@ -98,8 +98,8 @@ const Enemy = __webpack_require__(/*! ./enemy */ "./src/enemy.js")
 class Boss extends Enemy {
     constructor(x, y, dx, dy, radius, color, game){
         super(x, y, dx, dy, radius, color, game)
-        this.speed = 1;
-        this.hp = 10
+        this.speed = 3;
+        this.hp = round * round
         this.game = game
         this.bounty = round * round
     }
@@ -378,6 +378,11 @@ class Game {
         return enemyArr
     }
 
+    createBoss(){
+        let boss = new Boss(4, 50, 1, 1, 8, "blue", this)
+        return [boss]
+    }
+
     nextWave(enemies, round) {
         let newEnemies = []
         enemies.forEach(enemy => {
@@ -397,6 +402,7 @@ class Game {
                 enemyArr = this.nextWave(enemyArr, round)
                 this.spawn(enemyArr)   
                 round++
+                console.log(this.createBoss())
             }, 35000);
         }
     }
