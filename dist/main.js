@@ -86,6 +86,29 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/boss.js":
+/*!*********************!*\
+  !*** ./src/boss.js ***!
+  \*********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+const Enemy = __webpack_require__(/*! ./enemy */ "./src/enemy.js")
+
+class Boss extends Enemy {
+    constructor(x, y, dx, dy, radius, color, game){
+        super(x, y, dx, dy, radius, color, game)
+        this.speed = 1;
+        this.hp = 10
+        this.game = game
+        this.bounty = round * round
+    }
+}
+
+module.exports = Boss
+
+/***/ }),
+
 /***/ "./src/enemy.js":
 /*!**********************!*\
   !*** ./src/enemy.js ***!
@@ -240,6 +263,7 @@ module.exports = EnemyStatsView
 /***/ (function(module, exports, __webpack_require__) {
 
 const Enemy = __webpack_require__(/*! ./enemy */ "./src/enemy.js")
+const Boss = __webpack_require__(/*! ./boss */ "./src/boss.js")
 const Projectile = __webpack_require__(/*! ./projectile */ "./src/projectile.js")
 const Tower = __webpack_require__(/*! ./tower */ "./src/tower.js")
 
@@ -253,7 +277,7 @@ class Game {
 
 
     add(object) {
-        if (object instanceof Enemy) {
+        if (object instanceof Enemy || object instanceof Boss) {
             this.enemies.push(object);
         } else if (object instanceof Projectile) {
             this.projectiles.push(object);

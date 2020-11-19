@@ -1,4 +1,5 @@
 const Enemy = require("./enemy")
+const Boss = require("./boss")
 const Projectile = require("./projectile")
 const Tower = require("./tower")
 
@@ -12,7 +13,7 @@ class Game {
 
 
     add(object) {
-        if (object instanceof Enemy) {
+        if (object instanceof Enemy || object instanceof Boss) {
             this.enemies.push(object);
         } else if (object instanceof Projectile) {
             this.projectiles.push(object);
