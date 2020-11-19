@@ -99,7 +99,7 @@ class Boss extends Enemy {
     constructor(x, y, dx, dy, radius, color, game){
         super(x, y, dx, dy, radius, color, game)
         this.speed = 3;
-        this.hp = 10 * round * round
+        this.hp = 10 * round
         this.game = game
         this.bounty = round * round
     }
@@ -398,11 +398,13 @@ class Game {
     play() {
         if (this.enemies.length === 0 && lives > 0) {            
             setInterval(() => {
+                if (round % 2 == 0){ 
+                    console.log(round)
+                }
                 let enemyArr = this.createEnemyArr()
                 enemyArr = this.nextWave(enemyArr, round)
                 this.spawn(enemyArr)   
                 round++
-                console.log(this.createBoss())
             }, 35000);
         }
     }
