@@ -101,6 +101,7 @@ class Boss extends Enemy {
         this.speed = 3;
         this.hp = 10 * round
         this.game = game
+        this.color = "blue"
         this.bounty = round * round
     }
 }
