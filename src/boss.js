@@ -6,6 +6,7 @@ class Boss extends Enemy {
         this.speed = 3;
         this.dx = 2
         this.dy = 2
+        this.radius = 60
         this.hp = 10 * round
         this.game = game
         this.color = "blue"
