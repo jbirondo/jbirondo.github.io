@@ -134,13 +134,15 @@ class Game {
     play() {
         if (this.enemies.length === 0 && lives > 0) {            
             setInterval(() => {
-                if (round % 2 == 0){ 
-                    console.log(round)
+                if (round > 0 && round % 5 == 0){ 
+                    this.spawn(this.createBoss())
+                    round++
+                } else{
+                    let enemyArr = this.createEnemyArr()
+                    enemyArr = this.nextWave(enemyArr, round)
+                    this.spawn(enemyArr)   
+                    round++
                 }
-                let enemyArr = this.createEnemyArr()
-                enemyArr = this.nextWave(enemyArr, round)
-                this.spawn(enemyArr)   
-                round++
             }, 35000);
         }
     }
