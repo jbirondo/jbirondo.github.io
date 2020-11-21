@@ -9,7 +9,7 @@ class GameView {
         const timeDelta = time - this.lastTime;
         this.game.draw(this.grid, this.context);
         this.lastTime = time;
-        if(this.game.roundOver()){
+        if(this.game.enemies.length === 0){
             console.log("hello")
         }
         requestAnimationFrame(this.animate.bind(this));
