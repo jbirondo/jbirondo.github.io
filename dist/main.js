@@ -404,7 +404,7 @@ class Game {
         if (object instanceof Enemy) {
             if (this.enemies.indexOf(object) >= 0) {
                 this.enemies.splice(this.enemies.indexOf(object), 1);
-                if(this.roundOver()){
+                if(this.enemies.length === 0){
                     console.log("hello")
                 }
             }
