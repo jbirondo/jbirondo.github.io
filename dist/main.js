@@ -404,9 +404,6 @@ class Game {
         if (object instanceof Enemy) {
             if (this.enemies.indexOf(object) >= 0) {
                 this.enemies.splice(this.enemies.indexOf(object), 1);
-                if(this.enemies.length === 0){
-                    console.log("hello")
-                }
             }
             score += round
             money += object.bounty + round
@@ -522,6 +519,7 @@ class GameView {
     start() {
         if( lives > 0 && this.game.enemies.length === 0) {
             this.game.play()
+            console.log("hello")
         }
         this.lastTime = 0;
         requestAnimationFrame(this.animate.bind(this));
