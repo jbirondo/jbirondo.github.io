@@ -179,7 +179,7 @@ document.addEventListener("DOMContentLoaded", () => {
     canvas.addEventListener('mousemove', canvasHover)
     canvas.addEventListener('click', handleClick)
     canvas.addEventListener('click', statsClick)
-    canvas.addEventListener('keypress', upgradeKey)
+    document.addEventListener('keypress', upgradeKey)
 
     score.addEventListener('mousemove', scoreHover)
 
