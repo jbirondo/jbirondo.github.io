@@ -73,6 +73,7 @@ class Game {
             })
         })
         if(this.roundOver()){
+            console.log("hello")
             context.globalAlpha = 1.0
         }
 
