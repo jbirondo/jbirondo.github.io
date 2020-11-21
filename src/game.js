@@ -134,6 +134,7 @@ class Game {
     play() {
         if (this.enemies.length === 0 && lives > 0) {            
             setInterval(() => {
+                console.log(round)
                 if (round > 4 && round % 5 === 0){ 
                     this.spawn(this.createBoss())
                     console.log("hello", round)
