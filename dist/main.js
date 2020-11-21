@@ -512,7 +512,7 @@ class GameView {
         const timeDelta = time - this.lastTime;
         this.game.draw(this.grid, this.context);
         this.lastTime = time;
-        if(this.game.enemies.length === 0){
+        if(this.game.enemies.length === 0 && round > 0){
             this.context.globalAlpha = 1
         }
         requestAnimationFrame(this.animate.bind(this));
