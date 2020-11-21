@@ -825,6 +825,7 @@ class MovingObject {
                 (2 * Math.PI), //* (1 + (-1 * (this.hp / totalHp))), 
                 true
             );
+            context.globalAlpha = this.hp / totalHp
             context.fill();
         } else if (Math.floor(totalHp) === Math.floor(this.hp)) {
             context.fillStyle = this.color;
