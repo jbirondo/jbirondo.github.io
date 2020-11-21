@@ -41,6 +41,7 @@ class MovingObject {
             );
             context.fill();
         } else if (this.hp < 0) {
+            context.globalAlpha = 1
             null
         }
     }
