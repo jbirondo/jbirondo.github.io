@@ -512,7 +512,9 @@ class GameView {
         const timeDelta = time - this.lastTime;
         this.game.draw(this.grid, this.context);
         this.lastTime = time;
-        console.log("hello")
+        if(this.game.roundOver()){
+            console.log("hello")
+        }
         requestAnimationFrame(this.animate.bind(this));
     };
 
