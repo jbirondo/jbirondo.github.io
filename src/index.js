@@ -114,7 +114,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const upgradeKey = (event) => {
-        console.log(event)
         if(event.key === "u"){
             if(object.upgradeCost <= money){
                 newObject = object.upgrade()
