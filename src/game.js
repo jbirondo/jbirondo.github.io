@@ -80,7 +80,7 @@ class Game {
                 this.enemies.splice(this.enemies.indexOf(object), 1);
             }
             score += round
-            money += object.bounty + round
+            money += object.bounty
         } else if (object instanceof Projectile) {
             this.projectiles.splice(this.projectiles.indexOf(object), 1);
         } else if (object instanceof Tower) {
