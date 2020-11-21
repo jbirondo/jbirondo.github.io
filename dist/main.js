@@ -841,9 +841,9 @@ class MovingObject {
                 2 * Math.PI, 
                 true
             );
+            context.globalAlpha = 1
             context.fill();
         } else if (this.hp < 0) {
-            context.globalAlpha = 1
             null
         }
     }
