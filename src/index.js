@@ -113,6 +113,17 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    const upgradeKey = (event) => {
+        if(event.code === "KeyU"){
+            if(object.upgradeCost <= money){
+                newObject = object.upgrade()
+                object = newObject = object
+            } else {
+                alert("Not enough money")
+            }
+        }
+    }
+
     const sell = (event) => {
         let pos = getMousePos(stats, event)
         if(isSell(pos) && object instanceof Tower) {
@@ -167,6 +178,7 @@ document.addEventListener("DOMContentLoaded", () => {
     canvas.addEventListener('mousemove', canvasHover)
     canvas.addEventListener('click', handleClick)
     canvas.addEventListener('click', statsClick)
+    canvas.addEventListener('keypress', upgradeKey)
 
     score.addEventListener('mousemove', scoreHover)
 
