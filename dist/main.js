@@ -817,15 +817,14 @@ class MovingObject {
         if (Math.floor(totalHp) !== Math.floor(this.hp)){
             context.fillStyle = this.color;
             context.beginPath();
-            // context.arc(
-            //     this.x, 
-            //     this.y, 
-            //     this.radius, 
-            //     0, 
-            //     (2 * Math.PI) * (1 + (-1 * (this.hp / totalHp))), 
-            //     true
-            // );
-            context.globalAlpha = Math.floor(this.hp / totalHp)
+            context.arc(
+                this.x, 
+                this.y, 
+                this.radius, 
+                0, 
+                (2 * Math.PI) * (1 + (-1 * (this.hp / totalHp))), 
+                true
+            );
             context.fill();
         } else if (Math.floor(totalHp) === Math.floor(this.hp)) {
             context.fillStyle = this.color;
