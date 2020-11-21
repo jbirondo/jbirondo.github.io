@@ -398,11 +398,6 @@ class Game {
                 tower.fireProjectile(enemy)
             })
         })
-        if(this.roundOver()){
-            console.log("hello")
-            context.globalAlpha = 1.0
-        }
-
     }
 
     remove(object) {
@@ -412,6 +407,9 @@ class Game {
             }
             score += round
             money += object.bounty + round
+            if(this.roundOver()){
+                console.log("hello")
+            }
         } else if (object instanceof Projectile) {
             this.projectiles.splice(this.projectiles.indexOf(object), 1);
         } else if (object instanceof Tower) {
