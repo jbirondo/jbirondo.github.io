@@ -136,7 +136,7 @@ class Game {
             setInterval(() => {
                 let tempRound = round + 1
                 console.log(tempRound)
-                if (round > 4 && tempRound % 5 === 0){ 
+                if (round > 3 && tempRound % 5 === 0){ 
                     this.spawn(this.createBoss())
                     console.log("hello", tempRound)
                     round++
