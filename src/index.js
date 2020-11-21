@@ -65,22 +65,22 @@ document.addEventListener("DOMContentLoaded", () => {
     new GameView(game, context).start();
 
     const score = document.getElementById("score")
-    const scoreContext = score.getContext("2d")
+    const scoreContext = score.getContext("2d", {alpha: false})
     const scoreEle = new Score(scoreContext)
     new ScoreView(scoreEle).start()
 
     const stats = document.getElementById("stats")
-    const statsContext = stats.getContext("2d")
+    const statsContext = stats.getContext("2d", {alpha: false})
     let statsEle = new Stats(statsContext, object)
     new StatsView(statsEle).start()
 
     const instructions = document.getElementById("instructions")
-    const instructionsContext = instructions.getContext("2d")
+    const instructionsContext = instructions.getContext("2d", {alpha: false})
     const instructionsEle = new Instructions(instructionsContext)
     new InstructionsView(instructionsEle).start()
 
     const enemyStats = document.getElementById("enemy")
-    const enemyStatsContext = enemyStats.getContext("2d")
+    const enemyStatsContext = enemyStats.getContext("2d", {alpha: false})
     const enemyEle = new EnemyStats(enemyStatsContext)
     new EnemyStatsView(enemyEle).start()
 
