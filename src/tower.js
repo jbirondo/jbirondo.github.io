@@ -14,6 +14,7 @@ class Tower {
 
     draw(context) {
         context.fillStyle = "black"
+        context.globalAlpha = 1
         switch (this.stage) {
             case "Pawn":
                 context.font = "16px Arial"
