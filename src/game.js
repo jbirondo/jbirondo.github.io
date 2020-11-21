@@ -112,7 +112,7 @@ class Game {
         enemies.forEach(enemy => {
             enemy.hp = enemy.hp * (1 + (0.25 * round)) 
             enemy.color = ["black", "brown", "purple", "yellow", "orange"][round % 5]
-            enemy.bounty = Math.floor(enemy.bounty + (round * .4))
+            enemy.bounty = Math.floor(enemy.bounty + (Math.floor(round / 5) * 5))
             newEnemies.push(enemy)
 
         })
