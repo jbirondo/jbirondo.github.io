@@ -619,17 +619,17 @@ document.addEventListener("DOMContentLoaded", () => {
     new ScoreView(scoreEle).start()
 
     const stats = document.getElementById("stats")
-    const statsContext = stats.getContext("2d", {alpha: false})
+    const statsContext = stats.getContext("2d")
     let statsEle = new Stats(statsContext, object)
     new StatsView(statsEle).start()
 
     const instructions = document.getElementById("instructions")
-    const instructionsContext = instructions.getContext("2d", {alpha: false})
+    const instructionsContext = instructions.getContext("2d")
     const instructionsEle = new Instructions(instructionsContext)
     new InstructionsView(instructionsEle).start()
 
     const enemyStats = document.getElementById("enemy")
-    const enemyStatsContext = enemyStats.getContext("2d", {alpha: false})
+    const enemyStatsContext = enemyStats.getContext("2d")
     const enemyEle = new EnemyStats(enemyStatsContext)
     new EnemyStatsView(enemyEle).start()
 
