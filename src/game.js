@@ -135,10 +135,8 @@ class Game {
         if (this.enemies.length === 0 && lives > 0) {     
             setInterval(() => {
                 let tempRound = round + 1
-                console.log(tempRound)
                 if (round > 3 && tempRound % 5 === 0){ 
                     this.spawn(this.createBoss())
-                    console.log("hello", tempRound)
                     round++
                 } else {
                     let enemyArr = this.createEnemyArr()
