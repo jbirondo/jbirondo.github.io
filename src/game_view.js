@@ -10,7 +10,7 @@ class GameView {
         this.game.draw(this.grid, this.context);
         this.lastTime = time;
         if(this.game.enemies.length === 0){
-            console.log("hello")
+            this.context.globalAlpha = 1
         }
         requestAnimationFrame(this.animate.bind(this));
     };
