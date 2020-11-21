@@ -85,9 +85,10 @@ class Tower {
         if (this.inRange(enemy) === true && enemy.hp > 0) {
 			this.context.lineWidth = 1
 			this.context.strokeStyle = "black"
-			this.context.beginPath()
+            this.context.beginPath()
+            this.context.globalAlpha = 1
 			this.context.moveTo(((this.row * 20) + 10), ((this.col * 20) + 10))
-			this.context.lineTo(enemy.x, enemy.y)
+            this.context.lineTo(enemy.x, enemy.y)
             this.context.stroke();
             
             enemy.hp -= (this.dmg / 60)
