@@ -561,7 +561,7 @@ const InstructionsView = __webpack_require__(/*! ./instructions_view */ "./src/i
 
 document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById("canvas")
-    const context = canvas.getContext("2d")
+    const context = canvas.getContext("2d", {alpha: false})
     const game = new Game(context);
     const getMousePos = (canvas, event) => {
         let rect = canvas.getBoundingClientRect();
@@ -825,7 +825,6 @@ class MovingObject {
                 (2 * Math.PI), //* (1 + (-1 * (this.hp / totalHp))), 
                 true
             );
-            // context.globalAlpha = Math.floor(this.hp / totalHp)
             context.fill();
         } else if (Math.floor(totalHp) === Math.floor(this.hp)) {
             context.fillStyle = this.color;

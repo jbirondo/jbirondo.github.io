@@ -12,7 +12,7 @@ const InstructionsView = require("./instructions_view")
 
 document.addEventListener("DOMContentLoaded", () => {
     const canvas = document.getElementById("canvas")
-    const context = canvas.getContext("2d")
+    const context = canvas.getContext("2d", {alpha: false})
     const game = new Game(context);
     const getMousePos = (canvas, event) => {
         let rect = canvas.getBoundingClientRect();
