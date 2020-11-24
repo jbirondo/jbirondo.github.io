@@ -65,7 +65,6 @@ class Tower {
             } else if (this.stage === "Queen"){
                 this.stage = "King"
                 this.dmg = 200
-                this.upgradeCost = 15000
             }
         }
         return this
