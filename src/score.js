@@ -26,6 +26,32 @@ class Score {
             this.context.lineWidth = 10
             this.context.strokeStyle = "green"
             this.context.stroke()
+        } else if (){
+            this.context.clearRect(0, 0, 300 , 100);
+            this.context.font = "15px Arial";
+            this.context.fillText(`Score: ${score}`, 120, 20);
+            this.context.fillText(`Lives: ${lives}`, 120, 50);
+            this.context.fillText(`Money: ${money}`, 120, 80);
+            this.context.fillText(`Wave`, 30, 50);
+            if (round < 10){
+                this.context.fillText(`${round}`, 45, 70)
+            } else if (round >= 10 && round < 100) {
+                this.context.fillText(`${round}`, 41, 70)
+            } else {
+                this.context.fillText(`${round}`, 37, 70)
+            }
+            this.context.beginPath();
+            this.context.arc(
+                50,
+                50,
+                40,
+                0,
+                (2 * Math.PI) * (1 + (-1 * (countdown / 350))),
+                true
+            );
+            this.context.lineWidth = 10
+            this.context.strokeStyle = ["black", "brown", "purple", "yellow", "blue"][(round - 1) % 5]
+            this.context.stroke()
         } else {
             this.context.clearRect(0, 0, 300 , 100);
             this.context.font = "15px Arial";
