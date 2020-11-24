@@ -10,7 +10,7 @@ class EnemyStats {
             this.context.clearRect(0, 0, 300, 300)
             this.context.font = "20px Arial";
             this.context.fillText(`Boss`, 10, 80)
-            this.context.fillText(`Health: ${(10 * (1 + (0.25 * (round - 1))) )}`, 10, 110)
+            this.context.fillText(`Health: ${(10 * round )}`, 10, 110)
         }
         } else {
             this.context.clearRect(0, 0, 300, 300)
