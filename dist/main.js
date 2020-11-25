@@ -454,12 +454,11 @@ class Game {
         if (this.enemies.length === 0 && lives > 0) {     
             setInterval(() => {
                 let tempRound = round + 1
-                let sound
                 if (round > 3 && tempRound % 5 === 0){ 
                     this.spawn(this.createBoss())
-                    sound = new Audio('boss.mp3').play()
-                    if (sound !== undefined){
-                        sound.then(() => {
+                    let bossSound = new Audio('boss.mp3').play()
+                    if (bossSound !== undefined){
+                        bossSound.then(() => {
 
                         }).catch((error) => {
                             console.log(error)
@@ -470,9 +469,9 @@ class Game {
                     let enemyArr = this.createEnemyArr()
                     enemyArr = this.nextWave(enemyArr, round)
                     this.spawn(enemyArr)   
-                    sound = new Audio('round.mp3').play()
-                    if (sound !== undefined){
-                        sound.then(() => {
+                    let roundSound = new Audio('round.mp3').play()
+                    if (roundSound !== undefined){
+                        roundSound.then(() => {
 
                         }).catch((error) => {
                             console.log(error)
