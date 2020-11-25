@@ -2,6 +2,7 @@ const Enemy = require("./enemy")
 const Boss = require("./boss")
 const Projectile = require("./projectile")
 const Tower = require("./tower")
+const BossSound = require("./sounds/boss.mp3")
 
 class Game {
     constructor(context){
