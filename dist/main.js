@@ -333,7 +333,6 @@ const Enemy = __webpack_require__(/*! ./enemy */ "./src/enemy.js")
 const Boss = __webpack_require__(/*! ./boss */ "./src/boss.js")
 const Projectile = __webpack_require__(/*! ./projectile */ "./src/projectile.js")
 const Tower = __webpack_require__(/*! ./tower */ "./src/tower.js")
-const BossSound = __webpack_require__(/*! ./sounds/boss.mp3 */ "./src/sounds/boss.mp3")
 
 class Game {
     constructor(context){
@@ -455,13 +454,18 @@ class Game {
         if (this.enemies.length === 0 && lives > 0) {     
             setInterval(() => {
                 let tempRound = round + 1
+                let sound
                 if (round > 3 && tempRound % 5 === 0){ 
                     this.spawn(this.createBoss())
+                    sound = new Audio('./boss.mp3')
+                    sound.play()
                     round++
                 } else {
                     let enemyArr = this.createEnemyArr()
                     enemyArr = this.nextWave(enemyArr, round)
                     this.spawn(enemyArr)   
+                    sound = new Audio('./round.mp3')
+                    sound.play()
                     round++
                 }
             }, 35000);
@@ -984,17 +988,6 @@ class ScoreView {
     };
 }
 module.exports = ScoreView;
-
-/***/ }),
-
-/***/ "./src/sounds/boss.mp3":
-/*!*****************************!*\
-  !*** ./src/sounds/boss.mp3 ***!
-  \*****************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-throw new Error("Module parse failed: Unexpected character '\u0004' (1:3)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n(Source code omitted for this binary file)");
 
 /***/ }),
 
