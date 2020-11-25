@@ -119,33 +119,30 @@ class Game {
         return newEnemies
     }
 
+    playSound(file){
+        let sound = new Audio(file).play()
+        if (sound !== undefined){
+            sound.then(() => {
+
+            }).catch((error) => {
+                console.log(error)
+            })
+        }
+    }
+
     play() {
         if (this.enemies.length === 0 && lives > 0) {     
             setInterval(() => {
                 let tempRound = round + 1
                 if (round > 3 && tempRound % 5 === 0){ 
                     this.spawn(this.createBoss())
-                    let bossSound = new Audio('boss.mp3').play()
-                    if (bossSound !== undefined){
-                        bossSound.then(() => {
-
-                        }).catch((error) => {
-                            console.log(error)
-                        })
-                    }
+                    this.playSound('boss.mp3')
                     round++
                 } else {
                     let enemyArr = this.createEnemyArr()
                     enemyArr = this.nextWave(enemyArr, round)
                     this.spawn(enemyArr)   
-                    let roundSound = new Audio('round.mp3').play()
-                    if (roundSound !== undefined){
-                        roundSound.then(() => {
-
-                        }).catch((error) => {
-                            console.log(error)
-                        })
-                    }
+                    this.playSound('round.mp3')
                     round++
                 }
             }, 35000);
