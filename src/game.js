@@ -126,15 +126,27 @@ class Game {
                 let sound
                 if (round > 3 && tempRound % 5 === 0){ 
                     this.spawn(this.createBoss())
-                    sound = new Audio('boss.mp3')
-                    sound.play()
+                    sound = new Audio('boss.mp3').play()
+                    if (sound !== undefined){
+                        sound.then(() => {
+
+                        }).catch((error) => {
+                            console.log(error)
+                        })
+                    }
                     round++
                 } else {
                     let enemyArr = this.createEnemyArr()
                     enemyArr = this.nextWave(enemyArr, round)
                     this.spawn(enemyArr)   
-                    sound = new Audio('round.mp3')
-                    sound.play()
+                    sound = new Audio('round.mp3').play()
+                    if (sound !== undefined){
+                        sound.then(() => {
+
+                        }).catch((error) => {
+                            console.log(error)
+                        })
+                    }
                     round++
                 }
             }, 35000);
