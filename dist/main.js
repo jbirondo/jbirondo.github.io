@@ -1033,7 +1033,7 @@ class Stats {
                 this.context.fillText(`Sell`, 104, 40)
                 this.context.strokeStyle = "red"
                 this.context.strokeRect(100, 23, 40, 23);
-                this.context.strokeStyle = "black"
+                this.context.fillStyle = "black"
                 this.context.fillText(`Upgrade cost: ${object.upgradeCost}`, 10, 110)
             } else {
                 this.context.fillStyle = "red"
