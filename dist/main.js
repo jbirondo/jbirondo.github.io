@@ -1136,23 +1136,23 @@ class Tower {
             money -= this.upgradeCost;
             if (this.stage === "Pawn"){
                 this.stage = "Knight"
-                this.dmg = 6
+                this.dmg = 8
                 this.upgradeCost = 100
             } else if (this.stage === "Knight"){
                 this.stage = "Bishop"
-                this.dmg = 22
+                this.dmg = 33
                 this.upgradeCost = 250
             } else if (this.stage === "Bishop"){
                 this.stage = "Rook"
-                this.dmg = 65
+                this.dmg = 100
                 this.upgradeCost = 500
             } else if (this.stage === "Rook"){
                 this.stage = "Queen"
-                this.dmg = 140
+                this.dmg = 250
                 this.upgradeCost = 5000
             } else if (this.stage === "Queen"){
                 this.stage = "King"
-                this.dmg = 2000
+                this.dmg = 1766
             }
             this.playSound('click.wav')
         }
