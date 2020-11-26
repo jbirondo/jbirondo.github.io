@@ -1155,7 +1155,8 @@ class Tower {
                 this.dmg = 2000
             }
         }
-        Game.playSound("click.wav")
+        let game = new Game()
+        game.playSound("click.wav")
         object = this
     }
 
