@@ -52,19 +52,19 @@ class Tower {
                 this.upgradeCost = 100
             } else if (this.stage === "Knight"){
                 this.stage = "Bishop"
-                this.dmg = 15
+                this.dmg = 22
                 this.upgradeCost = 250
             } else if (this.stage === "Bishop"){
                 this.stage = "Rook"
-                this.dmg = 35
+                this.dmg = 65
                 this.upgradeCost = 500
             } else if (this.stage === "Rook"){
                 this.stage = "Queen"
-                this.dmg = 75
+                this.dmg = 140
                 this.upgradeCost = 5000
             } else if (this.stage === "Queen"){
                 this.stage = "King"
-                this.dmg = 1000
+                this.dmg = 2000
             }
         }
         return this
