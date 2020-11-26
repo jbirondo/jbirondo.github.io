@@ -80,7 +80,6 @@ class Game {
             if (this.enemies.indexOf(object) >= 0) {
                 this.enemies.splice(this.enemies.indexOf(object), 1);
             }
-            this.playSound('kill.wav')
             score += round
             money += object.bounty
         } else if (object instanceof Projectile) {

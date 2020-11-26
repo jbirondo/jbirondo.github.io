@@ -1,3 +1,5 @@
+const Game = require('./game')
+
 class Tower {
     constructor(row, col, canvas) {
         this.row = row;
@@ -67,6 +69,7 @@ class Tower {
                 this.dmg = 2000
             }
         }
+        Game.playSound("click.wave")
         return this
     }
 

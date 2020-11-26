@@ -411,7 +411,6 @@ class Game {
             if (this.enemies.indexOf(object) >= 0) {
                 this.enemies.splice(this.enemies.indexOf(object), 1);
             }
-            this.playSound('kill.wav')
             score += round
             money += object.bounty
         } else if (object instanceof Projectile) {
@@ -1083,7 +1082,9 @@ module.exports = StatsView;
   !*** ./src/tower.js ***!
   \**********************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
+
+const Game = __webpack_require__(/*! ./game */ "./src/game.js")
 
 class Tower {
     constructor(row, col, canvas) {
@@ -1154,6 +1155,7 @@ class Tower {
                 this.dmg = 2000
             }
         }
+        Game.playSound("click.wave")
         return this
     }
 
