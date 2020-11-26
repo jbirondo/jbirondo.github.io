@@ -69,8 +69,8 @@ class Tower {
                 this.dmg = 2000
             }
         }
-        Game.playSound("click.wave")
-        return this
+        Game.playSound("click.wav")
+        object = this
     }
 
     inRange(enemy) {

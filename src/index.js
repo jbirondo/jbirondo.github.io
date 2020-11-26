@@ -21,7 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
             y: event.clientY - rect.top
         }
     }
-    let object
     const handleClick = (event) => {
         let pos = getMousePos(canvas, event)
         let y = Number.parseInt(pos.x / 20)

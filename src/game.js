@@ -82,6 +82,7 @@ class Game {
             }
             score += round
             money += object.bounty
+            this.playSound('kill.wav')
         } else if (object instanceof Projectile) {
             this.projectiles.splice(this.projectiles.indexOf(object), 1);
         } else if (object instanceof Tower) {

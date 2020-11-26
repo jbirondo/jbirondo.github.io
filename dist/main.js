@@ -413,6 +413,7 @@ class Game {
             }
             score += round
             money += object.bounty
+            this.playSound('kill.wav')
         } else if (object instanceof Projectile) {
             this.projectiles.splice(this.projectiles.indexOf(object), 1);
         } else if (object instanceof Tower) {
@@ -579,7 +580,6 @@ document.addEventListener("DOMContentLoaded", () => {
             y: event.clientY - rect.top
         }
     }
-    let object
     const handleClick = (event) => {
         let pos = getMousePos(canvas, event)
         let y = Number.parseInt(pos.x / 20)
@@ -1155,8 +1155,8 @@ class Tower {
                 this.dmg = 2000
             }
         }
-        Game.playSound("click.wave")
-        return this
+        Game.playSound("click.wav")
+        object = this
     }
 
     inRange(enemy) {
