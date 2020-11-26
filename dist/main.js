@@ -350,6 +350,7 @@ class Game {
             this.projectiles.push(object);
         } else if (object instanceof Tower) {
             this.towers.push(object);
+            this.playSound('click.wav')
             money -= object.cost 
         } else {
             throw new Error("unknown type of object");
