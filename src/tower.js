@@ -68,10 +68,8 @@ class Tower {
                 this.stage = "King"
                 this.dmg = 2000
             }
+            this.playSound('click.wav')
         }
-        let game = new Game(this.context)
-        game.playSound("click.wav")
-        object = this
     }
 
     inRange(enemy) {
@@ -101,6 +99,17 @@ class Tower {
                 enemy.remove()
             }
 
+        }
+    }
+
+    playSound(file){
+        let sound = new Audio(file).play()
+        if (sound !== undefined){
+            sound.then(() => {
+
+            }).catch((error) => {
+                console.log(error)
+            })
         }
     }
 }
