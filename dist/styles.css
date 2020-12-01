@@ -29,6 +29,7 @@
 .second-instructions{
     height: 200px;
     width: 300px;
+    cursor: default;
 }
 
 .main{
