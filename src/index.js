@@ -68,11 +68,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const scoreEle = new Score(scoreContext)
     new ScoreView(scoreEle).start()
 
-    let stats = document.getElementById("stats")
-    let statsContext = stats.getContext("2d")
-    let statsEle = new Stats(statsContext, object)
-    new StatsView(statsEle).start()
-
     const instructions = document.getElementById("instructions")
     const instructionsContext = instructions.getContext("2d")
     const instructionsEle = new Instructions(instructionsContext)
@@ -105,17 +100,14 @@ document.addEventListener("DOMContentLoaded", () => {
         if(isUpgrade(pos)){
             if(object.upgradeCost <= money){
                 object = object.upgrade()
-                console.log(object)
             } else {
                 alert("Not enough money")
             }
         }
-        console.log(object)
-        stats = document.getElementById("stats")
-        statsContext = stats.getContext("2d")
-        statsEle = new Stats(statsContext, object)
+        let stats = document.getElementById("stats")
+        let statsContext = stats.getContext("2d")
+        let statsEle = new Stats(statsContext, object)
         new StatsView(statsEle).start()
-        return object
     }
 
     const upgradeKey = (event) => {
@@ -126,11 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert("Not enough money")
             }
         }
-        stats = document.getElementById("stats")
-        statsContext = stats.getContext("2d")
-        statsEle = new Stats(statsContext, object)
-        new StatsView(statsEle).start()
-        return object
     }
 
     const sell = (event) => {
