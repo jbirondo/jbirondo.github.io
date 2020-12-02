@@ -663,12 +663,12 @@ document.addEventListener("DOMContentLoaded", () => {
         let pos = getMousePos(stats, event)
         if(isUpgrade(pos)){
             if(object.upgradeCost <= money){
-                newObject = object.upgrade()
-                object = newObject = object
+                object = object.upgrade()
             } else {
                 alert("Not enough money")
             }
         }
+        return object
     }
 
     const upgradeKey = (event) => {
