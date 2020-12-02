@@ -112,6 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         console.log(object)
         stats = document.getElementById("stats")
+        statsContext = stats.getContext("2d")
         statsEle = new Stats(statsContext, object)
         new StatsView(statsEle).start()
         return object
@@ -126,6 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
         stats = document.getElementById("stats")
+        statsContext = stats.getContext("2d")
         statsEle = new Stats(statsContext, object)
         new StatsView(statsEle).start()
         return object
