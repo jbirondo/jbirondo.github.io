@@ -68,8 +68,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const scoreEle = new Score(scoreContext)
     new ScoreView(scoreEle).start()
 
-    const stats = document.getElementById("stats")
-    const statsContext = stats.getContext("2d")
+    let stats = document.getElementById("stats")
+    let statsContext = stats.getContext("2d")
     let statsEle = new Stats(statsContext, object)
     new StatsView(statsEle).start()
 
