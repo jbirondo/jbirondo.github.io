@@ -68,6 +68,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const scoreEle = new Score(scoreContext)
     new ScoreView(scoreEle).start()
 
+    let stats = document.getElementById("stats")
+    let statsContext = stats.getContext("2d")
+    let statsEle = new Stats(statsContext, object)
+    new StatsView(statsEle).start()
+
     const instructions = document.getElementById("instructions")
     const instructionsContext = instructions.getContext("2d")
     const instructionsEle = new Instructions(instructionsContext)
