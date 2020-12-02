@@ -109,6 +109,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert("Not enough money")
             }
         }
+        statsEle = new Stats(statsContext, object)
         return object
     }
 
@@ -120,6 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert("Not enough money")
             }
         }
+        statsEle = new Stats(statsContext, object)
         return object
     }
 
