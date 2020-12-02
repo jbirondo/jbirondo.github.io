@@ -1170,6 +1170,9 @@ class Tower {
     }
 
     fireProjectile(enemy) {
+        setInterval(() => {
+
+        }, 1000) 
         if (this.inRange(enemy) === true && enemy.hp > 0) {
             this.context.lineWidth = 1
             this.context.strokeStyle = "black"
