@@ -109,9 +109,8 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert("Not enough money")
             }
         }
-        let stats = document.getElementById("stats")
-        let statsContext = stats.getContext("2d")
-        let statsEle = new Stats(statsContext, object)
+        statsContext = stats.getContext("2d")
+        statsEle = new Stats(statsContext, object)
         new StatsView(statsEle).start()
     }
 
