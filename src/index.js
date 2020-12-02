@@ -115,12 +115,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const upgradeKey = (event) => {
         if(event.key === "u"){
             if(object.upgradeCost <= money){
-                newObject = object.upgrade()
-                object = newObject = object
+                object = object.upgrade()
             } else {
                 alert("Not enough money")
             }
         }
+        return object
     }
 
     const sell = (event) => {
