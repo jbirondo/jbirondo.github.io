@@ -669,6 +669,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
         statsEle = new Stats(statsContext, object)
+        new StatsView(statsEle).start()
         return object
     }
 
@@ -681,6 +682,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
         statsEle = new Stats(statsContext, object)
+        new StatsView(statsEle).start()
         return object
     }
 
