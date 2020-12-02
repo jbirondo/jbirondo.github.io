@@ -670,6 +670,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
         console.log(object)
+        stats = document.getElementById("stats")
         statsEle = new Stats(statsContext, object)
         new StatsView(statsEle).start()
         return object
@@ -683,6 +684,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert("Not enough money")
             }
         }
+        stats = document.getElementById("stats")
         statsEle = new Stats(statsContext, object)
         new StatsView(statsEle).start()
         return object
