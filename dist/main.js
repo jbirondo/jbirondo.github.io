@@ -668,9 +668,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 alert("Not enough money")
             }
         }
-        statsContext = stats.getContext("2d")
-        statsEle = new Stats(statsContext, object)
-        new StatsView(statsEle).start()
+        setTimeout(() => {
+            statsContext = stats.getContext("2d")
+            statsEle = new Stats(statsContext, object)
+            new StatsView(statsEle).start()
+        }, 100)
     }
 
     const upgradeKey = (event) => {
