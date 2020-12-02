@@ -1171,24 +1171,23 @@ class Tower {
 
     fireProjectile(enemy) {
         setInterval(() => {
-
-        }, 1000) 
-        if (this.inRange(enemy) === true && enemy.hp > 0) {
-            this.context.lineWidth = 1
-            this.context.strokeStyle = "black"
-            this.context.beginPath()
-            this.context.globalAlpha = 1
-            this.context.moveTo(((this.row * 20) + 10), ((this.col * 20) + 10))
-            this.context.lineTo(enemy.x, enemy.y)
-            this.context.stroke();
-            
-            enemy.hp -= (this.dmg / 60)
-
-            if (enemy.hp <= 0) {
-                enemy.remove()
+            if (this.inRange(enemy) === true && enemy.hp > 0) {
+                this.context.lineWidth = 1
+                this.context.strokeStyle = "black"
+                this.context.beginPath()
+                this.context.globalAlpha = 1
+                this.context.moveTo(((this.row * 20) + 10), ((this.col * 20) + 10))
+                this.context.lineTo(enemy.x, enemy.y)
+                this.context.stroke();
+                
+                enemy.hp -= (this.dmg)
+    
+                if (enemy.hp <= 0) {
+                    enemy.remove()
+                }
+    
             }
-
-        }
+        }, 1000) 
     }
 
     playSound(file){
