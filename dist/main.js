@@ -664,10 +664,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if(isUpgrade(pos)){
             if(object.upgradeCost <= money){
                 object = object.upgrade()
+                console.log(object)
             } else {
                 alert("Not enough money")
             }
         }
+        console.log(object)
         statsEle = new Stats(statsContext, object)
         new StatsView(statsEle).start()
         return object
