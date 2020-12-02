@@ -70,6 +70,7 @@ class Tower {
             }
             this.playSound('click.wav')
         }
+        return this
     }
 
     inRange(enemy) {
